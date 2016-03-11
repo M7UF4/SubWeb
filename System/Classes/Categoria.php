@@ -14,21 +14,21 @@
         }
         public function mod(){
             $db = new connexio();
-            $db->query("UPDATE Usuari SET tipus='$this->tipus' WHERE id_usuari= '$this->id_categoria'");
+            $db->query("UPDATE Categoria SET tipus='$this->tipus' WHERE id_categoria= '$this->id_categoria'");
             $db->close();
         }
         public function delete($var){
             $db = new connexio();
-            $sql = "delete from Usuari where id_usuari = $var";
+            $sql = "delete from Categoria where id_categoria = $var";
             $db->query($sql);
         }
         public function view_all(){
             $db = new connexio();
-            $sql = "SELECT * FROM Usuari;";
+            $sql = "SELECT * FROM Categoria;";
             $query = $db->query($sql);
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                $Usuari = new Usuari($obj["id_usuari"],$obj["saldo"],$obj["user"],$obj["email"],$obj["password"],$obj["nom"],$obj["cognom"],$obj["dni"],$obj["telefon"],$obj["adreça"],$obj["id_tipus"]);
+                $Usuari = new Usuari($obj["id_categoria"],$obj["tipus"]);
                 //var_dump($Usuari);
                 array_push($rtn, $Usuari);
             }
