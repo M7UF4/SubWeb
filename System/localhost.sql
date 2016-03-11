@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS `Usuari`;
 DROP TABLE IF EXISTS `Categoria`;
 DROP TABLE IF EXISTS `Producte`;
 DROP TABLE IF EXISTS `Subhasta`;
-DROP TABLE IF EXISTS `Pagament`;
+DROP TABLE IF EXISTS `Pagament`; 
 
 --
 -- TABLE: `Partida`
