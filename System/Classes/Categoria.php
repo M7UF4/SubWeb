@@ -1,20 +1,20 @@
 <?php
     require_once __DIR__."/../config.php";
-    class Usuari{
+    class Categoria{
         /*Atributs*/
-        private $id_usuari;
-        private $saldo;
+        private $id_categoria;
+        private $tipus;
         
         //METODES
         public function add(){
             $db = new connexio();
-            $db->query("INSERT INTO Usuari(saldo,user,email,password,nom,cognom,dni,telefon,adreça,id_tipus) "
-                    . "VALUES ('$this->saldo', '$this->user', '$this->email', '$this->password', '$this->nom', '$this->cognom', '$this->dni', '$this->telefon', '$this->adreça', '$this->id_tipus')");
+            $db->query("INSERT INTO Categoria(tipus) "
+                    . "VALUES ('$this->id_tipus')");
             $db->close();
         }
         public function mod(){
             $db = new connexio();
-            $db->query("UPDATE Usuari SET saldo='$this->saldo', user='$this->user', email='$this->email', password='$this->password', nom='$this->nom', cognom='$this->cognom', dni='$this->dni', telefon='$this->telefon', adreça='$this->adreça', id_tipus='$this->id_tipus' WHERE id_usuari= '$this->id_usuari'");
+            $db->query("UPDATE Usuari SET tipus='$this->tipus' WHERE id_usuari= '$this->id_categoria'");
             $db->close();
         }
         public function delete($var){
