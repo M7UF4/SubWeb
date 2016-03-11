@@ -5,7 +5,7 @@
     define("HOST","localhost");
     define("NOMUSUARI","subweb");
     define("CONTRASENYA","master");
-    define("NOMBDD","DB_SubWeb");
+    define("NOMBDD","db_subweb");
 
     class connexio extends mysqli {
         public function __construct() {
