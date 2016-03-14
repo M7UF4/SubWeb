@@ -34,7 +34,7 @@ INSERT INTO `Tipus` (`id_tipus`, `rang`, `descripcio`) VALUES
 -- TABLE: `Usuari`
 --
 CREATE TABLE IF NOT EXISTS `Usuari` (
-  `id_usuari` int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_usuari` int(10) NOT NULL AUTO_INCREMENT,
   `saldo` int(10) NOT NULL,
   `user` varchar(32) NOT NULL,
   `email` varchar(40) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `Usuari` (
   `dni` varchar(9) NOT NULL,
   `telefon` varchar(16),
   `adreça` varchar(32) NOT NULL,
-  `id_tipus` int(10) NOT NULL AUTO_INCREMENT,
+  `id_tipus` int(10) NOT NULL,
   PRIMARY KEY (`id_usuari`),
   UNIQUE KEY `user` (`user`,`email`),
   FOREIGN KEY (`id_tipus`) REFERENCES `Tipus` (`id_tipus`)
@@ -59,7 +59,7 @@ INSERT INTO `Usuari` (`id_usuari`, `saldo`, `user`, `email`, `password`, `nom`, 
 -- TABLE: `Pagament`
 --
 CREATE TABLE IF NOT EXISTS `Pagament` (
-  `id_pagament` int(10) NOT NULL PRIMARY KEY,
+  `id_pagament` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `id_usuari` int(10) NOT NULL,
   `tipus` varchar(32) NOT NULL,
   `quantitat` int(10) NOT NULL,

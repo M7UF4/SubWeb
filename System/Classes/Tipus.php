@@ -1,22 +1,22 @@
 <?php
     require_once __DIR__."/../config.php";
-    class Usuari{
+    class Tipus{
         /*Atributs*/
-        private $id_usuari;
-        private $saldo;
-        private $user;
+        private $id_tipus;
+        private $rang;
+        private $descripcio;
         
         //METODES
         
         public function view_all(){
             $db = new connexio();
-            $sql = "SELECT * FROM Usuari;";
+            $sql = "SELECT * FROM Tipus;";
             $query = $db->query($sql);
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                $Usuari = new Usuari($obj["id_usuari"],$obj["saldo"],$obj["user"],$obj["email"],$obj["password"],$obj["nom"],$obj["cognom"],$obj["dni"],$obj["telefon"],$obj["adreça"],$obj["id_tipus"]);
-                //var_dump($Usuari);
-                array_push($rtn, $Usuari);
+                $Tipus = new Tipus($obj["id_tipus"],$obj["rang"],$obj["descripcio"]);
+                //var_dump($Tipus);
+                array_push($rtn, $Tipus);
             }
             $db->close();
             return $rtn;
@@ -31,113 +31,41 @@
             }
         }
         function __construct0(){
-            $this->id_usuari=0;
-            $this->saldo = "";
-            $this->user = "";
-            $this->email = "";
-            $this->password = "";
-            $this->nom = "";
-            $this->cognom = "";
-            $this->dni = "";
-            $this->telefon = "";
-            $this->adreça = "";
-            $this->id_tipus = "";
+            $this->id_tipus=0;
+            $this->rang = "";
+            $this->descripcio = "";
         }
-        function __construct10($a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11){
-            $this->id_usuari=0;
-            $this->saldo = $a2;
-            $this->user = $a3;
-            $this->email = $a4;
-            $this->password = $a5;
-            $this->nom = $a6;
-            $this->cognom = $a7;
-            $this->dni = $a8;
-            $this->telefon = $a9;
-            $this->adreça = $a10;
-            $this->id_tipus = $a11;
+        function __construct10($a2, $a3){
+            $this->id_tipus=0;
+            $this->rang = $a2;
+            $this->descripcio = $a3;
         }
-        function __construct11($a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11){
-            $this->id_usuari=$a1;
-            $this->saldo = $a2;
-            $this->user = $a3;
-            $this->email = $a4;
-            $this->password = $a5;
-            $this->nom = $a6;
-            $this->cognom = $a7;
-            $this->dni = $a8;
-            $this->telefon = $a9;
-            $this->adreça = $a10;
-            $this->id_tipus = $a11;
+        function __construct11($a1, $a2, $a3){
+            $this->id_tipus=$a1;
+            $this->rang = $a2;
+            $this->descripcio = $a3;
         }
            
         //METODES SET
-        public function setId_Usuari($id_usuari) {
-            $this->id_usuari = $id_usuari;
-        }
-        public function setSaldo($saldo) {
-            $this->saldo = $saldo;
-        }
-        public function setUser($user) {
-            $this->user = $user;
-        }
-        public function setEmail($email) {
-            $this->email = $email;
-        }
-        public function setPassword($password) {
-            $this->password = $password;
-        }
-        public function setNom($nom) {
-            $this->nom = $nom;
-        }
-        public function setCognom($cognom) {
-            $this->cognom = $cognom;
-        }
-        public function setDni($dni) {
-            $this->dni = $dni;
-        }
-        public function setTelefon($telefon) {
-            $this->telefon = $telefon;
-        }
-        public function setAdreça($adreça) {
-            $this->adreça = $adreça;
-        }
         public function setId_Tipus($id_tipus) {
             $this->id_tipus = $id_tipus;
         }
+        public function setRang($rang) {
+            $this->rang = $rang;
+        }
+        public function setDescripcio($descripcio) {
+            $this->descripcio = $descripcio;
+        }
         
         //METODES GET 
-        public function getId_Usuari(){
-            return $this->id_usuari;
-        }
-        public function getSaldo(){
-            return $this->saldo;
-        }
-        public function getUser(){
-            return $this->user;
-        }
-        public function getEmail(){
-            return $this->email;
-        }
-        public function getPassword(){
-            return $this->password;
-        }
-        public function getNom(){
-            return $this->nom;
-        }
-        public function getCognom(){
-            return $this->cognom;
-        }
-        public function getDni(){
-            return $this->dni;
-        }
-        public function getTelefon(){
-            return $this->telefon;
-        }
-        public function getAdreça(){
-            return $this->adreça;
-        }
         public function getId_Tipus(){
             return $this->id_tipus;
+        }
+        public function getRang(){
+            return $this->rang;
+        }
+        public function getDescripcio(){
+            return $this->descripcio;
         }
     }
 ?>

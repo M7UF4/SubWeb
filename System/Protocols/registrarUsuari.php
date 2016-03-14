@@ -49,7 +49,6 @@
                 session_start();
                 $_SESSION['usuari'] = $usuari;
                 header('Location: ../../panel.php');
-
             } 
         }
     }

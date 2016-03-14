@@ -1,39 +1,38 @@
 <?php
     require_once __DIR__."/../config.php";
-    class Usuari{
+    class Subasta{
         /*Atributs*/
-        private $id_usuari;
-        private $saldo;
-        private $user;
-        private $email;
+        private $id_subasta;
+        private $id_producto;
+        private $num_licitacions;
+        private $temps;
         
         //METODES
         public function add(){
             $db = new connexio();
-            $db->query("INSERT INTO Usuari(saldo,user,email,password,nom,cognom,dni,telefon,adreça,id_tipus) "
-                    . "VALUES ('$this->saldo', '$this->user', '$this->email', '$this->password', '$this->nom', '$this->cognom', '$this->dni', '$this->telefon', '$this->adreça', '$this->id_tipus')");
+            $db->query("INSERT INTO Subasta(id_producto,num_licitacions,temps) "
+                    . "VALUES ('$this->id_producto', '$this->num_licitacions', '$this->temps')");
             $db->close();
         }
         public function mod(){
             $db = new connexio();
-            $db->query("UPDATE Usuari SET saldo='$this->saldo', user='$this->user', email='$this->email', password='$this->password', nom='$this->nom', cognom='$this->cognom', dni='$this->dni', telefon='$this->telefon', adreça='$this->adreça', id_tipus='$this->id_tipus' WHERE id_usuari= '$this->id_usuari'");
+            $db->query("UPDATE Subasta SET id_producto='$this->id_producto', num_licitacions='$this->num_licitacions', temps='$this->temps' WHERE id_subasta= '$this->id_subasta'");
             $db->close();
         }
         public function delete($var){
             $db = new connexio();
-            $sql = "delete from Usuari where id_usuari = $var";
+            $sql = "delete from Subasta where id_subasta = $var";
             $db->query($sql);
         }
-        
         public function view_all(){
             $db = new connexio();
-            $sql = "SELECT * FROM Usuari;";
+            $sql = "SELECT * FROM Subasta;";
             $query = $db->query($sql);
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                $Usuari = new Usuari($obj["id_usuari"],$obj["saldo"],$obj["user"],$obj["email"],$obj["password"],$obj["nom"],$obj["cognom"],$obj["dni"],$obj["telefon"],$obj["adreça"],$obj["id_tipus"]);
-                //var_dump($Usuari);
-                array_push($rtn, $Usuari);
+                $Subasta = new Subasta($obj["id_subasta"],$obj["id_producto"],$obj["num_licitacions"],$obj["temps"]);
+                //var_dump($Subasta);
+                array_push($rtn, $Subasta);
             }
             $db->close();
             return $rtn;
@@ -48,113 +47,50 @@
             }
         }
         function __construct0(){
-            $this->id_usuari=0;
-            $this->saldo = "";
-            $this->user = "";
-            $this->email = "";
-            $this->password = "";
-            $this->nom = "";
-            $this->cognom = "";
-            $this->dni = "";
-            $this->telefon = "";
-            $this->adreça = "";
-            $this->id_tipus = "";
+            $this->id_subasta=0;
+            $this->id_producto = "";
+            $this->num_licitacions = "";
+            $this->temps = "";
         }
-        function __construct10($a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11){
-            $this->id_usuari=0;
-            $this->saldo = $a2;
-            $this->user = $a3;
-            $this->email = $a4;
-            $this->password = $a5;
-            $this->nom = $a6;
-            $this->cognom = $a7;
-            $this->dni = $a8;
-            $this->telefon = $a9;
-            $this->adreça = $a10;
-            $this->id_tipus = $a11;
+        function __construct10($a2, $a3, $a4){
+            $this->id_subasta=0;
+            $this->id_producto = $a2;
+            $this->num_licitacions = $a3;
+            $this->temps = $a4;
         }
-        function __construct11($a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11){
-            $this->id_usuari=$a1;
-            $this->saldo = $a2;
-            $this->user = $a3;
-            $this->email = $a4;
-            $this->password = $a5;
-            $this->nom = $a6;
-            $this->cognom = $a7;
-            $this->dni = $a8;
-            $this->telefon = $a9;
-            $this->adreça = $a10;
-            $this->id_tipus = $a11;
+        function __construct11($a1, $a2, $a3, $a4){
+            $this->id_subasta=$a1;
+            $this->id_producto = $a2;
+            $this->num_licitacions = $a3;
+            $this->temps = $a4;
         }
            
         //METODES SET
-        public function setId_Usuari($id_usuari) {
-            $this->id_usuari = $id_usuari;
+        public function setId_Subasta($id_subasta) {
+            $this->id_subasta = $id_subasta;
         }
-        public function setSaldo($saldo) {
-            $this->saldo = $saldo;
+        public function setId_Producto($id_producto) {
+            $this->id_producto = $id_producto;
         }
-        public function setUser($user) {
-            $this->user = $user;
+        public function setNum_Licitacions($num_licitacions) {
+            $this->num_licitacions = $num_licitacions;
         }
-        public function setEmail($email) {
-            $this->email = $email;
-        }
-        public function setPassword($password) {
-            $this->password = $password;
-        }
-        public function setNom($nom) {
-            $this->nom = $nom;
-        }
-        public function setCognom($cognom) {
-            $this->cognom = $cognom;
-        }
-        public function setDni($dni) {
-            $this->dni = $dni;
-        }
-        public function setTelefon($telefon) {
-            $this->telefon = $telefon;
-        }
-        public function setAdreça($adreça) {
-            $this->adreça = $adreça;
-        }
-        public function setId_Tipus($id_tipus) {
-            $this->id_tipus = $id_tipus;
+        public function setTemps($temps) {
+            $this->temps = $temps;
         }
         
         //METODES GET 
-        public function getId_Usuari(){
-            return $this->id_usuari;
+        public function getId_Subasta(){
+            return $this->id_subasta;
         }
-        public function getSaldo(){
-            return $this->saldo;
+        public function getId_Producto(){
+            return $this->id_producto;
         }
-        public function getUser(){
-            return $this->user;
+        public function getNum_Licitacions(){
+            return $this->num_licitacions;
         }
-        public function getEmail(){
-            return $this->email;
-        }
-        public function getPassword(){
-            return $this->password;
-        }
-        public function getNom(){
-            return $this->nom;
-        }
-        public function getCognom(){
-            return $this->cognom;
-        }
-        public function getDni(){
-            return $this->dni;
-        }
-        public function getTelefon(){
-            return $this->telefon;
-        }
-        public function getAdreça(){
-            return $this->adreça;
-        }
-        public function getId_Tipus(){
-            return $this->id_tipus;
+        public function getTemps(){
+            return $this->temps;
         }
     }
 ?>
