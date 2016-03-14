@@ -12,11 +12,6 @@
     <body>
         <!-- Header content box -->
         <?php include "Public/layouts/menu.php";?>
-        <?php
-            if(isset($_SESSION['usuari'])){
-                    header('Location: panel.php'); 
-            }
-        ?>
         
         <!-- Body box -->
         <div class="body-box">
