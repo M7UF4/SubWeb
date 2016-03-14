@@ -28,7 +28,7 @@
             $query = $db->query($sql);
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                $Categoria = new Usuari($obj["id_categoria"],$obj["tipus"]);
+                $Categoria = new Categoria($obj["id_categoria"],$obj["tipus"]);
                 //var_dump($Categoria);
                 array_push($rtn, $Categoria);
             }
