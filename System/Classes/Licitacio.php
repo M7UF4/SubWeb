@@ -1,6 +1,6 @@
 <?php
     require_once __DIR__."/../config.php";
-    class Usuari{
+    class Licitacio{
         /*Atributs*/
         private $id_usuari;
         private $saldo;
@@ -23,6 +23,27 @@
             $db = new connexio();
             $sql = "delete from Usuari where id_usuari = $var";
             $db->query($sql);
+        }
+        function verificar_login($user,$password){ 
+            $db = new connexio();
+            $sql = "SELECT * FROM Usuari WHERE user = '$user' and password = '$password'";
+            $query = $db->query($sql);
+            $count = 0;
+            $datos = "";
+            if ($query->num_rows > 0) {
+                while($row = $query->fetch_assoc()) {
+                    $count++;
+                    $datos = $row;
+                }
+            } else {
+                $count = 0;
+            }
+            $db->close();
+            if($count == 1){
+                return $datos;
+            }else{
+                return null;
+            }
         }
         public function view_all(){
             $db = new connexio();
@@ -157,4 +178,3 @@
         }
     }
 ?>
-
