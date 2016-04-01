@@ -15,7 +15,7 @@
            
             <input class="input" id="phone" placeholder="Telèfon" value="" type="number" name="telefon" maxlength="9">
             
-            <input class="input" id="dni" placeholder="DNI" value="" type="number" name="dni" maxlength="9">
+            <input class="input" id="dni" placeholder="DNI" value="" type="text" name="dni" maxlength="9">
         </div>
     <div>
         <input class="input" id="pais" placeholder="Pais" value="" type="text" name="pais" maxlength="9">
