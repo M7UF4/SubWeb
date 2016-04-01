@@ -6,37 +6,18 @@
 -- Generation Time: Mar 14, 2016 at 08:57 PM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
-
-CREATE DATABASE IF NOT EXISTS `db_subweb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `db_subweb`;
-
---
--- Base de datos: Drop All
---
-
-DROP TABLE IF EXISTS `Licitacio`;
-DROP TABLE IF EXISTS `Tipus`;
-DROP TABLE IF EXISTS `Usuari`;
-DROP TABLE IF EXISTS `Pagament`;
-DROP TABLE IF EXISTS `Categoria`;
-DROP TABLE IF EXISTS `Producte`;
-DROP TABLE IF EXISTS `Subhasta`;
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
 -- Database: `db_subweb`
 --
+DROP DATABASE IF EXISTS db_subweb;
+CREATE DATABASE IF NOT EXISTS `db_subweb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+grant all on `db_subweb`.* to 'subweb'@'localhost' identified by 'master';
+USE `db_subweb`;
 
 -- --------------------------------------------------------
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 --
 -- Table structure for table `Categoria`
 --
@@ -182,8 +163,4 @@ ALTER TABLE `Subhasta`
 -- Constraints for table `Usuari`
 --
 ALTER TABLE `Usuari`
-  ADD CONSTRAINT `Usuari_ibfk_1` FOREIGN KEY (`id_tipus`) REFERENCES `Tipus` (`id_tipus`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ADD CONSTRAINT `Usuari_ibfk_1` FOREIGN KEY (`id_tipus`) REFERENCES `Tipus` (`id_tipus`);
