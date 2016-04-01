@@ -106,7 +106,9 @@ CREATE TABLE IF NOT EXISTS `Tipus` (
   PRIMARY KEY (`id_tipus`),
   UNIQUE KEY `rang` (`rang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `Tipus` (`id_tipus`, `rang`, `descripcio`) VALUES
+(1, 'Admin', 'Administrador de subweb'),
+(2, 'User', 'Usuari de subweb');
 -- --------------------------------------------------------
 
 --
@@ -129,6 +131,8 @@ CREATE TABLE IF NOT EXISTS `Usuari` (
   UNIQUE KEY `user` (`user`,`email`),
   KEY `id_tipus` (`id_tipus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+INSERT INTO `Usuari` (`id_usuari`, `saldo`, `user`, `email`, `password`, `nom`, `cognom`, `dni`, `telefon`, `adreça`, `id_tipus`) VALUES
+(1, 50000, 'Admin', 'subweb@gmail.com', 'eb0a191797624dd3a48fa681d3061212', NULL, NULL, NULL, NULL, NULL, 1);
 
 --
 -- Constraints for dumped tables
