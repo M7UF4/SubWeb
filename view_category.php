@@ -15,50 +15,36 @@
         
         <!-- Body box -->
         <div class="body-box">
-            <!-- Login content box -->
-            <div class="login-title">
-                SubWeb Login
-            </div>
-            <div class="login-body">
-                <div class="login-box">
-                    <script>
-                        $(document).ready(function(){
-                            $.ajax({
-                                url:   'System/Protocols/mostrar_categoria.php',
-                                type:  'post',
-                                beforeSend: function () {
-                                },
-                                success:  function (response) {
-                                    jsonCategoria = jQuery.parseJSON(response);
-                                    console.log(jsonCategoria);
-                                    if(Object.keys(jsonCategoria).length != 0){
-                                        var $value;
-                                        for ($value = 0; $value < Object.keys(jsonCategoria).length; $value++){
-                                            var txt = $('#selcategoria').html();
-                                            //jsonCategoria.sort(); 
-                                            $('#selcategoria').html(txt + 'id= '+jsonCategoria[$value].id_categoria+' tipus= '+jsonCategoria[$value].tipus+' <br>');
-                                            console.log($value, jsonCategoria[$value].id_categoria, jsonCategoria[$value].tipus);
-                                        }
-                                    }else if(Object.keys(jsonCategoria).length == 0){
-                                        alert("En el panell pots crear i gestionar els teus Enemics");
-                                    }
+            <script>
+                $(document).ready(function(){
+                    $.ajax({
+                        url:   'System/Protocols/mostrar_categoria.php',
+                        type:  'post',
+                        beforeSend: function () {
+                        },
+                        success:  function (response) {
+                            jsonCategoria = jQuery.parseJSON(response);
+                            console.log(jsonCategoria);
+                            if(Object.keys(jsonCategoria).length != 0){
+                                var $value;
+                                for ($value = 0; $value < Object.keys(jsonCategoria).length; $value++){
+                                    var txt = $('#selcategoria').html();
+                                    //jsonCategoria.sort(); 
+                                    $('#selcategoria').html(txt + 'id= '+jsonCategoria[$value].id_categoria+' tipus= '+jsonCategoria[$value].tipus+' <br>');
+                                    console.log($value, jsonCategoria[$value].id_categoria, jsonCategoria[$value].tipus);
                                 }
-                            });
-                        });
-                    </script>
-                    <div id="selcategoria">
-                        
-                    </div>
-                </div>
-            </div> 
+                            }else if(Object.keys(jsonCategoria).length == 0){
+                                var txt = $('#selcategoria').html();
+                                $('#selcategoria').html(txt + 'No hi ha categories creades!!');
+                            }
+                        }
+                    });
+                });
+            </script>
+            <div id="selcategoria">
+
+            </div>
         </div>
-        
-        <!-- Footer content box -->
-        <div class="footer-box">
-            Ets nou a <span>SubWeb</span>? <a class="link" href="signup.php">Registra't ara »</a><br>
-            Necessites ajuda? <a class="link" href="mailto:adminmaster@SubWeb.com">Contacta amb el Suport de AniMasterOnline</a><br>
-        </div>
-        
     </body>
 </html> 
 
