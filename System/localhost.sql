@@ -29,6 +29,14 @@ CREATE TABLE IF NOT EXISTS `Categoria` (
   UNIQUE KEY `tipus` (`tipus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+INSERT INTO `Categoria` (`id_categoria`, `tipus`) VALUES
+(3, 'Consoles'),
+(2, 'Fotografia'),
+(6, 'Gran electrodomÃ¨stic'),
+(4, 'Imatge i so'),
+(1, 'Informatica'),
+(7, 'Petit electrodomÃ¨stic'),
+(5, 'Telefonia');
 -- --------------------------------------------------------
 
 --
@@ -121,11 +129,11 @@ CREATE TABLE IF NOT EXISTS `Usuari` (
   `user` varchar(32) NOT NULL,
   `email` varchar(40) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `nom` varchar(32) NOT NULL,
-  `cognom` varchar(32) NOT NULL,
-  `dni` varchar(9) NOT NULL,
-  `telefon` varchar(16) DEFAULT NULL,
-  `adreça` varchar(32) NOT NULL,
+  `nom` varchar(32),
+  `cognom` varchar(32),
+  `dni` varchar(9),
+  `telefon` varchar(16),
+  `adreça` varchar(32),
   `id_tipus` int(10) NOT NULL,
   PRIMARY KEY (`id_usuari`),
   UNIQUE KEY `user` (`user`,`email`),

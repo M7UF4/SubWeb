@@ -15,7 +15,7 @@
                 $_SESSION['usuari'] = $usuari;
                 //echo '<br><br>';
                 //echo '<br><form><input type="button" value="Torna atras" name="Torna atras" onclick="history.back()" /></form>';
-                header('Location: ../../panel.php');
+                header('Location: ../../index.php');
                 
             } 
             else{
