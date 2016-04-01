@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Login</title>
+        <title>Inserir categoria</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="favicon.ico">
@@ -23,7 +23,7 @@
                         <table align="center" BORDER=0>
                             <TR>
                                 <TD>
-                                    <input class="input" id="cat" placeholder="DVD" value="" type="text" name="cat" maxlength="16"  autofocus required>
+                                    <input class="input" id="cat" placeholder="DVD" value="" type="text" name="cat" maxlength="30"  autofocus required>
                                 </TD>
                             </TR>
                             <TR>
