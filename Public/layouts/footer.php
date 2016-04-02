@@ -1,14 +1,10 @@
 <?php
 
 ?>
-<div class="footer-box">
-    <div class="footer-social">
-        <center>
-        <a href="#" ></a>
-        <a href="#" ></a>
-        <a href="#" ></a>
-        <a href="#" ></a>
-        </center>
-    </div>
-</div>
+        <!-- Footer content box -->
+        <div class="footer-box">
+            Peu de pagina
+        </div>
+    </body>
+</html> 
 

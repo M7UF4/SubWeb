@@ -17,8 +17,7 @@
                 //echo '<br><form><input type="button" value="Torna atras" name="Torna atras" onclick="history.back()" /></form>';
                 header('Location: ../../index.php');
                 
-            } 
-            else{
+            }else{
                 echo '<br><center><div><h3>Su usuario es incorrecto, intente nuevamente.</h3></div>'; //Si la función verificar_login() no pasa, que se muestre un mensaje de error.
                 echo '<br><form><input type="button" value="Torna atras" name="Torna atras" onclick="history.back()" /></form></center>';
             } 
