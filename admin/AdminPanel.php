@@ -1,5 +1,8 @@
 <!-- Header content box -->
-<?php include "../Public/layouts/menu.php";?>
+<?php 
+$title='AdminPanel';
+$migas='#Inici|../index.php#Admin Panel|AdminPanel.php';
+include "../Public/layouts/menu.php";?>
 
 <!-- Content body -->
 <!-- Body box -->

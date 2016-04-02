@@ -1,5 +1,8 @@
 <!-- Header content box -->
-<?php include "Public/layouts/menu.php";?>
+<?php 
+$title='Registre';
+$migas='#Inici|index.php#Registre';
+include "Public/layouts/menu.php";?>
 
 <!-- Content body -->
 <!-- Body box -->

@@ -1,5 +1,8 @@
 <!-- Header content box -->
-<?php include "../Public/layouts/menu.php";?>
+<?php 
+$title='Configuració';
+$migas='#Inici|../index.php#Configuració|panel.php';
+include "../Public/layouts/menu.php";?>
 
 <!-- Content body -->
     <?php 

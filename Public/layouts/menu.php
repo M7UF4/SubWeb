@@ -1,13 +1,20 @@
 <html>
     <head>
-        <title>SubWeb</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-        <?php 
+        <?php
+            /* Title & Media querys */
+            $subtitle='| Subweb Online Licitacions';
+            echo '<title>'.$title.' '.$subtitle.'</title>';
+            echo '<meta charset="UTF-8">';
+            echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+            
+            /* Fonts */
+            echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">';
+            
+            /* Css Jquery resources */
             $self = $_SERVER['PHP_SELF'];
             if (strpos($self,"admin/")) {
                 include "../System/Errors.php"; //Debug Mode
+                echo '<LINK REL=StyleSheet HREF="../Public/css/font-awesome.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/style.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/menu.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/panellAdmin.css" TYPE="text/css" MEDIA=screen>';
@@ -16,6 +23,7 @@
                 echo '<link rel="shortcut icon" href="../favicon.ico">';
             }else if (strpos($self,"user/")) {
                 include "../System/Errors.php"; //Debug Mode
+                echo '<LINK REL=StyleSheet HREF="../Public/css/font-awesome.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/style.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/menu.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/panellUser.css" TYPE="text/css" MEDIA=screen>';
@@ -24,6 +32,7 @@
                 echo '<link rel="shortcut icon" href="../favicon.ico">';
             }else{
                 include "System/Errors.php"; //Debug Mode
+                echo '<LINK REL=StyleSheet HREF="Public/css/font-awesome.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="Public/css/style.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="Public/css/menu.css" TYPE="text/css" MEDIA=screen>';
                 echo '<script src="Public/jquery/jquery-1.12.0.min.js"></script>';
@@ -141,10 +150,37 @@
         ?>
         <div class="header-logo">
             <?php
+                if (strpos($self,"index")) {
+                    echo '  <style>
+                                .header-logo{
+                                    display:none;
+                                }
+                            </style>';
+                }
+                $migasdepan = explode("#",$migas);
+                $contmigas = count($migasdepan);
+                echo '&nbsp; <i class="fa fa-home"></i> <i class="fa fa-angle-right"></i>';
+                for ($i = 0; $i < $contmigas; $i++){
+                    $pan = explode("|", $migasdepan[$i]);
+                    if ($i <= 1){
+                        if(count($pan) == 2){
+                            echo '<a href="'.$pan[1].'"> '.$pan[0].'</a> ';
+                        }else{
+                            echo '<a> '.$pan[0].'</a> ';
+                        }
+                    }else{
+                        if(count($pan) == 2){
+                            echo '<i class="fa fa-angle-right"></i><a href="'.$pan[1].'"> '.$pan[0].'</a> ';
+                        }else{
+                            echo '<i class="fa fa-angle-right"></i><a> '.$pan[0].'</a> ';
+                        }
+                    }
+                    
+                    
+                }
                 if(isset($_SESSION['usuari'])){
                     //var_dump($value);
                 }
-                
             ?>
         </div>
     </div>

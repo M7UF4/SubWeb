@@ -1,5 +1,8 @@
 <!-- Header content box -->
-<?php include "Public/layouts/menu.php";?>
+<?php 
+$title='Categories';
+$migas='#Index|index.php#categories';
+include "Public/layouts/menu.php";?>
 
 <!-- Content body -->
 <!-- Body box -->
@@ -7,11 +10,10 @@
     <script>
         $(document).ready(function(){
             $.ajax({
-                url:   'System/Protocols/mostrar_categoria.php',
-                type:  'post',
-                beforeSend: function () {
-                },
-                success:  function (response) {
+                type: "POST",
+                url: "System/Protocols/mostrar_categoria.php",
+                success: function (response) {
+                    console.log(response);
                     jsonCategoria = jQuery.parseJSON(response);
                     console.log(jsonCategoria);
                     if(Object.keys(jsonCategoria).length != 0){

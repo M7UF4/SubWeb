@@ -1,5 +1,8 @@
 <!-- Header content box -->
-<?php include "Public/layouts/menu.php";?>
+<?php 
+$title='Index';
+$migas='#Index|index.php#pag2';
+include "Public/layouts/menu.php";?>
         
 <!-- Body content box -->
 <div class="body-box">
