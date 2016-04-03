@@ -48,6 +48,7 @@
             session_start();
             if(isset($_SESSION['usuari'])){
                 $value=$_SESSION['usuari'];
+                //var_dump($value);
             }
             echo '<div class="header-nav">';
                 echo'<ul class="nav">';
@@ -60,7 +61,7 @@
                             header('Location: ../login.php');
                         }else{
                             if($value['id_tipus'] == 1){   
-                                echo'<li style="float:right;"><a href="../user/panel.php">Hola, ';
+                                echo'<li style="float:right;"><a>Hola, ';
                                 echo $value['user'];
                                 echo'<span class="flecha">&#9660</span></a>';
                                     echo'<ul class="panel-ul">';
@@ -83,18 +84,14 @@
                             }
                         }
                     }else if (strpos($self,"user/")) {
-                        echo'<li><a href="index.php">Inici</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="../index.php">Inici</a> <span class="flecha">&#9660</span></li>';
                         /*
                          * Resta de Menus aqui!!
                          */
                         if(!isset($_SESSION['usuari'])){
-                            if (strpos($self,"signup")) {
-                                echo'<li style="float:right;"><a href="signup.php">Signup <span class="flecha">&#9660</span></a></li>';
-                            }else{
-                                echo'<li style="float:right;"><a href="login.php">Login <span class="flecha">&#9660</span></a></li>';
-                            }
+                            header('Location: ../login.php');
                         }else{
-                            echo'<li style="float:right;"><a href="panel.php">Hola, ';
+                            echo'<li style="float:right;"><a>Hola, ';
                             echo $value['user'];
                             echo'<span class="flecha">&#9660</span></a>';
                                 echo'<ul class="panel-ul">';
@@ -119,13 +116,10 @@
                          * Resta de Menus aqui!!
                          */
                         if(!isset($_SESSION['usuari'])){
-                            if (strpos($self,"signup")) {
-                                echo'<li style="float:right;"><a href="signup.php">Signup <span class="flecha">&#9660</span></a></li>';
-                            }else{
-                                echo'<li style="float:right;"><a href="login.php">Login <span class="flecha">&#9660</span></a></li>';
-                            }
+                            echo'<li style="float:right;"><a href="login.php">Login <span class="flecha">&#9660</span></a></li>';
+                            echo'<li style="float:right;"><a href="signup.php">Signup <span class="flecha">&#9660</span></a></li>';
                         }else{
-                            echo'<li style="float:right;"><a href="user/panel.php">Hola, ';
+                            echo'<li style="float:right;"><a>Hola, ';
                             echo $value['user'];
                             echo'<span class="flecha">&#9660</span></a>';
                                 echo'<ul class="panel-ul">';
@@ -175,12 +169,8 @@
                             echo '<i class="fa fa-angle-right"></i><a> '.$pan[0].'</a> ';
                         }
                     }
-                    
-                    
-                }
-                if(isset($_SESSION['usuari'])){
-                    //var_dump($value);
                 }
             ?>
+            
         </div>
     </div>

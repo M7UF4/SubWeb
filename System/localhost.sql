@@ -132,15 +132,19 @@ CREATE TABLE IF NOT EXISTS `Usuari` (
   `nom` varchar(32),
   `cognom` varchar(32),
   `dni` varchar(9),
-  `telefon` varchar(16),
-  `adreça` varchar(32),
+  `phone` varchar(16),
+  `adreca` varchar(32),
+  `pais` varchar(32),
+  `poble` varchar(32),
+  `provincia` varchar(32),
+  `postal` varchar(5),
   `id_tipus` int(10) NOT NULL,
   PRIMARY KEY (`id_usuari`),
-  UNIQUE KEY `user` (`user`,`email`),
+  UNIQUE KEY `user` (`user`),
   KEY `id_tipus` (`id_tipus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-INSERT INTO `Usuari` (`id_usuari`, `saldo`, `user`, `email`, `password`, `nom`, `cognom`, `dni`, `telefon`, `adreça`, `id_tipus`) VALUES
-(1, 50000, 'Admin', 'subweb@gmail.com', 'eb0a191797624dd3a48fa681d3061212', NULL, NULL, NULL, NULL, NULL, 1);
+INSERT INTO `Usuari` (`id_usuari`, `saldo`, `user`, `email`, `password`, `nom`, `cognom`, `dni`, `phone`, `adreca`, `pais`, `poble`, `provincia`, `postal`, `id_tipus`) VALUES
+(1, 50000, 'Admin', 'subweb@gmail.com', 'eb0a191797624dd3a48fa681d3061212', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 --
 -- Constraints for dumped tables

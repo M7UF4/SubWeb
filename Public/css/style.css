@@ -33,11 +33,14 @@ form{
     margin-bottom: 6px;
     border: none;
 }
+.input:focus::-webkit-input-placeholder{
+  color: white;
+}
 .input:focus {
-  background-color: #999999;
+  background-color: #666;
   color: #fff;
 }
-.input-1, .input-2, .input-5{
+.input-1, .input-2{
     display: -webkit-flex;
     display: flex;
     
@@ -61,11 +64,7 @@ form{
     width: 50%;
     margin-left: 3px;
 }
-.input-5 > .input{
-    width: 20%;
-    margin-left: 3px;
-}
-#logbutton:hover {
+#logbutton:active {
    outline: none;
    background-color: #DDF45B;
 }
@@ -81,6 +80,11 @@ form{
     outline: none;
     margin-bottom: 6px;
 }
+#logbutton:disabled {
+   outline: none;
+   background-color: #777777;
+}
+
 .alert {
     margin-bottom: 6px;
     border-radius: 3px;

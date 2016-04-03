@@ -113,6 +113,9 @@
         .nav li:hover > ul {
             display:block;
         }
+        .nav li:hover{
+            cursor: pointer;
+        }
         .nav li ul li {
             position:relative;
         }

@@ -10,20 +10,25 @@
         private $nom;
         private $cognom;
         private $dni;
-        private $telefon;
+        private $phone;
         private $adreça;
+        private $pais;
+        private $poble;
+        private $provincia;
+        private $postal;
         private $id_tipus;
         
         //METODES
         public function add(){
             $db = new connexio();
-            $db->query("INSERT INTO Usuari(saldo,user,email,password,nom,cognom,dni,telefon,adreça,id_tipus) "
-                    . "VALUES ('$this->saldo', '$this->user', '$this->email', '$this->password', '$this->nom', '$this->cognom', '$this->dni', '$this->telefon', '$this->adreça', '$this->id_tipus')");
+            $db2 = $db->query("INSERT INTO Usuari(`saldo`, `user`, `email`, `password`, `nom`, `cognom`, `dni`, `phone`, `adreca`, `pais`, `poble`, `provincia`, `postal`, `id_tipus`) "
+                    . "VALUES ('$this->saldo', '$this->user', '$this->email', '$this->password', '$this->nom', '$this->cognom', '$this->dni', '$this->phone', '$this->adreça', '$this->pais', '$this->poble', '$this->provincia', '$this->postal', '$this->id_tipus')");
             $db->close();
+            return $db2;
         }
         public function mod(){
             $db = new connexio();
-            $db->query("UPDATE Usuari SET saldo='$this->saldo', user='$this->user', email='$this->email', password='$this->password', nom='$this->nom', cognom='$this->cognom', dni='$this->dni', telefon='$this->telefon', adreça='$this->adreça', id_tipus='$this->id_tipus' WHERE id_usuari= '$this->id_usuari'");
+            $db->query("UPDATE Usuari SET saldo='$this->saldo', user='$this->user', email='$this->email', password='$this->password', nom='$this->nom', cognom='$this->cognom', dni='$this->dni', phone='$this->phone', adreça='$this->adreça', '$this->pais', '$this->poble', '$this->provincia', '$this->postal', id_tipus='$this->id_tipus' WHERE id_usuari= '$this->id_usuari'");
             $db->close();
         }
         public function delete($var){
@@ -52,13 +57,32 @@
                 return null;
             }
         }
+        function verificar_user($user){ 
+            $db = new connexio();
+            $sql = "SELECT * FROM Usuari WHERE user = '$user'";
+            $query = $db->query($sql);
+            $count = 0;
+            if ($query->num_rows > 0) {
+                while($row = $query->fetch_assoc()) {
+                    $count++;
+                }
+            } else {
+                $count = 0;
+            }
+            $db->close();
+            if($count == 1){
+                return false;
+            }else{
+                return true;
+            }
+        }
         public function view_all(){
             $db = new connexio();
             $sql = "SELECT * FROM Usuari;";
             $query = $db->query($sql);
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                $Usuari = new Usuari($obj["id_usuari"],$obj["saldo"],$obj["user"],$obj["email"],$obj["password"],$obj["nom"],$obj["cognom"],$obj["dni"],$obj["telefon"],$obj["adreça"],$obj["id_tipus"]);
+                $Usuari = new Usuari($obj["id_usuari"],$obj["saldo"],$obj["user"],$obj["email"],$obj["password"],$obj["nom"],$obj["cognom"],$obj["dni"],$obj["phone"],$obj["adreça"],$obj["pais"], $obj["poble"], $obj["provincia"], $obj["postal"],$obj["id_tipus"]);
                 //var_dump($Usuari);
                 array_push($rtn, $Usuari);
             }
@@ -83,11 +107,15 @@
             $this->nom = "";
             $this->cognom = "";
             $this->dni = "";
-            $this->telefon = "";
+            $this->phone = "";
             $this->adreça = "";
+            $this->pais = "";
+            $this->poble = "";
+            $this->provincia = "";
+            $this->postal = "";
             $this->id_tipus = "";
         }
-        function __construct10($a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11){
+        function __construct14($a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11, $a12, $a13, $a14, $a15){
             $this->id_usuari=0;
             $this->saldo = $a2;
             $this->user = $a3;
@@ -96,11 +124,15 @@
             $this->nom = $a6;
             $this->cognom = $a7;
             $this->dni = $a8;
-            $this->telefon = $a9;
+            $this->phone = $a9;
             $this->adreça = $a10;
-            $this->id_tipus = $a11;
+            $this->pais = $a11;
+            $this->poble = $a12;
+            $this->provincia = $a13;
+            $this->postal = $a14;
+            $this->id_tipus = $a15;
         }
-        function __construct11($a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11){
+        function __construct15($a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11, $a12, $a13, $a14, $a15){
             $this->id_usuari=$a1;
             $this->saldo = $a2;
             $this->user = $a3;
@@ -109,9 +141,13 @@
             $this->nom = $a6;
             $this->cognom = $a7;
             $this->dni = $a8;
-            $this->telefon = $a9;
+            $this->phone = $a9;
             $this->adreça = $a10;
-            $this->id_tipus = $a11;
+            $this->pais = $a11;
+            $this->poble = $a12;
+            $this->provincia = $a13;
+            $this->postal = $a14;
+            $this->id_tipus = $a15;
         }
            
         //METODES SET
@@ -139,8 +175,8 @@
         public function setDni($dni) {
             $this->dni = $dni;
         }
-        public function setTelefon($telefon) {
-            $this->telefon = $telefon;
+        public function setPhone($phone) {
+            $this->phone = $phone;
         }
         public function setAdreça($adreça) {
             $this->adreça = $adreça;
@@ -174,8 +210,8 @@
         public function getDni(){
             return $this->dni;
         }
-        public function getTelefon(){
-            return $this->telefon;
+        public function getPhone(){
+            return $this->phone;
         }
         public function getAdreça(){
             return $this->adreça;

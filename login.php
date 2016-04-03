@@ -7,26 +7,26 @@ include "Public/layouts/menu.php";?>
 <!-- Content body -->
 <script>
     function loginsend(){
-            var user = document.getElementById('user').value;
-            var pass = document.getElementById('pass').value;
-            var parametros = {
-                "user" : user,
-                "pass" : pass
-            };
-            $.ajax({
-                data:  parametros,
-                type: "POST",
-                url: "System/Protocols/loginUsuari.php",
-                success: function (response) {
-                    if(response === "fail"){
-                        var fail = "<div class='alert' role='alert'>Les dades d'identificació no son correctes</div>";
-                        $('#alertfail').empty().append(fail);
-                    }else if(response === "succes"){
-                        window.location.href = 'user/panel.php';
-                    }
+        var user = document.getElementById('user').value;
+        var pass = document.getElementById('pass').value;
+        var parametros = {
+            "user" : user,
+            "pass" : pass
+        };
+        $.ajax({
+            data:  parametros,
+            type: "POST",
+            url: "System/Protocols/loginUsuari.php",
+            success: function (response) {
+                if(response === "fail"){
+                    var fail = "<div class='alert' role='alert'>Les dades d'identificació no son correctes</div>";
+                    $('#alertfail').empty().append(fail);
+                }else if(response === "succes"){
+                    window.location.href = 'index.php';
                 }
-            });
-        }
+            }
+        });
+    }
 </script>
 <!-- Body box -->
 <div class="body-box">
