@@ -10,10 +10,11 @@
         border-color: black;
         border-style: solid;
         z-index: 1;
+        font-family: 'Open Sans', sans-serif;
     }
 </style>
 <?php
-$opc = true;
+$opc = false;
 if($opc){
     if (!ini_get('display_errors')) {
         ini_set('display_errors', '1');

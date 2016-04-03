@@ -2,4 +2,90 @@ body{
     background-color: #DDF45B;
     font-family: 'Open Sans', sans-serif;
 }
-
+*{
+   font-family: inherit; 
+}
+form{
+    font-family: 'Open Sans', sans-serif;
+}
+.form-content{
+    font-family: inherit;
+    max-width: 100%;
+    width: auto;
+    padding: 10px;
+    display: box;
+    box-orient: vertical;
+    box-pack: center;
+    box-direction: normal;
+    box-align: stretch;
+    
+}
+.input{
+    background: #ffffff;
+    height: 30px;
+    padding: 3px;
+    border-radius: 3px;
+    color: #777777;
+    position: relative;
+    outline: none;
+    font-weight: 300;
+    font-family: inherit;
+    margin-bottom: 6px;
+    border: none;
+}
+.input:focus {
+  background-color: #999999;
+  color: #fff;
+}
+.input-1, .input-2, .input-5{
+    display: -webkit-flex;
+    display: flex;
+    
+}
+.input-1, .input-2 > div{
+    font-family: 'Open Sans', sans-serif;
+}
+.input-2 > div{
+    width: 50%;
+    margin-left: 3px;
+}
+.input-1 > div{
+    width: 100%;
+    margin-left: 3px;
+}
+.input-1 > .input{
+    width: 100%;
+    margin-left: 3px;
+}
+.input-2 > .input{
+    width: 50%;
+    margin-left: 3px;
+}
+.input-5 > .input{
+    width: 20%;
+    margin-left: 3px;
+}
+#logbutton:hover {
+   outline: none;
+   background-color: #DDF45B;
+}
+#logbutton {
+    width: 100%;
+    margin-left: 3px;
+    padding: 7px 20px;
+    font-size: 14px;
+    border-radius: 3px;
+    color: #ffffff;
+    background-color: #09afdf;
+    border: none;
+    outline: none;
+    margin-bottom: 6px;
+}
+.alert {
+    margin-bottom: 6px;
+    border-radius: 3px;
+    border: none;
+    color: #a94442;
+    background-color: #f2dede;
+    padding: 5px;
+}
