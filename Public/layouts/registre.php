@@ -41,7 +41,8 @@ function ajaxuser(){
         type: "POST",
         url: "System/Protocols/userTest.php",
         success: function (response) {
-            if(response == true && user != ""){
+            console.log(response);
+            if(response == "yes" && user != ""){
                     $('#alertuser').empty();
                     flag_user = true;
             }else{

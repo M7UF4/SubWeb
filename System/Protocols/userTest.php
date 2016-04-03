@@ -4,8 +4,8 @@
     $Usuari = new Usuari();
     $rtn = $Usuari->verificar_user($username);
     if ($rtn){
-        echo 'true';
+        echo 'yes';
     }else{
-        echo 'false';
+        echo 'no';
     }
 ?>
