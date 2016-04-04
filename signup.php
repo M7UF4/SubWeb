@@ -1,7 +1,7 @@
 <!-- Header content box -->
 <?php 
 $title='Registre';
-$migas='#Inici|index.php#Registre';
+$migas='#Inici|index.php#Registre#Otra|otra.php';
 include "Public/layouts/menu.php";?>
 
 <!-- Content body -->
