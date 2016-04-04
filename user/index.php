@@ -1,7 +1,7 @@
 <!-- Header content box -->
 <?php 
 $title='Configuració';
-$migas='#Inici|../index.php#Configuració|panel.php';
+$migas='#Inici|../index.php#Configuració|index.php';
 include "../Public/layouts/menu.php";?>
 
 <!-- Content body -->
