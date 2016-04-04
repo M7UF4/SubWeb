@@ -1,7 +1,7 @@
 <!-- Header content box -->
 <?php 
-$title='ModUser';
-$migas='#Inici|../index.php#Configuració|index.php#ModUser';
+$title='Modifica la contrasenya';
+$migas='#Inici|../index.php#Configuració|index.php#Contrasenya';
 include "../Public/layouts/menu.php";?>
 
 <!-- Content body -->
@@ -12,9 +12,28 @@ include "../Public/layouts/menu.php";?>
         Modifica el teu usuari!!
     </div>
     <div class="content-body">
-            <?php include "../Public/layouts/mod_pass.php";?>
+            <form method="POST" name="myForm" action="System/Protocols/passUsuari.php">
+                <div class="form-content"> 
+                    <div class="input-1">
+                        <input class="input" id="user" placeholder="Usuari *" type="hidden" name="user" maxlength="32" disabled>
+                    </div>
+                    <div class="input-1">
+                        <input class="input" id="pass" placeholder="Contrasenya actual *" value="" type="password" name="pass" maxlength="16" >
+                    </div>
+                    <div class="input-2">
+                        <input class="input" id="pass" placeholder="Contrasenya nova *" value="" type="password" name="pass" maxlength="16" >
+                        <input class="input" id="pass2" placeholder="Repeteix la contrasenya nova *" value="" type="password" name="pass2" maxlength="16" >
+                    </div>
+                    <div class="input-1">
+                        <div id="alertpass"></div>
+                    </div>
+                    <div class="input-1">
+                        <input id="logbutton" type="submit" value="Envia">
+                    </div>
+                </div>
+            </form>
     </div>
 </div>
 <!-- Footer content box -->
-<?php include "Public/layouts/footer.php";?> 
+<?php include "../Public/layouts/footer.php";?> 
 

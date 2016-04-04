@@ -90,6 +90,7 @@
                 overflow: auto;
                 border: 0px solid black;
                 overflow: hidden;
+                z-index: 1;
             }
             .panel-img{
                 overflow: hidden;

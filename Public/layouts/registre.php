@@ -117,34 +117,9 @@ function validateForm() {
         <div class="input-2">    
             <input class="input" id="email" placeholder="E-mail *" value="" type="text" name="email" maxlength="40" >
             <input class="input" id="email2" placeholder="Repeteix E-mail *" value="" type="text" name="email2" maxlength="40" >
-            
         </div>
         <div class="input-1">
             <div id="alertemail"></div>
-        </div>
-        <div class="input-2">
-            <input class="input" id="nom" placeholder="Nom" type="text" name="nom" maxlength="32" >
-            <input class="input" id="cognom" placeholder="Cognom" type="text" name="cognom" maxlength="32" >
-            
-        </div>
-        <div class="input-2">
-            <div id="alertnom"></div>
-            <div id="alertcognom"></div>
-        </div>
-        <div class="input-2"> 
-            <input class="input" id="dni" placeholder="Dni" value="" type="text" name="dni" maxlength="9">
-            <input class="input" id="phone" placeholder="Telèfon" value="" type="text" name="phone" maxlength="9">
-        </div>
-        <div class="input-1">
-            <input class="input" id="adreça" placeholder="Adreça" type="text" name="adreça" maxlength="32">
-        </div>
-        <div class="input-2">
-            <input class="input" id="pais" placeholder="Pais" value="" type="text" name="pais" maxlength="32">
-            <input class="input" id="poble" placeholder="Poble" value="" type="text" name="poble" maxlength="32">
-        </div>
-        <div class="input-2">     
-            <input class="input" id="provincia" placeholder="Província" value="" type="text" name="provincia" maxlength="32">
-            <input class="input" id="postal" placeholder="Codi postal" value="" type="text" name="postal" maxlength="5">
         </div>
         <div class="input-1">
             <input id="logbutton" type="submit" value="Registra't">
