@@ -2,9 +2,6 @@ body{
     background-color: #DDF45B;
     font-family: 'Open Sans', sans-serif;
 }
-*{
-   font-family: inherit; 
-}
 form{
     font-family: 'Open Sans', sans-serif;
 }
@@ -84,7 +81,6 @@ form{
    outline: none;
    background-color: #777777;
 }
-
 .alert {
     margin-bottom: 6px;
     border-radius: 3px;

@@ -1,8 +1,23 @@
 <?php
+    require_once('../Classes/Usuari.php');
+    session_start();
+    if(isset($_SESSION['usuari'])){
+        $value=$_SESSION['usuari'];
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+        $id=$value['id_usuari'];
+        $user=$value['user'];
 
+        $newPass = md5($_POST['pass']);
+
+        $usuari = new Usuari();
+        $result = $usuari->modPass($id, $user, $newPass);
+        if($result){
+            echo ' <b>Succes : </b> true';
+            $result = $usuari->return_user($id);
+            if($result != "error"){
+                $_SESSION['usuari'] = $result;
+                header('Location: ../../user/');
+            }
+        }
+    }
+?>

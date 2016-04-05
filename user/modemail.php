@@ -12,7 +12,7 @@ include "../Public/layouts/menu.php";?>
         Modifica el teu usuari!!
     </div>
     <div class="content-body">
-            <form method="POST" name="myForm" action="System/Protocols/Usuari_Email.php">
+            <form method="POST" name="myForm" action="../System/Protocols/Usuari_Email.php">
                 <div class="form-content">
                     <div class="input-2">    
                         <input class="input" id="email" placeholder="E-mail nou *" type="text" name="email" maxlength="40" >

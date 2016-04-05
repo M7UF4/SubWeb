@@ -12,10 +12,10 @@ include "../Public/layouts/menu.php";?>
         Modifica el teu usuari!!
     </div>
     <div class="content-body">
-            <form method="POST" name="myForm" action="System/Protocols/Usuari_Pass.php">
+            <form method="POST" name="myForm" action="../System/Protocols/Usuari_Pass.php">
                 <div class="form-content">
                     <div class="input-1">
-                        <input class="input" id="pass" placeholder="Contrasenya actual *" value="" type="password" name="pass" maxlength="16" >
+                        <input class="input" id="pass" placeholder="Contrasenya actual *" value="" type="password" name="oldpass" maxlength="16" >
                     </div>
                     <div class="input-2">
                         <input class="input" id="pass" placeholder="Contrasenya nova *" value="" type="password" name="pass" maxlength="16" >

@@ -1,10 +1,50 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 02-abr-2016, 0:51:27
-    Author     : Daark
-*/
+body{
+    background-color: #d2d2d2;
+}
+.user-box{
+    width: 100%;
+}
+.user-content{
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 80%;
+    width: auto;
+    background-color: #d2d2d2;
+}
+    .user-title{
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 1px;
+        background-color: white;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        padding-left: 15px;
+        margin-bottom: 2px;
+    }
+    .user-info{
+        font-family: 'Open Sans', sans-serif;
+    }
+    .user-content > a{
+        display: block;
+        margin-bottom: 1px;
+        background-color: white;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 20px;
+    }
+    .user-content > a:hover{
+        background-color: #999;
+    }
+    .user-content > a:link{
+        color: black;
+    }
+    .user-content > a:visited{
+        color: black;
+    }
+    .user-content > .user-info{
+        margin-bottom: 1px;
+        background-color: white;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 20px;
+    }
 

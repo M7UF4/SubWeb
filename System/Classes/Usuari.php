@@ -26,10 +26,35 @@
             $db->close();
             return $db2;
         }
-        public function mod(){
+        public function modIdentity($id, $user, $nom, $cognom){
             $db = new connexio();
-            $db->query("UPDATE Usuari SET saldo='$this->saldo', user='$this->user', email='$this->email', password='$this->password', nom='$this->nom', cognom='$this->cognom', dni='$this->dni', phone='$this->phone', adreça='$this->adreça', '$this->pais', '$this->poble', '$this->provincia', '$this->postal', id_tipus='$this->id_tipus' WHERE id_usuari= '$this->id_usuari'");
+            $result = $db->query("UPDATE Usuari SET  nom='$nom', cognom='$cognom' WHERE id_usuari= '$id' AND user= '$user'");
             $db->close();
+            return $result;
+        }
+        public function modPass($id, $user, $pass){
+            $db = new connexio();
+            $result = $db->query("UPDATE Usuari SET  password='$pass' WHERE id_usuari= '$id' AND user= '$user'");
+            $db->close();
+            return $result;
+        }
+        public function modPhone($id, $user, $phone){
+            $db = new connexio();
+            $result = $db->query("UPDATE Usuari SET  phone='$phone' WHERE id_usuari= '$id' AND user= '$user'");
+            $db->close();
+            return $result;
+        }
+        public function modEmail($id, $user, $email){
+            $db = new connexio();
+            $result = $db->query("UPDATE Usuari SET  email='$email' WHERE id_usuari= '$id' AND user= '$user'");
+            $db->close();
+            return $result;
+        }
+        public function modContact($id, $user, $adreca, $pais, $poble, $provincia, $postal){
+            $db = new connexio();
+            $result = $db->query("UPDATE Usuari SET  adreca='$adreca', pais='$pais', poble='$poble', provincia='$provincia', postal='$postal' WHERE id_usuari= '$id' AND user= '$user'");
+            $db->close();
+            return $result;
         }
         public function delete($var){
             $db = new connexio();
@@ -74,6 +99,26 @@
                 return false;
             }else{
                 return true;
+            }
+        }
+        function return_user($id){ 
+            $db = new connexio();
+            $sql = "SELECT * FROM Usuari WHERE id_usuari = '$id'";
+            $query = $db->query($sql);
+            $count = 0;
+            if ($query->num_rows > 0) {
+                while($row = $query->fetch_assoc()) {
+                    $count++;
+                    $datos = $row;
+                }
+            } else {
+                $count = 0;
+            }
+            $db->close();
+            if($count == 1){
+                return $datos;
+            }else{
+                return "error";
             }
         }
         public function view_all(){

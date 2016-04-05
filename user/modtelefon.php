@@ -12,7 +12,7 @@ include "../Public/layouts/menu.php";?>
         Modifica el teu usuari!!
     </div>
     <div class="content-body">
-            <form method="POST" name="myForm" action="System/Protocols/Usuari_Phone.php">
+            <form method="POST" name="myForm" action="../System/Protocols/Usuari_Phone.php">
                 <div class="form-content"> 
                     
                     <div class="input-1">    
