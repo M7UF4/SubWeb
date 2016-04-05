@@ -1,8 +1,13 @@
 <?php
+    require_once('../Classes/Usuari.php');
+    session_start();
+    if(isset($_SESSION['usuari'])){
+        $newNom = $_POST['nom'];
+        $newCognom = $_POST['cognom'];
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+        echo $value['user'].' --> '.$newNom.' '.$newCognom;
+    }else{
+        header('Location: ../../index.php');
+    }
+?>
 
