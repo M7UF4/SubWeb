@@ -16,7 +16,7 @@ include "Public/layouts/menu.php";?>
         $.ajax({
             data:  parametros,
             type: "POST",
-            url: "System/Protocols/loginUsuari.php",
+            url: "System/Protocols/Usuari_Login.php",
             success: function (response) {
                 if(response === "fail"){
                     var fail = "<div class='alert' role='alert'>Les dades d'identificació no son correctes</div>";

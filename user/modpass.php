@@ -12,11 +12,8 @@ include "../Public/layouts/menu.php";?>
         Modifica el teu usuari!!
     </div>
     <div class="content-body">
-            <form method="POST" name="myForm" action="System/Protocols/passUsuari.php">
-                <div class="form-content"> 
-                    <div class="input-1">
-                        <input class="input" id="user" placeholder="Usuari *" type="hidden" name="user" maxlength="32" disabled>
-                    </div>
+            <form method="POST" name="myForm" action="System/Protocols/Usuari_Pass.php">
+                <div class="form-content">
                     <div class="input-1">
                         <input class="input" id="pass" placeholder="Contrasenya actual *" value="" type="password" name="pass" maxlength="16" >
                     </div>

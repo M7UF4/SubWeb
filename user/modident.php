@@ -12,10 +12,10 @@ include "../Public/layouts/menu.php";?>
         Modifica la teva identitat
     </div>
     <div class="content-body">
-        <form method="POST" name="myForm" action="System/Protocols/identificarUsuari.php">
+        <form method="POST" name="myForm" action="System/Protocols/Usuari_Identity.php">
             <div class="form-content"> 
                 <div class="input-1">
-                    <input class="input" id="user" placeholder="Usuari *" type="hidden" name="user" maxlength="32" disabled>
+                    <input class="input" id="user" placeholder="Usuari *" type="hidden" name="user" maxlength="32" value="<?php echo $value['user']; ?>">
                 </div>
                 <div class="input-2">
                     <input class="input" id="nom" placeholder="Nom" type="text" name="nom" maxlength="32" >

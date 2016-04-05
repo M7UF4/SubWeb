@@ -12,11 +12,8 @@ include "../Public/layouts/menu.php";?>
         Modifica el teu usuari!!
     </div>
     <div class="content-body">
-        <form method="POST" name="myForm" action="System/Protocols/direccioUsuari.php">
-            <div class="form-content"> 
-                <div class="input-1">
-                    <input class="input" id="user" placeholder="Usuari *" type="hidden" name="user" maxlength="32" disabled>
-                </div>
+        <form method="POST" name="myForm" action="System/Protocols/Usuari_Contact.php">
+            <div class="form-content">
                 <div class="input-1">
                     <input class="input" id="adreça" placeholder="Adreça" type="text" name="adreça" maxlength="32">
                 </div>

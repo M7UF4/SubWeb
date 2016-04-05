@@ -39,7 +39,7 @@ function ajaxuser(){
     $.ajax({
         data: parametros,
         type: "POST",
-        url: "System/Protocols/userTest.php",
+        url: "System/Protocols/Usuari_Testuser.php",
         success: function (response) {
             console.log(response);
             if(response == "yes" && user != ""){
@@ -98,7 +98,7 @@ function validateForm() {
     }
 }
 </script>
-<form method="POST" name="myForm" action="System/Protocols/registrarUsuari.php" onsubmit="return validateForm()">
+<form method="POST" name="myForm" action="System/Protocols/Usuari_Signin.php" onsubmit="return validateForm()">
     <div class="form-content"> 
         <div class="input-1">
             <input class="input" id="user" placeholder="Usuari *" type="text" name="user" maxlength="32" >

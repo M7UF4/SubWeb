@@ -71,9 +71,9 @@
                                             echo'</div>';
                                             echo'<div class="panel-links">';
                                                 if($value['id_tipus'] == 1){
-                                                    echo'<a href="AdminPanel.php">AdminPanel</a>';
+                                                    echo'<a href="../admin/">AdminPanel</a>';
                                                 }
-                                                echo'<a href="../user/panel.php"> Configuració</a>';
+                                                echo'<a href="../user/"> Configuració</a>';
                                                 echo'<a href="../logout.php">Sortir</a>';
                                             echo'</div>';
                                         echo'</div>';
@@ -101,9 +101,9 @@
                                         echo'</div>';
                                         echo'<div class="panel-links">';
                                             if($value['id_tipus'] == 1){
-                                                echo'<a href="../admin/AdminPanel.php">AdminPanel</a>';
+                                                echo'<a href="../admin/">AdminPanel</a>';
                                             }
-                                            echo'<a href="panel.php"> Configuració</a>';
+                                            echo'<a href="../user/"> Configuració</a>';
                                             echo'<a href="../logout.php">Sortir</a>';
                                         echo'</div>';
                                     echo'</div>';
@@ -129,9 +129,9 @@
                                         echo'</div>';
                                         echo'<div class="panel-links">';
                                             if($value['id_tipus'] == 1){
-                                                echo'<a href="admin/AdminPanel.php">AdminPanel</a>';
+                                                echo'<a href="admin/">AdminPanel</a>';
                                             }
-                                            echo'<a href="user/panel.php"> Configuració</a>';
+                                            echo'<a href="user/"> Configuració</a>';
                                             echo'<a href="logout.php">Sortir</a>';
                                         echo'</div>';
                                     echo'</div>';

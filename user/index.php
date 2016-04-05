@@ -41,6 +41,9 @@ include "../Public/layouts/menu.php";?>
             }
         ?>
     </div>
+    <div class="input-1">
+        <input class="input" id="user" placeholder="Usuari *" type="hidden" name="user" maxlength="32" value="<?php echo $value['user']; ?>">
+    </div>
 </div>
     
 <br>

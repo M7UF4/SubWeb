@@ -12,14 +12,11 @@ include "../Public/layouts/menu.php";?>
         Modifica el teu usuari!!
     </div>
     <div class="content-body">
-            <form method="POST" name="myForm" action="System/Protocols/phoneUsuari.php">
+            <form method="POST" name="myForm" action="System/Protocols/Usuari_Phone.php">
                 <div class="form-content"> 
-                    <div class="input-1">
-                        <input class="input" id="user" placeholder="Usuari *" type="hidden" name="user" maxlength="32" value="<?php echo $value['user']; ?>">
-                    </div>
+                    
                     <div class="input-1">    
                         <input class="input" id="phone" placeholder="Telefon *" value="" type="text" name="phone" maxlength="16" >
-                        
                     </div>
                     <div class="input-1">
                         <div id="alertphone"></div>
