@@ -20,7 +20,7 @@ include "../Public/layouts/menu.php";?>
                 echo '<a href="modident.php">';
                     echo '<div class="user-info"><strong>Identitat:&emsp;</strong>';
                         echo '<span> N/a &nbsp;</span>';
-                        echo '<i class="fa fa-pencil"></i>';
+                        echo '<i class="fa fa-plus-square-o"></i>';
                     echo '</div>';
                 echo '</a>';
             }
@@ -55,7 +55,7 @@ include "../Public/layouts/menu.php";?>
                  echo '<a href="modtelefon.php">';
                     echo '<div class="user-info"><strong>Telefon:&emsp;</strong>';
                         echo '<span> N/a &nbsp;</span>';
-                        echo '<i class="fa fa-pencil"></i>';
+                        echo '<i class="fa fa-plus-square-o"></i>';
                     echo '</div>';
                 echo '</a>';
                 

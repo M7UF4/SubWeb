@@ -5,10 +5,10 @@
     $newUser = $_POST['user'];
     $newPass = md5($_POST['pass']);
     $newEmail = $_POST['email'];
-    $newNom = $_POST['nom'];
-    $newCognom = $_POST['cognom'];
     
     //optional inputs
+    $newNom = null;
+    $newCognom = null;
     $newDni = null;
     $newPhone = null;
     $newAdreça = null;
