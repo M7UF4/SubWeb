@@ -10,20 +10,22 @@ and open the template in the editor.
 
 .body-box {
     overflow:auto;
+    background-color:rgba(221,244,91,0.8);
 }
 .nav-box{
     width:15%;
-    height:300%;
-    background-color:red;
-    font-family: 'Open Sans', sans-serif;
+    height:100%;
     float:left;
-    
+    position:fixed;
 }
 .content-box{
-    width:83%;
-    padding: 3px;
-    float:right;
-    background-color:rgba(0,0,100,0.1);
+    
+    width:80%;
+    margin-left:16%;
+    margin-top:1%;
+    margin-bottom:2%;
+    float:left;
+    background-color: white;
 }
 
 
