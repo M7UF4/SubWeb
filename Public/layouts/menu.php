@@ -9,7 +9,7 @@
             
             /* Fonts */
             echo '<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">';
-            
+            echo '<link href="https://fonts.googleapis.com/css?family=Rokkitt:700,400" rel="stylesheet" type="text/css">';
             /* Css Jquery resources */
             $self = $_SERVER['PHP_SELF'];
             if (strpos($self,"admin/")) {
@@ -49,7 +49,7 @@
             
             if(isset($_SESSION['usuari'])){
                 $value=$_SESSION['usuari'];
-                //var_dump($value);
+                var_dump($value);
             }
             echo '<div class="header-nav">';
                 echo'<ul class="nav">';

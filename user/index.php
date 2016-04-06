@@ -10,64 +10,64 @@ include "../Public/layouts/menu.php";?>
     <!--Content Box -->
     <div class="user-content">
         <div class="user-title"><h3>INFORMACIÓ</h3></div>
-        <div class="user-info"><b>User:</b> <?php echo $value['user'];?> </div>
+        <div class="user-info"><strong>Usuari:&emsp;</strong> <?php echo "<span>".$value['user']."</span>";?> </div>
         <?php 
             if($value['nom']!=""){
-                echo '<div class="user-info"><b>Identitat:</b>';
-                echo $value['nom']." ".$value['cognom'];
+                echo '<div class="user-info"><strong>Identitat:&emsp;</strong>';
+                echo "<span>".$value['nom']." ".$value['cognom']."</span>";
                 echo '</div>';
             }else{
                 echo '<a href="modident.php">';
-                    echo '<div class="user-info"><b>Identitat:</b>';
-                        echo ' Encara no has introduit la teva identitat &nbsp;';
+                    echo '<div class="user-info"><strong>Identitat:&emsp;</strong>';
+                        echo '<span> N/a &nbsp;</span>';
                         echo '<i class="fa fa-pencil"></i>';
                     echo '</div>';
                 echo '</a>';
             }
         ?>
         <a href="modpass.php">
-            <div class="user-info"><b>Contrasenya:</b> 
+            <div class="user-info"><strong>Contrasenya:&emsp;</strong> 
                 <?php 
-                    $passlen = strlen($value['password'])/2;
+                    $passlen = strlen($value['password'])/3;
                     $passhid= "";
                     for($i = 0; $i<=$passlen; $i++){
                         $passhid = $passhid."*";
                     }
-                    echo $passhid;
+                    echo "<span>".$passhid."</span>";
                 ?>
                 <i class="fa fa-pencil"></i>
             </div>
         </a>
         <a href="modemail.php">
-            <div class="user-info"><b>E-mail:</b> 
+            <div class="user-info"><strong>E-mail:&emsp;</strong> 
                 <?php 
-                    echo $value['email'];
+                    echo "<span>".$value['email']."</span>";
                 ?> 
                 <i class="fa fa-pencil"></i>
             </div>
         </a>
         <?php 
             if($value['phone']!=""){
-                echo '<div class="user-info"><b>Telefon:</b> ';
-                echo $value['phone'];
+                echo '<div class="user-info"><strong>Telefon:&emsp;</strong> ';
+                echo "<span>".$value['phone']."</span>";
                 echo '</div>';
             }else{
                  echo '<a href="modtelefon.php">';
-                    echo '<div class="user-info"><b>Telefon:</b>';
-                        echo ' Encara no has introduit el teu telefon &nbsp;';
+                    echo '<div class="user-info"><strong>Telefon:&emsp;</strong>';
+                        echo '<span> N/a &nbsp;</span>';
                         echo '<i class="fa fa-pencil"></i>';
                     echo '</div>';
                 echo '</a>';
                 
             }
         ?>
-        <a href="modcontact.php">
-            <div class="user-info"><b>Direcció principal</b> <i class="fa fa-pencil"></i><br>
+        <a style="border:none;" href="modcontact.php">
+            <div class="user-info"><strong>Direcció principal</strong> <i class="fa fa-pencil"></i><br>
                 <?php 
                     if($value['adreca']!=""){
-                        echo $value['adreca']."<br>";
-                        echo $value['pais']." ".$value['poble']."<br>";
-                        echo $value['provincia']." ".$value['postal'];
+                        echo "<span>".mb_strtoupper($value['adreca'],'utf-8')."<br></span>";
+                        echo "<span>".mb_strtoupper($value['pais'],'utf-8')." ".mb_strtoupper($value['poble'],'utf-8')."<br></span>";
+                        echo "<span>".mb_strtoupper($value['provincia'],'utf-8')." ".mb_strtoupper($value['postal'],'utf-8')."</span>";
                     }else{
                         echo '<br>';
                         echo '<br>';

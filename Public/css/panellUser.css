@@ -1,38 +1,90 @@
 body{
-    background-color: #d2d2d2;
+    background-color: #f1f1f1;
 }
 .user-box{
     width: 100%;
 }
 .user-content{
-    margin-left: 10%;
-    margin-right: 10%;
-    max-width: 80%;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 90%;
     width: auto;
-    background-color: #d2d2d2;
+    //background-color: #d2d2d2;
 }
     .user-title{
-        font-family: 'Open Sans', sans-serif;
-        margin-bottom: 1px;
         background-color: white;
-        padding-bottom: 6px;
-        padding-top: 6px;
+        padding-bottom: 7px;
+        padding-top: 7px;
         padding-left: 15px;
-        margin-bottom: 2px;
+        border-top: 2px solid #f45c20;
+        border-bottom: 2px solid #e5e5e5;
+    }
+    .user-title > h3{
+        font-family: 'Rokkitt', serif;
+        font-weight: 400;
+        color: #f45c20;
+        font-size: 24px;
+    }
+    .user-title > a > .sb-return{
+        margin-left: 0px;
+        margin-right: 12px;
+        border: 1px solid #b2b2b2;
+        background-color: #d2d2d2;
+        width: 20px;
+        height: 20px;
+        float: left;
+        transition: all 0.3s;
+        transform: rotate(-135deg);
+        
+    }
+    .user-title > a > .sb-return:hover{
+        border: 1px solid #b2b2b2;
+        background-color: #d2d2d2;
+        float: left;
+        transition: all 0.3s;
+        transform: rotate(45deg);
+    }
+    .user-title > a > .sb-return > .sb-return-icon{
+        color: #626262;
+        font-size: 24px;
+        display: absolute;
+        left: 2;
+        top: 1;
+        position: relative;
+        text-align: center;
+        transform: rotate(-45deg);
     }
     .user-info{
-        font-family: 'Open Sans', sans-serif;
+        color: #586369;
+    }
+    .user-info > span{
+        font-size: 14px;
+    }
+    
+    .user-info > strong{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .user-info > i{
+        float: right;
+        margin-right: 12px;
+        font-size: 20px;
+        color: #d1d1d1;
+    }
+    a:hover > .user-info > i{
+        color: #f45c20;
     }
     .user-content > a{
         display: block;
-        margin-bottom: 1px;
         background-color: white;
         padding-bottom: 12px;
         padding-top: 12px;
         padding-left: 20px;
+        border-bottom: 1px solid #e5e5e5;
     }
     .user-content > a:hover{
-        background-color: #999;
+        background-color: #e5e5e5;;
     }
     .user-content > a:link{
         color: black;
@@ -41,10 +93,79 @@ body{
         color: black;
     }
     .user-content > .user-info{
-        margin-bottom: 1px;
+        background-color: white;
+        font-size: 16px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 20px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .user-content > form > .user-info{
         background-color: white;
         padding-bottom: 12px;
         padding-top: 12px;
         padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    form > .user-info{
+        font-family: inherit;
+        max-width: 100%;
+        width: auto;
+        padding: 10px;
+        display: box;
+        box-orient: vertical;
+        box-pack: center;
+        box-direction: normal;
+        box-align: stretch;
+
+    }
+    .input{
+        background: #f2f2f2;
+        height: 30px;
+        padding: 3px;
+        border-radius: 0px;
+        color: #777777;
+        position: relative;
+        outline: none;
+        font-weight: 300;
+        font-family: inherit;
+        margin-bottom: 6px;
+        border: 1px solid #d2d2d2;
+    }
+    .input:focus::-webkit-input-placeholder{
+        color: #a2a2a2;
+    }
+    .input:hover{
+        background: #f2f2f2;
+    }
+    .input:focus{
+        background: #d2d2d2;
+        color: #a2a2a2;
+    }
+    #logbutton{
+        font-family: 'Rokkitt', serif;
+        font-weight: 400;
+        background-color: #FB5D18;
+        font-size: 24px;
+        border-radius: 0px;
+        text-shadow: 0 1px 1px #333;
+        transition: all 0.3s ease;
+    }
+    #logbutton:focus{
+        font-family: 'Rokkitt', serif;
+        font-weight: 400;
+        background-color:  #FB6e18;
+        font-size: 24px;
+        border-radius: 0px;
+        transition: all 0.3s ease;
+    }
+    #logbutton:hover{
+        font-family: 'Rokkitt', serif;
+        font-weight: 400;
+        background-color:  #FB6e18;
+        font-size: 24px;
+        border-radius: 0px;
+        transition: all 0.3s ease;
     }
 
