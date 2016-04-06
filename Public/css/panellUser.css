@@ -1,5 +1,6 @@
 body{
-    background-color: #f1f1f1;
+    //background-color: #f1f1f1;
+    background-color: #DDF45B;
 }
 .user-box{
     width: 100%;
@@ -18,7 +19,7 @@ body{
         padding-top: 7px;
         padding-left: 15px;
         border-top: 2px solid #f45c20;
-        border-bottom: 2px solid #e5e5e5;
+        border-bottom: 2px solid #a1a1a1;
     }
     .user-title > h3{
         font-family: 'Rokkitt', serif;
@@ -66,11 +67,11 @@ body{
         font-size: 15px;
         font-weight: 600;
     }
-    .user-info > i{
+    a > .user-info > i{
         float: right;
         margin-right: 12px;
         font-size: 20px;
-        color: #d1d1d1;
+        color: #a1a1a1;
     }
     a:hover > .user-info > i{
         color: #f45c20;
@@ -81,7 +82,7 @@ body{
         padding-bottom: 12px;
         padding-top: 12px;
         padding-left: 20px;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid #a9a9a9;
     }
     .user-content > a:hover{
         background-color: #e5e5e5;;
@@ -98,7 +99,7 @@ body{
         padding-bottom: 12px;
         padding-top: 12px;
         padding-left: 20px;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid #a9a9a9;
     }
     .user-content > form > .user-info{
         background-color: white;
@@ -141,7 +142,7 @@ body{
     }
     .input:focus{
         background: #d2d2d2;
-        color: #a2a2a2;
+        color: #525252;
     }
     #logbutton{
         font-family: 'Rokkitt', serif;

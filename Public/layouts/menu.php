@@ -49,7 +49,7 @@
             
             if(isset($_SESSION['usuari'])){
                 $value=$_SESSION['usuari'];
-                var_dump($value);
+                //var_dump($value);
             }
             echo '<div class="header-nav">';
                 echo'<ul class="nav">';

@@ -11,6 +11,9 @@ if( $value['nom'] != "" && $value['cognom'] != ""){
 <!-- Content body -->
 <!-- Body box -->
 <div class="user-box">
+    <div class="user-menu">
+        aaa
+    </div>
     <!--Content Box -->
     <div class="user-content">
         <div class="user-title"><a href="../user/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Modifica la teva identitat</h3></div>
