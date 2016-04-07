@@ -7,6 +7,10 @@ include "../Public/layouts/menu.php";?>
 <!-- Content body -->
 <!-- Body box -->
 <div class="user-box">
+    <!--user menu Box -->
+    <div class="user-menu">
+        
+    </div>
     <!--Content Box -->
     <div class="user-content">
         <div class="user-title"><h3>INFORMACIÓ</h3></div>

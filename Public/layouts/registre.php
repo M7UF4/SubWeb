@@ -75,7 +75,7 @@ function testpass(opc){
             flag_pass = false;
         }
     }else{
-        var fail = "<div class='alert' role='alert'>El format de la contrasenya no és vàlid o es igual que l'anterior.</div>";
+        var fail = "<div class='alert' role='alert'>El format de la contrasenya no és vàlid.</div>";
         $('#alertpass').empty().append(fail);
         flag_pass = false;
     }
@@ -83,7 +83,7 @@ function testpass(opc){
 function testemail(opc){
     var mail = $("#email").val();
     var mail2 = $("#email2").val();
-    if((mail != null && !/^\s+$/.test(mail) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)) || (mail2 != null && !/^\s+$/.test(mail2) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail2))){
+    if((!opc && mail != null && !/^\s+$/.test(mail) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)) || (opc && mail2 != null && !/^\s+$/.test(mail2) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail2))){
         $('#alertemail').empty();
         if(mail != mail2){
             if(opc || flag){
@@ -99,7 +99,7 @@ function testemail(opc){
             flag_mail = true;
         }
     }else{
-        var fail = "<div class='alert' role='alert'>El format del e-mail no és vàlid o es igual que l'anterior.</div>";
+        var fail = "<div class='alert' role='alert'>El format del e-mail no és vàlid.</div>";
         $('#alertemail').empty().append(fail);
         flag_mail = false;
     }

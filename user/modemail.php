@@ -85,7 +85,7 @@ function valpass(){
 function testmail(opc){
     var mail = $("#email").val();
     var mail2 = $("#email2").val();
-    if((mail != val_mail && mail != null && !/^\s+$/.test(mail) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)) || (mail2 != val_mail && mail2 != null && !/^\s+$/.test(mail2) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail2))){
+    if((!opc && mail != val_mail && mail != null && !/^\s+$/.test(mail) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)) || (opc && mail2 != val_mail && mail2 != null && !/^\s+$/.test(mail2) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail2))){
         $('#alertemail').empty();
         if(mail != mail2){
             if(opc || flag){
