@@ -11,13 +11,13 @@ $( document ).ready(function() {
         ajaxuser();
     });
     $("#pass").blur(function () {
-        testpass();
+        testpass(false);
     });
     $("#pass2").blur(function () {
         testpass(true);
     });
     $("#email").blur(function () {
-        testemail();
+        testemail(false);
     });
     $("#email2").blur(function () {
         testemail(true);
@@ -61,33 +61,48 @@ function ajaxuser(){
 function testpass(opc){
     var pass = $("#pass").val();
     var pass2 = $("#pass2").val();
-    if(pass === pass2 && pass !== ""){
+    if((pass.length >= 6 && pass != null && !/^\s+$/.test(pass) && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/.test(pass)) || (pass2.length >= 6 && pass2 != null && !/^\s+$/.test(pass2) && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/.test(pass2))){
         $('#alertpass').empty();
-        flag_pass = true;
-    }else{
-        if(opc || flag){
-            flag = true;
-            var fail = "<div class='alert' role='alert'>Les contrasenyes no coincideixen.</div>";
-            $('#alertpass').empty().append(fail);
+        if(pass == pass2){
+            $('#alertpass').empty();
+            flag_pass = true;
+        }else{
+            if(opc || flag){
+                flag = true;
+                var fail = "<div class='alert' role='alert'>Les contrasenyes no coincideixen.</div>";
+                $('#alertpass').empty().append(fail);
+            }
+            flag_pass = false;
         }
+    }else{
+        var fail = "<div class='alert' role='alert'>El format de la contrasenya no és vàlid o es igual que l'anterior.</div>";
+        $('#alertpass').empty().append(fail);
         flag_pass = false;
     }
 }
 function testemail(opc){
-    var email = $("#email").val();
-    var email2 = $("#email2").val();
-    if(email === email2 && email !== ""){
+    var mail = $("#email").val();
+    var mail2 = $("#email2").val();
+    if((mail != null && !/^\s+$/.test(mail) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)) || (mail2 != null && !/^\s+$/.test(mail2) && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail2))){
         $('#alertemail').empty();
-        flag_email = true;
-    }else{
-        if(opc || flag2){
-            flag2 = true;
-            var fail = "<div class='alert' role='alert'>El e-mail no coincideix.</div>";
-            $('#alertemail').empty().append(fail);
+        if(mail != mail2){
+            if(opc || flag){
+                flag = true;
+                var fail = "<div class='alert' role='alert'>Els e-mails no coincideixen.</div>";
+                $('#alertemail').empty().append(fail);
+                flag_mail = false;
+            }else{
+                flag_mail = false;
+            }
+        }else{
+            $('#alertemail').empty();
+            flag_mail = true;
         }
-        flag_email = false;
+    }else{
+        var fail = "<div class='alert' role='alert'>El format del e-mail no és vàlid o es igual que l'anterior.</div>";
+        $('#alertemail').empty().append(fail);
+        flag_mail = false;
     }
-    
 }
 function validateForm() {
     ajaxuser();
@@ -101,22 +116,22 @@ function validateForm() {
 <form method="POST" name="myForm" action="System/Protocols/Usuari_Signin.php" onsubmit="return validateForm()">
     <div class="form-content"> 
         <div class="input-1">
-            <input class="input" id="user" placeholder="Usuari *" type="text" name="user" maxlength="32" >
+            <input class="input" id="user" placeholder="Usuari *" type="text" name="user" maxlength="32" required>
         </div>
         <div class="input-1">
             <div id="alertuser"></div>
         </div>
         <div class="input-2">
-            <input class="input" id="pass" placeholder="Contrasenya *" value="" type="password" name="pass" maxlength="16" >
-            <input class="input" id="pass2" placeholder="Repeteix Contrasenya *" value="" type="password" name="pass2" maxlength="16" >
+            <input class="input" id="pass" placeholder="Contrasenya *" value="" type="password" name="pass" maxlength="16" required>
+            <input class="input" id="pass2" placeholder="Repeteix Contrasenya *" value="" type="password" name="pass2" maxlength="16" required>
             
         </div>
         <div class="input-1">
             <div id="alertpass"></div>
         </div>
         <div class="input-2">    
-            <input class="input" id="email" placeholder="E-mail *" value="" type="text" name="email" maxlength="40" >
-            <input class="input" id="email2" placeholder="Repeteix E-mail *" value="" type="text" name="email2" maxlength="40" >
+            <input class="input" id="email" placeholder="E-mail *" value="" type="text" name="email" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+            <input class="input" id="email2" placeholder="Repeteix E-mail *" value="" type="text" name="email2" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
         </div>
         <div class="input-1">
             <div id="alertemail"></div>

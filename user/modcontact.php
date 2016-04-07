@@ -25,7 +25,7 @@ include "../Public/layouts/menu.php";?>
             <div class="user-info">
                 <div class="input-2">     
                     <input class="input" id="provincia" placeholder="Província" value="" type="text" name="provincia" maxlength="32">
-                    <input class="input" id="postal" placeholder="Codi postal" value="" type="text" name="postal" maxlength="5">
+                    <input class="input" id="postal" placeholder="Codi postal" value="" type="text" name="postal" maxlength="5" onkeypress="return aceptNum(event)" onpaste="return false;">
                 </div>
             </div>
             <div style="border:none;" class="user-info" >
@@ -38,4 +38,10 @@ include "../Public/layouts/menu.php";?>
 </div>
 <!-- Footer content box -->
 <?php include "../Public/layouts/footer.php";?> 
-
+<script>
+    var nav4 = window.Event ? true : false;
+    function aceptNum(evt){
+        var key = nav4 ? evt.which : evt.keyCode;
+        return (key <= 13 || (key>= 48 && key <= 57));
+    }
+</script>

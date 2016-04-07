@@ -5,7 +5,7 @@ $migas='#Inici|../index.php#Configuració|index.php#Identitat';
 include "../Public/layouts/menu.php";
 
 if( $value['nom'] != "" && $value['cognom'] != ""){
-    //header('Location: index.php');
+    header('Location: index.php');
 }
 ?>
 <!-- Content body -->
@@ -17,11 +17,11 @@ if( $value['nom'] != "" && $value['cognom'] != ""){
     <!--Content Box -->
     <div class="user-content">
         <div class="user-title"><a href="../user/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Modifica la teva identitat</h3></div>
-        <form method="POST" name="myForm" action="../System/Protocols/Usuari_Identity.php">
+        <form method="POST" name="myForm" action="../System/Protocols/Usuari_Identity.php" onsubmit="return validateForm()">
             <div class="user-info">
                 <div class="input-2">
-                    <input class="input" id="nom" placeholder="Nom" type="text" name="nom" maxlength="32" >
-                    <input class="input" id="cognom" placeholder="Cognom" type="text" name="cognom" maxlength="32" >
+                    <input class="input" id="nom" placeholder="Nom" type="text" name="nom" maxlength="32">
+                    <input class="input" id="cognom" placeholder="Cognom" type="text" name="cognom" maxlength="32">
                 </div>
                 <div class="input-2">
                     <div id="alertnom"></div>
@@ -52,7 +52,7 @@ $( document ).ready(function() {
 });
 function testnom(){
     var nom = $("#nom").val();
-    if(nom.length >= 2 && nom != null && !/^\s+$/.test(nom) && isNaN(nom) && !parseInt(nom)){
+    if(nom != null && !/^\s+$/.test(nom) && /^[a-zA-Z]{2,}$/.test(nom)){
         $('#alertnom').empty();
         flag_nom = true;
     }else{
@@ -63,13 +63,13 @@ function testnom(){
 }
 function testcognom(){
     var cognom = $("#cognom").val();
-    if(cognom.length >= 2 && cognom != null && !/^\s+$/.test(cognom) && isNaN(cognom) && !parseInt(cognom)){
+    if(cognom != null && !/^\s+$/.test(cognom) && /^[a-zA-Z]{2,}$/.test(cognom)){
         $('#alertcognom').empty();
-        flag_nom = true;
+        flag_cognom = true;
     }else{
         var fail = "<div class='alert' role='alert'>Introdueix un cognom!.</div>";
         $('#alertcognom').empty().append(fail);
-        flag_nom = false;
+        flag_cognom = false;
     }
 }
 function finaltest(){
@@ -80,9 +80,8 @@ function finaltest(){
     }
 }
 function validateForm() {
-    ajaxuser();
-    testpass(true);
-    testemail(true);
+    testnom();
+    testcognom();
     if(!finaltest()){
         return false;
     }

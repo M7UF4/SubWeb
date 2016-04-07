@@ -17,7 +17,7 @@ if( $value['phone'] != ""){
         <form method="POST" name="myForm" action="../System/Protocols/Usuari_Phone.php">
             <div class="user-info">
                 <div class="input-1">    
-                    <input class="input" id="phone" placeholder="Telefon *" value="" type="text" name="phone" maxlength="16" >
+                    <input class="input" id="phone" placeholder="Telefon *" value="" type="text" name="phone" maxlength="9" onkeypress="return aceptNum(event)" onpaste="return false;">
                 </div>
                 <div class="input-1">
                     <div id="alertphone"></div>
@@ -33,4 +33,10 @@ if( $value['phone'] != ""){
 </div>
 <!-- Footer content box -->
 <?php include "../Public/layouts/footer.php";?> 
-
+<script>
+    var nav4 = window.Event ? true : false;
+    function aceptNum(evt){
+        var key = nav4 ? evt.which : evt.keyCode;
+        return (key <= 13 || (key>= 48 && key <= 57));
+    }
+</script>
