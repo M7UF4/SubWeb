@@ -4,18 +4,17 @@
     $user = $_POST['user'];
     $pass = md5($_POST['pass']);
     $usuari = new Usuari();
-    $usuari = $usuari->verificar_login($user,$pass);
+    $result1 = $usuari->verificar_login($user,$pass);
     if(!isset($_SESSION['usuari'])){ 
-        if( $usuari != null){ 
-            $result = $usuari->delete($user_id);
-            if($result){
+        if( $result1 != null){ 
+            $result2 = $usuari->delete($user_id);
+            if($result2){
                 echo 'succes';
             }else{
-                echo 'fail';
+                echo 'error2';
             }
         }else{
-            echo 'fail';
-        } 
+            echo 'error1';
+        }
     }
 ?>
-

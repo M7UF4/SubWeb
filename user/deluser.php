@@ -26,6 +26,8 @@ include "../Public/layouts/menu.php";?>
                 <div class="user-info">
                     <label><input style="float: left;" class="input-box" id="confirm" type="checkbox" name="confirm" required>Sí, vull eliminar de forma permanent aquest compte de SubWeb i les dades que conté.</label>
                 </div>
+            </div>
+            <div style="border:none;" class="user-info" >
                 <div class="input-1">
                     <div id="alertfail"></div>
                 </div>
@@ -61,15 +63,18 @@ function valpass(){
     $.ajax({
         data:  parametros,
         type: "POST",
-        url: "../System/Protocols/Usuari_Validate.php",
+        url: "../System/Protocols/Usuari_Delete.php",
         success: function (response) {
             console.log(response);
-            if(response === "fail"){
+            if(response === "error1"){
                 var fail = "<div class='alert' role='alert'>Contrasenya incorrecta</div>";
+                $('#alertfail').empty().append(fail);
+            }else if(response === "error2"){
+                var fail = "<div class='alert' role='alert'>Error al eliminar l'usuari</div>";
                 $('#alertfail').empty().append(fail);
             }else if(response === "succes"){
                 $('#alertfail').empty();
-                //window.location.href = '../index.php';
+                window.location.href = '../logout.php';
             }
         }
     });

@@ -13,7 +13,7 @@
             /* Css Jquery resources */
             $self = $_SERVER['PHP_SELF'];
             if (strpos($self,"admin/")) {
-                include "../System/Errors.php"; //Debug Mode
+                //include "../System/Errors.php"; //Debug Mode
                 echo '<LINK REL=StyleSheet HREF="../Public/css/font-awesome.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/style.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/menu.css" TYPE="text/css" MEDIA=screen>';
@@ -22,7 +22,7 @@
                 echo '<script src="../Public/jquery/jquery-ui.min.js"></script>';
                 echo '<link rel="shortcut icon" href="../favicon.ico">';
             }else if (strpos($self,"user/")) {
-                include "../System/Errors.php"; //Debug Mode
+                //include "../System/Errors.php"; //Debug Mode
                 echo '<LINK REL=StyleSheet HREF="../Public/css/font-awesome.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/style.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/menu.css" TYPE="text/css" MEDIA=screen>';
@@ -31,7 +31,7 @@
                 echo '<script src="../Public/jquery/jquery-ui.min.js"></script>';
                 echo '<link rel="shortcut icon" href="../favicon.ico">';
             }else{
-                include "System/Errors.php"; //Debug Mode
+                //include "System/Errors.php"; //Debug Mode
                 echo '<LINK REL=StyleSheet HREF="Public/css/font-awesome.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="Public/css/style.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="Public/css/menu.css" TYPE="text/css" MEDIA=screen>';
