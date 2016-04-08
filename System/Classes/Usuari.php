@@ -58,8 +58,9 @@
         }
         public function delete($var){
             $db = new connexio();
-            $sql = "delete from Usuari where id_usuari = $var";
+            $result = $sql = "delete from Usuari where id_usuari = $var";
             $db->query($sql);
+            return $result;
         }
         function verificar_login($user,$password){ 
             $db = new connexio();

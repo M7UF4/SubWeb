@@ -65,7 +65,7 @@ include "../Public/layouts/menu.php";?>
                 
             }
         ?>
-        <a style="border:none;" href="modcontact.php">
+        <a href="modcontact.php">
             <div class="user-info"><strong>Direcció principal</strong> <i class="fa fa-pencil"></i><br>
                 <?php 
                     if($value['adreca']!=""){
@@ -79,7 +79,11 @@ include "../Public/layouts/menu.php";?>
                     }
                 ?>
             </div>
-        </a>    
+        </a>
+        <a style="border:none;" href="deluser.php">
+            <div class="user-info"><strong>Eliminar Usuari</strong> <i class="fa fa-times"></i><br>
+            </div>
+        </a> 
     </div> 
 </div>
 <!-- Footer content box -->

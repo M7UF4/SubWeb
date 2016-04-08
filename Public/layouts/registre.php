@@ -25,6 +25,7 @@ $( document ).ready(function() {
 });
 
 function finaltest(){
+    console.log(flag_user, flag_pass, flag_email);
     if(flag_user != false && flag_pass != false && flag_email != false){
         return true;
     }else{
@@ -90,18 +91,18 @@ function testemail(opc){
                 flag = true;
                 var fail = "<div class='alert' role='alert'>Els e-mails no coincideixen.</div>";
                 $('#alertemail').empty().append(fail);
-                flag_mail = false;
+                flag_email = false;
             }else{
-                flag_mail = false;
+                flag_email = false;
             }
         }else{
             $('#alertemail').empty();
-            flag_mail = true;
+            flag_email = true;
         }
     }else{
         var fail = "<div class='alert' role='alert'>El format del e-mail no és vàlid.</div>";
         $('#alertemail').empty().append(fail);
-        flag_mail = false;
+        flag_email = false;
     }
 }
 function validateForm() {
