@@ -3,7 +3,7 @@
 $title='Index';
 $migas='#Index|index.php';
 include "Public/layouts/menu.php";?>
-        
+      
 <!-- Body content box -->
 <div class="body-box">
 
@@ -15,7 +15,6 @@ include "Public/layouts/menu.php";?>
 
         </div>
         <div class="content-zone">
-
         </div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <!-- Header content box -->
 <?php 
 $title='Configuració';
-$migas='#Inici|../index.php#Configuració|index.php';
+$migas='#Inici|../index.php#Configuració#Informació|../user';
 include "../Public/layouts/menu.php";?>
 
 <!-- Content body -->
@@ -9,7 +9,15 @@ include "../Public/layouts/menu.php";?>
 <div class="user-box">
     <!--user menu Box -->
     <div class="user-menu">
-        
+        <ul>
+            <li class='um-active'><a href="../user">Info</a></li>
+            <li><a href="triskens.php">triskens</a></li>
+            <li><a href="licitacions.php">Licitacions</a></li>
+            <li><a href="factures.php">Factures</a></li>
+            <?php
+            echo '<li><a>'.$value['saldo'].'<i class="fa fa-star-o"></i></a></li>';
+            ?>
+        </ul>
     </div>
     <!--Content Box -->
     <div class="user-content">

@@ -1,7 +1,7 @@
 <?php
     require_once('../Classes/Usuari.php');
     //Requiered inputs
-    $newSaldo = 50; //Saldo inicial
+    $newSaldo = 500; //Saldo inicial
     $newUser = $_POST['user'];
     $newPass = md5($_POST['pass']);
     $newEmail = $_POST['email'];
