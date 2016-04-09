@@ -23,18 +23,42 @@ body{
     -webkit-box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
     -moz-box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
     box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
+    border-top: 2px solid #f45c20;
 }
 .user-menu > ul{
     width: 100%;
 }
+.user-menu > ul > .um-coin{
+    float: right;
+}
+.user-menu > ul > .um-coin:hover{
+    background-color: #23ADE0;
+    cursor: pointer;
+}
+
 .user-menu > ul > li{
     width: auto;
-    padding: 3px;
+    padding: 6px;
     float: left;
+}
+.user-menu > ul > li:hover{
+    background-color: #a2a2a2;
+    color: #f2f2f2;
+}
+.user-menu > ul > .um-active{
+    background-color: #f45c20;
+}
+.user-menu > ul > .um-active > a{
+    color: white;
+}
+.fa-star-o{
+    color: #FB5D18;
 }
 .user-menu > ul > li > a{
     display: block;
     width: 100%;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
 }
 .user-content{
     margin-top: 2%;
@@ -139,6 +163,7 @@ body{
         padding-top: 12px;
         padding-left: 20px;
         border-bottom: 1px solid #a9a9a9;
+        font-family: 'Open Sans', sans-serif;
     }
     .user-content > form > .user-info{
         background-color: white;
@@ -215,4 +240,13 @@ body{
         border-radius: 0px;
         transition: all 0.3s ease;
     }
+#buycredits{
+    display: none;
+}
+#buytitle{
+    color: #777777;
+    font-size: 15px;
+    border-bottom: 1px solid #a9a9a9;
+    font-family: 'Open Sans', sans-serif;
+}
 

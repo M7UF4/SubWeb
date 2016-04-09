@@ -11,11 +11,11 @@ include "../Public/layouts/menu.php";?>
     <div class="user-menu">
         <ul>
             <li class='um-active'><a href="../user">Info</a></li>
-            <li><a href="triskens.php">triskens</a></li>
             <li><a href="licitacions.php">Licitacions</a></li>
             <li><a href="factures.php">Factures</a></li>
+            <li><a href="tenda.php">Tenda</a></li>
             <?php
-            echo '<li><a>'.$value['saldo'].'<i class="fa fa-star-o"></i></a></li>';
+            echo '<li class="um-coin"><a href="tenda.php">'.$value['saldo'].'&nbsp;<i class="fa fa-star-o"></i></a></li>';
             ?>
         </ul>
     </div>

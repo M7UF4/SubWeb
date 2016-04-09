@@ -56,6 +56,12 @@
             $db->close();
             return $result;
         }
+        public function modsaldo($id, $user, $saldo){
+            $db = new connexio();
+            $result = $db->query("UPDATE Usuari SET  saldo='$saldo' WHERE id_usuari= '$id' AND user= '$user'");
+            $db->close();
+            return $result;
+        }
         public function delete($var){
             $db = new connexio();
             $result = $sql = "delete from Usuari where id_usuari = $var";
