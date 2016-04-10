@@ -32,7 +32,7 @@ body{
     float: right;
 }
 .user-menu > ul > .um-coin:hover{
-    background-color: #23ADE0;
+    background-color: whitesmoke;
     cursor: pointer;
 }
 
@@ -47,6 +47,9 @@ body{
 }
 .user-menu > ul > .um-active{
     background-color: #f45c20;
+}
+.user-menu > ul > .um-active:hover{
+    background-color: #FB5D18;
 }
 .user-menu > ul > .um-active > a{
     color: white;
