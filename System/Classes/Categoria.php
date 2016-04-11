@@ -35,6 +35,28 @@
             $db->close();
             return $rtn;
         }
+        
+        public function autocomp(){
+            $db = new connexio();
+            $sql = "SELECT * FROM Categoria order by tipus asc";
+            $query = $db->query($sql);
+        }
+        
+        }
+        public function auto_all($name){
+            $db = new connexio();
+            $sql = "SELECT * FROM Categoria where tipus LIKE %$name%; order by tipus asc";
+            $query = $db->query($sql);
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                //$Categoria = new Categoria($obj["id_categoria"],$obj["tipus"]);
+                //var_dump($Categoria);
+                //array_push($rtn, $Categoria);
+                echo obj["tipus"];
+            }
+            $db->close();
+            return $rtn;
+        }
         //CONSTRUCTORS
         function __construct(){
             $args = func_get_args();

@@ -1,5 +1,8 @@
 <!-- Header content box -->
-<?php include "Public/layouts/menu.php";?>
+<?php 
+$title='Agregar categories';
+$migas='#Index|index.php#Agregar categories';
+include "Public/layouts/menu.php";?>
 
 <!-- Content body -->     
 <!-- Body box -->

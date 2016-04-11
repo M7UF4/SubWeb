@@ -1,5 +1,8 @@
 <!-- Header content box -->
-<?php include "Public/layouts/menu.php";?>
+<?php 
+$title='Categories';
+$migas='#Index|index.php#Llista de categories';
+include "Public/layouts/menu.php";?>
 
 <!-- Content body -->
 <!-- Body box -->
@@ -7,7 +10,7 @@
     
     <center>   
 <table width="300">
-<center><h2><font color="white">Lista de categories</h2></font></center>
+<center><h2><font color="white">Llista de categories</h2></font></center>
 
 
 <tr align="left">
