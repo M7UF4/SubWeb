@@ -52,13 +52,13 @@
             $this->num_licitacions = "";
             $this->temps = "";
         }
-        function __construct10($a2, $a3, $a4){
+        function __construct3($a2, $a3, $a4){
             $this->id_subhasta=0;
             $this->id_producte = $a2;
             $this->num_licitacions = $a3;
             $this->temps = $a4;
         }
-        function __construct11($a1, $a2, $a3, $a4){
+        function __construct4($a1, $a2, $a3, $a4){
             $this->id_subhasta=$a1;
             $this->id_producte = $a2;
             $this->num_licitacions = $a3;

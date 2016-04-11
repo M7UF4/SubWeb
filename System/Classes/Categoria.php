@@ -42,7 +42,7 @@
             $query = $db->query($sql);
         }
         
-        }
+        
         public function auto_all($name){
             $db = new connexio();
             $sql = "SELECT * FROM Categoria where tipus LIKE %$name%; order by tipus asc";
