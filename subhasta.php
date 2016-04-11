@@ -16,48 +16,48 @@ include "Public/layouts/menu.php";?>
         require_once(__DIR__.'/System/Classes/Producte.php'); //Necessitem Producte
         $Subhasta = new Subhasta();
         $Subhasta = $Subhasta->view_all();
+        //var_dump($Subhasta);
         $i = 0;
         foreach ($Subhasta as $row) {
-            $Enemigo = new Enemigo();
-            $Enemigo = $Enemigo->get_all($row->id_enemigo);
+            //var_dump($row);
+            $id_Subasta = $row->getId_Subhasta();
+            $id_Producte = $row->getId_Producte();
+            $licitacions = $row->getNum_Licitacions();
             
             /*Anem a dividir les subhastes en 2 columnes depenent de par o impar en i*/
             if ( $i%2 == 0){
-                $Partida_Enemigo = new Partida_Enemigo();
-                $Partida_Enemigo = $Partida_Enemigo->view_partida($id_Partida);
-                $i = 0;
-                foreach ($Partida_Enemigo as $row) {
-                    $Enemigo = new Enemigo();
-                    $Enemigo = $Enemigo->get_all($row->id_enemigo);
-                }
-                echo
-                '<a href="…"><div class="columna-esquerra">
-                    <div class="titol">Titol</div>
-                    <div class="imatge">
-                        <img src="" height="100%">
-                    </div>
-                    <p>Descripció del objecte, blah blah</p>
-                </div></a>';
-            }else{
-                $Enemigo = new Enemigo();
-                $Enemigo = $Enemigo->get_all($row->id_enemigo);
-                if ( $i%2 == 0){
-                    $Partida_Enemigo = new Partida_Enemigo();
-                    $Partida_Enemigo = $Partida_Enemigo->view_partida($id_Partida);
-                    $i = 0;
-                    foreach ($Partida_Enemigo as $row) {
-                        $Enemigo = new Enemigo();
-                        $Enemigo = $Enemigo->get_all($row->id_enemigo);
-                    }
-                    echo
-                    '<a href="…"><div class="columna-dreta">
-                        <div class="titol">Titol</div>
-                        <div class="imatge">
-                            <img src="" height="100%">
+                $Producte = new Producte();
+                $return = $Producte->view_producte($id_Producte);
+                
+                $titol = $return->getNom();
+                $descripcio = $return->getDescripcio();
+                $img = $return->getLink_img(); 
+                
+                echo '2<a href="'.$id_Producte.'">
+                        <div class="columna-esquerra">
+                            <div class="titol">'.$titol.'</div>
+                            <div class="imatge">
+                                <img src=" Public/img/productes/'.$img.'" height="100%">
+                            </div>
+                            <p>'.$descripcio.'</p>
                         </div>
-                        <p>Descripció del objecte, blah blah</p>
-                    </div></a>';
+                      </a>';
+            }else{
+                $Producte = new Producte();
+                $Producte = $Producte->view_all();
+                foreach ($Producte as $row) {
+                    $titol = $row->getNom();
+                    $descripcio = $row->getDescripcio();
+                    $img = $row->getLink_img(); 
                 }
+                    echo
+                    '1<a href="'.$id_Producte.'"><div class="columna-dreta">
+                    <div class="titol">'.$titol.'</div>
+                    <div class="imatge">
+                        <img src="'.$img.'" height="100%">
+                    </div>
+                    <p>'.$descripcio.'</p>
+                </div></a>';
             }
             $i++;
         }

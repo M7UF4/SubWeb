@@ -10,6 +10,7 @@
     margin-top:1%;
     margin-bottom:2%;
     background-color: green;
+    overflow: auto;
 }
 .columna-esquerra{
     float:left;

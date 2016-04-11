@@ -26,8 +26,12 @@
         }
         public function view_all(){
             $db = new connexio();
+            //var_dump($db);
+            //echo '<br> <br>';
             $sql = "SELECT * FROM Subhasta;";
             $query = $db->query($sql);
+            //var_dump($query);
+            //echo '<br> <br>';
             $rtn = array();
             while($obj = $query->fetch_assoc()){
                 $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"]);
