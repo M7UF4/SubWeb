@@ -1,0 +1,44 @@
+.body-box {
+    overflow:auto;
+    background-color:red;
+}
+.content-box{
+    
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:1%;
+    margin-bottom:2%;
+    background-color: green;
+}
+.columna-esquerra{
+    float:left;
+    background-color:purple;
+    height: 200px;
+    width: 43%;
+    margin-top: 1%;
+}
+.columna-dreta{
+    float:right;
+    background-color:yellow;
+    height: 200px;
+    width: 43%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.titol{
+    background-color:brown;
+    height: 10%;
+    width: 100%;
+}
+.imatge{
+    float:left;
+    background-color:white;
+    height: 85%;
+    width: 40%;
+    margin: 1%;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
