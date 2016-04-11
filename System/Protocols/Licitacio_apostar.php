@@ -1,0 +1,17 @@
+<?php 
+    require_once('../Classes/Licitacio.php');
+    
+    //Ejemplo aprenderaprogramar.com
+    $id_licitacio = $_POST['id_licitacio'];
+    $id_producte = $_POST['id_producte'];
+    $id_user = $_POST['id_user'];
+    $credits = $_POST['aposta'];
+    
+    //Afegir Licitacio a la BD.
+    $newLicitacio = new Licitacio($id_licitacio, $id_producte, $id_user, $credits);
+    $test = $newLicitacio->add();
+    if($test){
+        echo '<br>Correcte la licitacio';
+    }else{
+        echo '<br>Error en la licitacio';
+    }
