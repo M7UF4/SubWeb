@@ -43,7 +43,7 @@ include "../Public/layouts/menu.php";?>
                         <ul class="row1">
                             <li class="cell cellcat">'.$tipus.'&nbsp;</li>
                             <li class="cell cellid">'.$id.'&nbsp;</li>
-                            <a class="cell celldel" href="delete_category.php?delete_categoria='.$id.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
+                            <a class="cell celldel" href="delCat.php?delCat='.$id.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
                         </ul>
                         ';
                     }else{
@@ -51,7 +51,7 @@ include "../Public/layouts/menu.php";?>
                         <ul class="row2">
                             <li class="cell cellcat">'.$tipus.'&nbsp;</li>
                             <li class="cell cellid">'.$id.'&nbsp;</li>
-                            <a class="cell celldel" href="delete_category.php?delete_categoria='.$id.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
+                            <a class="cell celldel" href="delCat.php?delCat='.$id.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
                         </ul>
                         ';
                     }

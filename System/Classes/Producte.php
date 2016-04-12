@@ -33,40 +33,15 @@
             $query = $db->query($sql);
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                //$Producte = new Producte($obj["id_producte"],$obj["nom"],$obj["descripcio"],$obj["caracteristiques"],$obj["link_img"],$obj["id_categoria"],$obj["preu_mercat"]);
+                $Producte = new Producte($obj["id_producte"],$obj["nom"],$obj["descripcio"],$obj["caracteristiques"],$obj["link_img"],$obj["id_categoria"],$obj["preu_mercat"]);
                 //var_dump($Producte);
-                $img=$obj['link_img'];
-                $id_pro=$obj["id_producte"];
-                echo "<table width=500px;><tr>";
-                echo "<td><img src = 'System/Protocols/product/$img' width = '180' height = '180'></td><td width=300px; align=left;><b>". $obj["nom"]."</b><br>". $obj["descripcio"]."<br>".$obj["caracteristiques"]."</td><td><a href='proDetail.php?proId=$id_pro'>Ver detalles</a></td><td><a href='delPro.php?delete_pro=$id_pro'>Delete</a></td><br>";
-                echo "</tr></table>";
-                
+                array_push($rtn, $Producte);
             }
             $db->close();
             return $rtn;
         }        
         
-        public function view_pro($id_pro){
-            $db=new connexio();
-            $sql="SELECT * from Producte where id_producte=$id_pro";
-            $query = $db->query($sql);
-            while($obj=$query->fetch_assoc()){
-                $img=$obj['link_img'];
-                $id_pro=$obj["id_producte"];
-                echo "<table><tr></tr><th align=left;>".$obj["nom"]."</th><tr>";
-                echo "<td><img src = 'System/Protocols/product/$img' width = '380' height = '380'></td></tr>";
-                echo "</tr></table>";
-                echo "<table width=900px; border=1px;><tr><td width=300px;><b>Descripció</b></td><td width=300px;><b>Caracteristics</b></td><td width=300px;><b>Preu</b></td>";
-                echo "</td></tr><tr>"
-                . "<td width=300px;>".$obj["descripcio"]."</td><td width=300px;>".$obj["caracteristiques"]."</td><td width=300px;>".$obj["preu_mercat"].'$'."</td>"
-                        . "</table>";
-                echo "<td><a href='delPro.php?delete_pro=$id_pro'>Delete</a></td>";
-                
-            }
-        }
-        
-        
-        //CONSTRUCTORS
+       //CONSTRUCTORS
         function __construct(){
             $args = func_get_args();
             $num = func_num_args();

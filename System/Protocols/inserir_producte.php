@@ -11,9 +11,8 @@
     $caracter = $_POST['caracter'];
     
     move_uploaded_file($file_tmp,"product/$file");
-    
+
     $Producte = new Producte($nom, $desc, $caracter, $file, $cat, $preu);
     $Producte->add();
-    echo "Producte afegit";
-    
+    header('Location: ../../admin/product.php');
 ?>
