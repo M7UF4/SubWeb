@@ -2,7 +2,9 @@
 <?php 
 $title='Category';
 $migas='#Inici|../index.php#AdminPanel|index.php#Category';
-include "../Public/layouts/menu.php";?>
+include "../Public/layouts/menu.php";
+
+?>
 
 <!-- Content body -->
 <!-- Body box -->
