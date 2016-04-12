@@ -1,196 +1,272 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 01/04/2016, 16:12:26
-    Author     : alumne
-*/
-
-.body-box {
-    overflow:auto;
-    background-color:rgba(221,244,91,0.8);
+body{
+    //background-color: #f3f3f3;
+    background: rgba(145,232,66,1);
+    background: -moz-linear-gradient(top, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(145,232,66,1)), color-stop(100%, rgba(210,255,82,1)));
+    background: -webkit-linear-gradient(top, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
+    background: -o-linear-gradient(top, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
+    background: -ms-linear-gradient(top, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
+    background: linear-gradient(to bottom, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91e842', endColorstr='#d2ff52', GradientType=0 );
 }
-.nav-box{
-    width:15%;
-    height:100%;
-    float:left;
-    position:fixed;
+.user-box{
+    width: 100%;
 }
-.content-box{
-    
-    width:80%;
-    margin-left:16%;
-    margin-top:1%;
-    margin-bottom:2%;
-    float:left;
+.user-menu{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 90%;
+    width: auto;
     background-color: white;
+    overflow: auto;
+    -webkit-box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
+    -moz-box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
+    box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
+    border-top: 2px solid #f45c20;
+}
+.user-menu > ul{
+    width: 100%;
+}
+.user-menu > ul > .um-coin{
+    float: right;
+}
+.user-menu > ul > .um-coin:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
 }
 
+.user-menu > ul > li{
+    width: auto;
+    padding: 6px;
+    float: left;
+}
+.user-menu > ul > li:hover{
+    background-color: #a2a2a2;
+    color: #f2f2f2;
+}
+.user-menu > ul > .um-active{
+    background-color: #f45c20;
+}
+.user-menu > ul > .um-active:hover{
+    background-color: #FB5D18;
+}
+.user-menu > ul > .um-active > a{
+    color: white;
+}
+.fa-star-o{
+    color: #FB5D18;
+}
+.user-menu > ul > li > a{
+    display: block;
+    width: 100%;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+.user-content{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 90%;
+    width: auto;
+    //background-color: #d2d2d2;
+    
+}
+    .user-title{
+        background-color: white;
+        padding-bottom: 7px;
+        padding-top: 7px;
+        padding-left: 15px;
+        border-top: 2px solid #f45c20;
+        border-bottom: 2px solid #a1a1a1;
+    }
+    .user-title > h3{
+        font-family: 'Rokkitt', serif;
+        font-weight: 400;
+        color: #f45c20;
+        font-size: 24px;
+    }
+    .user-title > a > .sb-return{
+        margin-left: 0px;
+        margin-right: 12px;
+        border: 1px solid #b2b2b2;
+        background-color: #d2d2d2;
+        width: 20px;
+        height: 20px;
+        float: left;
+        transition: all 0.6s;
+        transform: rotate(-135deg);
+        
+    }
+    .user-title > a > .sb-return:hover{
+        border: 1px solid #b2b2b2;
+        background-color: #d2d2d2;
+        float: left;
+        transition: all 0.6s;
+        transform: rotate(45deg);
+    }
+    .user-title > a > .sb-return > .sb-return-icon{
+        color: #626262;
+        font-size: 24px;
+        display: absolute;
+        left: 2;
+        top: 1;
+        position: relative;
+        text-align: center;
+        transform: rotate(-45deg);
+    }
+    .user-info{
+        color: #586369;
+    }
+    .user-info > span{
+        font-size: 14px;
+    }
+    
+    .user-info > strong{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    a > .user-info > i{
+        float: right;
+        margin-right: 12px;
+        font-size: 20px;
+        color: #a1a1a1;
+    }
+    a:hover > .user-info > .fa-times{
+        color: #e60000;
+        text-shadow: 2px 1px 5px rgba(0, 0, 0, 1);
+    }
+    a:hover > .user-info > i{
+        color: #f45c20;
+        text-shadow: 2px 1px 5px rgba(0, 0, 0, 1);
+    }
+    .user-content > a{
+        display: block;
+        background-color: white;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 20px;
+        border-bottom: 1px solid #a9a9a9;
+    }
+    .user-content > a:hover{
+        background-color: #e5e5e5;;
+    }
+    .user-content > a:link{
+        color: black;
+    }
+    .user-content > a:visited{
+        color: black;
+    }
+    .user-content > .user-info{
+        background-color: white;
+        font-size: 16px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 20px;
+        border-bottom: 1px solid #a9a9a9;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .user-content > .caixa{
+        background-color: whitesmoke;
+        margin-top: 6px;
+        border-top: 2px solid #f45c20;
+        -webkit-box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
+        -moz-box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
+        box-shadow: 0px 3px 15px 0px rgba(51,51,51,0.51);
+    }
+    .user-content > .caixa1{
+        width:250px;
+        margin-right: 12px;
+        float:left;
+        
+    }
+    .user-content > .caixa2{
+        width:auto;
+        background:#444;
+        overflow:auto;
+        padding: 1%;
+    }
+    .user-content > .caixa > form > .user-info{
+        background-color: white;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    form > .user-info{
+        font-family: inherit;
+        max-width: 100%;
+        width: auto;
+        padding: 10px;
+        display: box;
+        box-orient: vertical;
+        box-pack: center;
+        box-direction: normal;
+        box-align: stretch;
 
-#cssmenu,
-#cssmenu ul,
-#cssmenu ul li,
-#cssmenu ul li a {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style: none;
-  line-height: 1;
-  display: block;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    }
+    .input{
+        background: #f2f2f2;
+        height: 30px;
+        padding: 3px;
+        border-radius: 0px;
+        color: #777777;
+        position: relative;
+        outline: none;
+        font-weight: 300;
+        font-family: inherit;
+        margin-bottom: 6px;
+        border: 1px solid #d2d2d2;
+    }
+    .input:focus::-webkit-input-placeholder{
+        color: #a2a2a2;
+    }
+    .input:hover{
+        background: #f2f2f2;
+    }
+    .input:focus{
+        background: #d2d2d2;
+        color: #525252;
+    }
+    .input-box{
+        display: block;
+        top: 4;
+        position: relative;
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+    #logbutton{
+        font-family: 'Rokkitt', serif;
+        font-weight: 400;
+        background-color: #FB5D18;
+        font-size: 24px;
+        border-radius: 0px;
+        text-shadow: 0 1px 1px #333;
+        transition: all 0.3s ease;
+    }
+    #logbutton:focus{
+        font-family: 'Rokkitt', serif;
+        font-weight: 400;
+        background-color:  #FB6e18;
+        font-size: 24px;
+        border-radius: 0px;
+        transition: all 0.3s ease;
+    }
+    #logbutton:hover{
+        font-family: 'Rokkitt', serif;
+        font-weight: 400;
+        background-color:  #FB6e18;
+        font-size: 24px;
+        border-radius: 0px;
+        transition: all 0.3s ease;
+    }
+#buycredits{
+    display: none;
 }
-#cssmenu {
-  width:100%;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #ffffff;
-}
-#cssmenu ul ul {
-  display: none;
-}
-.align-right {
-  float: right;
-}
-#cssmenu > ul > li > a {
-  padding: 15px 20px;
-  border-left: 1px solid #1682ba;
-  border-right: 1px solid #1682ba;
-  border-top: 1px solid #1682ba;
-  cursor: pointer;
-  z-index: 2;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
-  background: #36aae7;
-  background: -webkit-linear-gradient(#36aae7, #1fa0e4);
-  background: -moz-linear-gradient(#36aae7, #1fa0e4);
-  background: -o-linear-gradient(#36aae7, #1fa0e4);
-  background: -ms-linear-gradient(#36aae7, #1fa0e4);
-  background: linear-gradient(#36aae7, #1fa0e4);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-#cssmenu > ul > li > a:hover,
-#cssmenu > ul > li.active > a,
-#cssmenu > ul > li.open > a {
-  color: #eeeeee;
-  background: #1fa0e4;
-  background: -webkit-linear-gradient(#1fa0e4, #1992d1);
-  background: -moz-linear-gradient(#1fa0e4, #1992d1);
-  background: -o-linear-gradient(#1fa0e4, #1992d1);
-  background: -ms-linear-gradient(#1fa0e4, #1992d1);
-  background: linear-gradient(#1fa0e4, #1992d1);
-}
-#cssmenu > ul > li.open > a {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid #1682ba;
-}
-#cssmenu > ul > li:last-child > a,
-#cssmenu > ul > li.last > a {
-  border-bottom: 1px solid #1682ba;
-}
-.holder {
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.holder::after,
-.holder::before {
-  display: block;
-  position: absolute;
-  content: "";
-  width: 6px;
-  height: 6px;
-  right: 20px;
-  z-index: 10;
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-}
-.holder::after {
-  top: 17px;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-}
-#cssmenu > ul > li > a:hover > span::after,
-#cssmenu > ul > li.active > a > span::after,
-#cssmenu > ul > li.open > a > span::after {
-  border-color: #eeeeee;
-}
-.holder::before {
-  top: 18px;
-  border-top: 2px solid;
-  border-left: 2px solid;
-  border-top-color: inherit;
-  border-left-color: inherit;
-}
-#cssmenu ul ul li a {
-  cursor: pointer;
-  border-bottom: 1px solid #32373e;
-  border-left: 1px solid #32373e;
-  border-right: 1px solid #32373e;
-  padding: 10px 20px;
-  z-index: 1;
-  text-decoration: none;
-  font-size: 13px;
-  color: #eeeeee;
-  background: #49505a;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-#cssmenu ul ul li:hover > a,
-#cssmenu ul ul li.open > a,
-#cssmenu ul ul li.active > a {
-  background: #424852;
-  color: #ffffff;
-}
-#cssmenu ul ul li:first-child > a {
-  box-shadow: none;
-}
-#cssmenu ul ul ul li:first-child > a {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-#cssmenu ul ul ul li a {
-  padding-left: 30px;
-}
-#cssmenu > ul > li > ul > li:last-child > a,
-#cssmenu > ul > li > ul > li.last > a {
-  border-bottom: 0;
-}
-#cssmenu > ul > li > ul > li.open:last-child > a,
-#cssmenu > ul > li > ul > li.last.open > a {
-  border-bottom: 1px solid #32373e;
-}
-#cssmenu > ul > li > ul > li.open:last-child > ul > li:last-child > a {
-  border-bottom: 0;
-}
-#cssmenu ul ul li.has-sub > a::after {
-  display: block;
-  position: absolute;
-  content: "";
-  width: 5px;
-  height: 5px;
-  right: 20px;
-  z-index: 10;
-  top: 11.5px;
-  border-top: 2px solid #eeeeee;
-  border-left: 2px solid #eeeeee;
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-}
-#cssmenu ul ul li.active > a::after,
-#cssmenu ul ul li.open > a::after,
-#cssmenu ul ul li > a:hover::after {
-  border-color: #ffffff;
+#buytitle{
+    color: #777777;
+    font-size: 15px;
+    border-bottom: 1px solid #a9a9a9;
+    font-family: 'Open Sans', sans-serif;
 }

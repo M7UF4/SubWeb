@@ -2,8 +2,8 @@
     require_once __DIR__."/../config.php";
     class Categoria{
         /*Atributs*/
-        public $id_categoria;
-        public $tipus;
+        private $id_categoria;
+        private $tipus;
         
         //METODES
         public function add(){
@@ -63,6 +63,13 @@
         }
         public function setTipus($tipus) {
             $this->tipus = $tipus;
+        }
+        
+        public function getId_Categoria(){
+            return $this->id_categoria;
+        }
+        public function getTipus(){
+            return $this->tipus;
         }
     }
 ?>

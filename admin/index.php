@@ -3,47 +3,77 @@
 $title='AdminPanel';
 $migas='#Inici|../index.php#Admin Panel|index.php';
 include "../Public/layouts/menu.php";?>
-    <script src="script.js"></script>
-    
-    
-    <!-- Navigation Box -->
-    <div class="body-box">
-        <div class="nav-box">
-            <div id='cssmenu'>
-                <ul>
-                   <li><a href='#'><span>Home</span></a></li>
-                   <li class='active has-sub'><a href='#'><span>Products</span></a>
-                      <ul>
-                         <li class='has-sub'><a href='#'><span>Product 1</span></a>
-                            <ul>
-                               <li><a href='#'><span>Sub Product</span></a></li>
-                               <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                            </ul>
-                         </li>
-                         <li class='has-sub'><a href='#'><span>Product 2</span></a>
-                            <ul>
-                               <li><a href='#'><span>Sub Product</span></a></li>
-                               <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                            </ul>
-                         </li>
-                      </ul>
-                   </li>
-                   <li><a href='#'><span>About</span></a></li>
-                   <li class='last'><a href='#'><span>Contact</span></a></li>
-                   <li><a href='#'><span>Productes</span></a></li>
-                   <li><a href='#'><span>Usuaris</span></a></li>
-                   <li><a href='#'><span>Admins</span></a></li>
-                   <li><a href='#'><span>BBDD</span></a></li>
-                   <li><a href='#'><span>Permisos</span></a></li>
-                </ul>
-            </div>
-        </div>
 
-        <!--Content Box -->
-        <div class="content-box">
-            <h1>content box</h1>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div> 
+<!-- Content body -->
+<!-- Body box  -->
+<div class="user-box">
+    <!--user menu Box -->
+    <div class="user-menu">
+        <ul>
+            <li class='um-active'><a href="../user">Info</a></li>
+            <li><a href="category.php">Categories</a></li>
+            <li><a href="product.php">Productes</a></li>
+            <li><a href="subhasta.php">Subhastes</a></li>
+        </ul>
     </div>
+    <!--Content Box 1 -->
+    <div class="user-content">
+        <div class="user-title"><h3>INFORMACIÓ</h3></div>
+        <a href="moduser.php">
+            <div class="user-info">
+                <strong>Usuari:&emsp;</strong> 
+                <?php echo "<span>".$value['user']."</span>";?> 
+                <i class="fa fa-pencil"></i>
+            </div>
+        </a>
+        <a href="modpass.php">
+            <div class="user-info"><strong>Contrasenya:&emsp;</strong> 
+                <?php 
+                    $passlen = strlen($value['password'])/3;
+                    $passhid= "";
+                    for($i = 0; $i<=$passlen; $i++){
+                        $passhid = $passhid."*";
+                    }
+                    echo "<span>".$passhid."</span>";
+                ?>
+                <i class="fa fa-pencil"></i>
+            </div>
+        </a>
+        <a href="modemail.php">
+            <div class="user-info"><strong>E-mail:&emsp;</strong> 
+                <?php 
+                    echo "<span>".$value['email']."</span>";
+                ?> 
+                <i class="fa fa-pencil"></i>
+            </div>
+        </a>
+    </div>
+    
+    <!--Content Box 2 -->
+    <div class="user-content">
+        <div class="user-title"><h3>Eines</h3></div>
+        <a href="/phpmyadmin">
+            <div class="user-info">
+                <strong>PhpMyAdmin</strong> 
+                <i class="fa fa-chevron-right"></i>
+            </div>
+        </a>
+        <a href="#">
+            <div class="user-info"><strong>#</strong> 
+                <i class="fa fa-chevron-right"></i>
+            </div>
+        </a>
+        <a href="#">
+            <div class="user-info"><strong>#</strong> 
+                <i class="fa fa-chevron-right"></i>
+            </div>
+        </a>
+        <a href="#">
+            <div class="user-info"><strong>#</strong> 
+                <i class="fa fa-chevron-right"></i>
+            </div>
+        </a>
+    </div> 
+</div>
 <!-- Footer content box -->
 <?php include "../Public/layouts/footer.php";?> 

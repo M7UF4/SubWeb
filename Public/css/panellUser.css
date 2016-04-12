@@ -1,13 +1,14 @@
 body{
     //background-color: #f3f3f3;
     background: rgba(163,163,163,1);
-    background: -moz-linear-gradient(top, rgba(163,163,163,1) 0%, rgba(255,252,255,0.68) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(163,163,163,1)), color-stop(100%, rgba(255,252,255,0.68)));
-    background: -webkit-linear-gradient(top, rgba(163,163,163,1) 0%, rgba(255,252,255,0.68) 100%);
-    background: -o-linear-gradient(top, rgba(163,163,163,1) 0%, rgba(255,252,255,0.68) 100%);
-    background: -ms-linear-gradient(top, rgba(163,163,163,1) 0%, rgba(255,252,255,0.68) 100%);
-    background: linear-gradient(to bottom, rgba(163,163,163,1) 0%, rgba(255,252,255,0.68) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3a3a3', endColorstr='#fffcff', GradientType=0 );
+    background: rgba(255,146,10,1);
+    background: -moz-linear-gradient(top, rgba(255,146,10,1) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,146,10,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(255,146,10,1) 0%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,146,10,1) 0%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,146,10,1) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,146,10,1) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', endColorstr='#ffffff', GradientType=0 );
 }
 .user-box{
     width: 100%;
