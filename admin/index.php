@@ -19,14 +19,10 @@ include "../Public/layouts/menu.php";?>
     <!--Content Box 1 -->
     <div class="user-content">
         <div class="user-title"><h3>INFORMACIÓ</h3></div>
-        <a href="moduser.php">
             <div class="user-info">
                 <strong>Usuari:&emsp;</strong> 
                 <?php echo "<span>".$value['user']."</span>";?> 
-                <i class="fa fa-pencil"></i>
             </div>
-        </a>
-        <a href="modpass.php">
             <div class="user-info"><strong>Contrasenya:&emsp;</strong> 
                 <?php 
                     $passlen = strlen($value['password'])/3;
@@ -36,17 +32,12 @@ include "../Public/layouts/menu.php";?>
                     }
                     echo "<span>".$passhid."</span>";
                 ?>
-                <i class="fa fa-pencil"></i>
             </div>
-        </a>
-        <a href="modemail.php">
             <div class="user-info"><strong>E-mail:&emsp;</strong> 
                 <?php 
                     echo "<span>".$value['email']."</span>";
                 ?> 
-                <i class="fa fa-pencil"></i>
             </div>
-        </a>
     </div>
     
     <!--Content Box 2 -->

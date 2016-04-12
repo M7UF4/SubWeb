@@ -11,7 +11,7 @@ include "../Public/layouts/menu.php";?>
     <div class="user-content">
         <div class="user-title"><a href="../admin/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Category</h3></div>
         <div class="caixa caixa1">
-            <form method="POST" name="myForm" action="../System/Protocols/inserir_categoria.php">
+            <form method="POST" name="myForm" action="../System/Protocols/Categoria_Add.php">
                 <div class="user-info">
                     <div class="input-1">
                         <input class="input" id="cat" placeholder="DVD" value="" type="text" name="cat" maxlength="30"  autofocus required>
@@ -26,22 +26,34 @@ include "../Public/layouts/menu.php";?>
         </div>
         <div class="caixa caixa2">
             <ul class="row">
-                <li class="cell">Id_Categoria</li>
-                <li class="cell">Nom</li>
-                <li class="cell">&nbsp;</li>
-                <li class="cell">&nbsp;</li>
+                <li class="cell cellcat celltop">Tipus</li>
+                <li class="cell cellid celltop">Id</li>
+                <a class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
             </ul>
             <?php
                 require_once('../System/Classes/Categoria.php');
                 $category = new Categoria();
-                $result = $category->view_all();
+                $category = $category->view_all();
                 $i = 0;
-                foreach ($result as $row) {
-                    var_dump($row);
-                    echo '<br><br>';
+                foreach ($category as $row) {
+                    $id = $row->getId_Categoria();
+                    $tipus = $row->getTipus();
                     if ( $i%2 == 0){
+                        echo '
+                        <ul class="row1">
+                            <li class="cell cellcat">'.$tipus.'&nbsp;</li>
+                            <li class="cell cellid">'.$id.'&nbsp;</li>
+                            <a class="cell celldel" href="delete_category.php?delete_categoria='.$id.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
+                        </ul>
+                        ';
                     }else{
-                        
+                        echo '
+                        <ul class="row2">
+                            <li class="cell cellcat">'.$tipus.'&nbsp;</li>
+                            <li class="cell cellid">'.$id.'&nbsp;</li>
+                            <a class="cell celldel" href="delete_category.php?delete_categoria='.$id.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
+                        </ul>
+                        ';
                     }
                     $i++;
                 }

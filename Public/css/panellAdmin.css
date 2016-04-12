@@ -1,13 +1,13 @@
 body{
     //background-color: #f3f3f3;
-    background: rgba(145,232,66,1);
-    background: -moz-linear-gradient(top, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(145,232,66,1)), color-stop(100%, rgba(210,255,82,1)));
-    background: -webkit-linear-gradient(top, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
-    background: -o-linear-gradient(top, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
-    background: -ms-linear-gradient(top, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
-    background: linear-gradient(to bottom, rgba(145,232,66,1) 0%, rgba(210,255,82,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91e842', endColorstr='#d2ff52', GradientType=0 );
+    background: rgba(210,255,82,1);
+    background: -moz-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(210,255,82,1) 28%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(210,255,82,1)), color-stop(28%, rgba(210,255,82,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(210,255,82,1) 28%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(210,255,82,1) 28%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(210,255,82,1) 28%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(210,255,82,1) 0%, rgba(210,255,82,1) 28%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#ffffff', GradientType=0 );
 }
 .user-box{
     width: 100%;
@@ -78,7 +78,7 @@ body{
         padding-top: 7px;
         padding-left: 15px;
         border-top: 2px solid #f45c20;
-        border-bottom: 2px solid #a1a1a1;
+        border-bottom: 1px solid #a1a1a1;
     }
     .user-title > h3{
         font-family: 'Rokkitt', serif;
@@ -183,8 +183,7 @@ body{
     .user-content > .caixa2{
         width:auto;
         background:#444;
-        overflow:auto;
-        padding: 1%;
+        overflow:hidden;
     }
     .user-content > .caixa > form > .user-info{
         background-color: white;
@@ -240,7 +239,7 @@ body{
         font-family: 'Rokkitt', serif;
         font-weight: 400;
         background-color: #FB5D18;
-        font-size: 24px;
+        font-size: 19px;
         border-radius: 0px;
         text-shadow: 0 1px 1px #333;
         transition: all 0.3s ease;
@@ -249,7 +248,7 @@ body{
         font-family: 'Rokkitt', serif;
         font-weight: 400;
         background-color:  #FB6e18;
-        font-size: 24px;
+        font-size: 19px;
         border-radius: 0px;
         transition: all 0.3s ease;
     }
@@ -257,7 +256,7 @@ body{
         font-family: 'Rokkitt', serif;
         font-weight: 400;
         background-color:  #FB6e18;
-        font-size: 24px;
+        font-size: 19px;
         border-radius: 0px;
         transition: all 0.3s ease;
     }
@@ -269,4 +268,55 @@ body{
     font-size: 15px;
     border-bottom: 1px solid #a9a9a9;
     font-family: 'Open Sans', sans-serif;
+}
+.row{
+    width: 100%;
+    padding: 3px;
+    display: block;
+    background-color: #a1a1a1;
+    overflow: hidden;
+}
+.row1{
+    width: 100%;
+    padding: 3px;
+    display: block;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+.row2{
+    width: 100%;
+    padding: 3px;
+    display: block;
+    background-color: white;
+    overflow: hidden;
+}
+.cell{
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.cell > li > i{
+    color: #111;
+}
+a.cell{
+    background-color: #a1a1a1;
+    width: 25px;
+    text-align: center;
+}
+.cellcat{
+    width: 200px;
+    text-align: left;
+}
+.cellid{
+    width: 55px;
+    text-align: center;
+}
+.celldel{
+    float: right;
+    margin-right: 10px;
+}
+.celltop{
+    font-weight: 700;
+    font-size: 15px;
+    color: #333;
 }
