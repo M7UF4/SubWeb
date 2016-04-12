@@ -14,7 +14,7 @@
         public function add(){
             $db = new connexio();
             $db->query("INSERT INTO Producte(nom,descripcio,caracteristiques,link_img,id_categoria,preu_mercat) "
-                    . "VALUES ('$this->nom', '$this->descripcio', '$this->caracteristiques', '$this->link_img', '$this->id_categoria', '$this->preu_mercat)");
+                    . "VALUES ('$this->nom','$this->descripcio','$this->caracteristiques','$this->link_img','$this->id_categoria','$this->preu_mercat')");
             $db->close();
         }
         public function mod(){
@@ -29,17 +29,43 @@
         }
         public function view_all(){
             $db = new connexio();
-            $sql = "SELECT * FROM Producte;";
+            $sql = "SELECT * FROM Producte";
             $query = $db->query($sql);
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                $Producte = new Producte($obj["id_producte"],$obj["nom"],$obj["descripcio"],$obj["caracteristiques"],$obj["link_img"],$obj["id_categoria"],$obj["preu_mercat"]);
+                //$Producte = new Producte($obj["id_producte"],$obj["nom"],$obj["descripcio"],$obj["caracteristiques"],$obj["link_img"],$obj["id_categoria"],$obj["preu_mercat"]);
                 //var_dump($Producte);
-                array_push($rtn, $Producte);
+                $img=$obj['link_img'];
+                $id_pro=$obj["id_producte"];
+                echo "<table width=500px;><tr>";
+                echo "<td><img src = 'System/Protocols/product/$img' width = '180' height = '180'></td><td width=300px; align=left;><b>". $obj["nom"]."</b><br>". $obj["descripcio"]."<br>".$obj["caracteristiques"]."</td><td><a href='proDetail.php?proId=$id_pro'>Ver detalles</a></td><td><a href='delPro.php?delete_pro=$id_pro'>Delete</a></td><br>";
+                echo "</tr></table>";
+                
             }
             $db->close();
             return $rtn;
+        }        
+        
+        public function view_pro($id_pro){
+            $db=new connexio();
+            $sql="SELECT * from Producte where id_producte=$id_pro";
+            $query = $db->query($sql);
+            while($obj=$query->fetch_assoc()){
+                $img=$obj['link_img'];
+                $id_pro=$obj["id_producte"];
+                echo "<table><tr></tr><th align=left;>".$obj["nom"]."</th><tr>";
+                echo "<td><img src = 'System/Protocols/product/$img' width = '380' height = '380'></td></tr>";
+                echo "</tr></table>";
+                echo "<table width=900px; border=1px;><tr><td width=300px;><b>Descripció</b></td><td width=300px;><b>Caracteristics</b></td><td width=300px;><b>Preu</b></td>";
+                echo "</td></tr><tr>"
+                . "<td width=300px;>".$obj["descripcio"]."</td><td width=300px;>".$obj["caracteristiques"]."</td><td width=300px;>".$obj["preu_mercat"].'$'."</td>"
+                        . "</table>";
+                echo "<td><a href='delPro.php?delete_pro=$id_pro'>Delete</a></td>";
+                
+            }
         }
+        
+        
         //CONSTRUCTORS
         function __construct(){
             $args = func_get_args();
@@ -58,7 +84,7 @@
             $this->id_categoria = "";
             $this->preu_mercat = "";
         }
-        function __construct10($a2, $a3, $a4, $a5, $a6, $a7){
+        function __construct6($a2, $a3, $a4, $a5, $a6, $a7){
             $this->id_producte=0;
             $this->nom = $a2;
             $this->descripcio = $a3;
@@ -67,7 +93,7 @@
             $this->id_categoria = $a6;
             $this->preu_mercat = $a7;
         }
-        function __construct11($a1, $a2, $a3, $a4, $a5, $a6, $a7){
+        function __construct7($a1, $a2, $a3, $a4, $a5, $a6, $a7){
             $this->id_producte=$a1;
             $this->nom = $a2;
             $this->descripcio = $a3;
