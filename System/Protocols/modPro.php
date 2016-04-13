@@ -4,7 +4,6 @@
     $var = $_GET['modPro'];
     
     $nom = $_POST['nom'];
-    var_dump($nom);
     $cat = $_POST['cat'];
     $file = $_FILES['image']['name'];
     $file_tmp = $_FILES['image']['tmp_name'];
@@ -16,5 +15,5 @@
 
     $Producte = new Producte($nom, $desc, $caracter, $file, $cat, $preu);
     $Producte->mod($var);
-    //header('Location: ../../admin/product.php');
+    header('Location: ../../admin/product.php');
 ?>

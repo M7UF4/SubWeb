@@ -5,6 +5,7 @@
         <group>
             <file>file:/var/www/html/SubWeb/admin/product.php</file>
             <file>file:/var/www/html/SubWeb/admin/delPro.php</file>
+            <file>file:/var/www/html/SubWeb/System/Protocols/modPro.php</file>
             <file>file:/var/www/html/SubWeb/admin/modPro.php</file>
             <file>file:/var/www/html/SubWeb/System/Classes/Producte.php</file>
         </group>
