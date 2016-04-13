@@ -41,6 +41,40 @@
             $db->close();
             return $rtn;
         }
+        public function view_all_order_desc(){
+            $db = new connexio();
+            //var_dump($db);
+            //echo '<br> <br>';
+            $sql = "SELECT * FROM Subhasta order by temps desc;";
+            $query = $db->query($sql);
+            //var_dump($query);
+            //echo '<br> <br>';
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"]);
+                //var_dump($Subhasta);
+                array_push($rtn, $Subhasta);
+            }
+            $db->close();
+            return $rtn;
+        }
+        public function view_all_order_asc(){ //mostra els resultats ordenats pel que fa més temps que s'ha creat
+            $db = new connexio();
+            //var_dump($db);
+            //echo '<br> <br>';
+            $sql = "SELECT * FROM Subhasta order by temps asc;";
+            $query = $db->query($sql);
+            //var_dump($query);
+            //echo '<br> <br>';
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"]);
+                //var_dump($Subhasta);
+                array_push($rtn, $Subhasta);
+            }
+            $db->close();
+            return $rtn;
+        }
         //CONSTRUCTORS
         function __construct(){
             $args = func_get_args();

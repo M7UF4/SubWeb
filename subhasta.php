@@ -15,49 +15,50 @@ include "Public/layouts/menu.php";?>
         require_once(__DIR__.'/System/Classes/Subhasta.php'); //Necessitem Subhasta
         require_once(__DIR__.'/System/Classes/Producte.php'); //Necessitem Producte
         $Subhasta = new Subhasta();
-        $Subhasta = $Subhasta->view_all();
-        //var_dump($Subhasta);
+        $Subhasta = $Subhasta->view_all_order_asc(); //modificar el metode per order by asc o desc per temps
+        
         $i = 0;
         foreach ($Subhasta as $row) {
             //var_dump($row);
             $id_Subasta = $row->getId_Subhasta();
             $id_Producte = $row->getId_Producte();
             $licitacions = $row->getNum_Licitacions();
-            
+            $temps_restant = $row->getTemps();
             /*Anem a dividir les subhastes en 2 columnes depenent de par o impar en i*/
-            if ( $i%2 == 0){
+            if ( $i%2==0){
                 $Producte = new Producte();
-                $return = $Producte->view_producte($id_Producte);
-                
-                $titol = $return->getNom();
-                $descripcio = $return->getDescripcio();
-                $img = $return->getLink_img(); 
-                
-                echo '2<a href="'.$id_Producte.'">
-                        <div class="columna-esquerra">
-                            <div class="titol">'.$titol.'</div>
-                            <div class="imatge">
-                                <img src=" Public/img/productes/'.$img.'" height="100%">
-                            </div>
-                            <p>'.$descripcio.'</p>
-                        </div>
-                      </a>';
-            }else{
-                $Producte = new Producte();
-                $Producte = $Producte->view_all();
-                foreach ($Producte as $row) {
+                $return = $Producte->view_pro($id_Producte);
+                foreach ($return as $row) {
                     $titol = $row->getNom();
                     $descripcio = $row->getDescripcio();
                     $img = $row->getLink_img(); 
                 }
                     echo
-                    '1<a href="'.$id_Producte.'"><div class="columna-dreta">
+                    '<a href="'.$id_Producte.'"><div class="columna-esquerra">
                     <div class="titol">'.$titol.'</div>
                     <div class="imatge">
                         <img src="'.$img.'" height="100%">
                     </div>
-                    <p>'.$descripcio.'</p>
-                </div></a>';
+                    <p>'.$descripcio.'</p>1<br>
+                        '.$temps_restant.'
+                    </div></a>';
+            }else{
+                $Producte2 = new Producte();
+                $return2 = $Producte2->view_pro($id_Producte);
+                foreach ($return2 as $row) {
+                    $titol = $row->getNom();
+                    $descripcio = $row->getDescripcio();
+                    $img = $row->getLink_img(); 
+                }
+                    echo
+                    '<a href="'.$id_Producte.'"><div class="columna-dreta">
+                    <div class="titol">'.$titol.'</div>
+                    <div class="imatge">
+                        <img src="'.$img.'" height="100%">
+                    </div>
+                    <p>'.$descripcio.'</p>2<br>
+                        '.$temps_restant.'
+                    </div></a>';
             }
             $i++;
         }
