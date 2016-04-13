@@ -31,7 +31,7 @@ require_once('../System/Classes/Producte.php');
     <div class="user-content">
         <div class="user-title"><a href="../admin/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Product</h3></div>
         <div class="caixa caixa1">
-            <form method="POST" name="myForm" action="../System/Protocols/modPro.php" enctype="multipart/form-data">
+            <form method="POST" name="myForm" action="../System/Protocols/modPro.php?modPro=<?" enctype="multipart/form-data">
                 <div class="user-info">
                     <div class="input-1">
                         <input class="input" id="cat" placeholder="Nom" value="<?php echo $nom ?>" type="text" name="nom" maxlength="30"  autofocus required>
