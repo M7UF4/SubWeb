@@ -17,9 +17,9 @@
                     . "VALUES ('$this->nom','$this->descripcio','$this->caracteristiques','$this->link_img','$this->id_categoria','$this->preu_mercat')");
             $db->close();
         }
-        public function mod(){
+        public function mod($idPro){
             $db = new connexio();
-            $db->query("UPDATE Producte SET nom='$this->nom', descripcio='$this->descripcio', caracteristiques='$this->caracteristiques', link_img='$this->link_img', id_categoria='$this->id_categoria', preu_mercat='$this->preu_mercat' WHERE id_producte= '$this->id_producte'");
+            $db->query("UPDATE Producte SET nom='$this->nom', descripcio='$this->descripcio', caracteristiques='$this->caracteristiques', link_img='$this->link_img', id_categoria='$this->id_categoria', preu_mercat='$this->preu_mercat' WHERE id_producte= '$idPro'");
             $db->close();
         }
         public function delete($var){
@@ -40,6 +40,20 @@
             $db->close();
             return $rtn;
         }        
+        
+        public function view_pro($id_pro){
+            $db = new connexio();
+            $sql = "SELECT * FROM Producte where id_producte='$id_pro'";
+            $query = $db->query($sql);
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                $Producte = new Producte($obj["id_producte"],$obj["nom"],$obj["descripcio"],$obj["caracteristiques"],$obj["link_img"],$obj["id_categoria"],$obj["preu_mercat"]);
+                array_push($rtn, $Producte);
+            }
+            //var_dump($rtn);
+            $db->close();
+            return $rtn;
+        }  
         
        //CONSTRUCTORS
         function __construct(){

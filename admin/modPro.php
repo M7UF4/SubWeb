@@ -7,6 +7,21 @@ require_once('../System/Classes/Categoria.php');
 $db = new connexio();
 $sql = "SELECT * FROM Categoria";
 $query = $db->query($sql);
+
+require_once('../System/Classes/Producte.php');
+     $var = $_GET['modPro'];
+     $Producte2=new Producte();
+     $Producte2= $Producte2->view_pro($var);
+     
+     foreach ($Producte2 as $row) {
+            $id = $row->getId_Producte();
+            $nom = $row->getNom();
+            $cat= $row->getId_Categoria();
+            $imatge = $row->getLink_img();
+            $descripcio = $row->getDescripcio();
+            $caracter = $row->getCaracteristiques();
+            $preu = $row->getPreu_Mercat();
+     }
 ?>
 
 <!-- Content body -->
@@ -16,13 +31,13 @@ $query = $db->query($sql);
     <div class="user-content">
         <div class="user-title"><a href="../admin/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Product</h3></div>
         <div class="caixa caixa1">
-            <form method="POST" name="myForm" action="../System/Protocols/inserir_producte.php" enctype="multipart/form-data">
+            <form method="POST" name="myForm" action="../System/Protocols/modPro.php" enctype="multipart/form-data">
                 <div class="user-info">
                     <div class="input-1">
-                        <input class="input" id="cat" placeholder="Nom" value="" type="text" name="nom" maxlength="30"  autofocus required>
+                        <input class="input" id="cat" placeholder="Nom" value="<?php echo $nom ?>" type="text" name="nom" maxlength="30"  autofocus required>
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" list="categoryname" autocomplete="off" placeholder="Categoria" value="" type="text" name="cat" maxlength="30"  autofocus required>
+                        <input class="input" id="cat" list="categoryname" autocomplete="off" placeholder="Categoria" value="<?php echo $cat ?>" type="text" name="cat" maxlength="30"  autofocus required>
                         <datalist id="categoryname">
                             <?php while($row = $query->fetch_assoc()) { ?>
                                 <option value="<?php echo $row['id_categoria']; ?>">
@@ -31,21 +46,21 @@ $query = $db->query($sql);
                         </datalist>
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" placeholder="Image" value="" type="file" name="image" maxlength="30"  autofocus required>
+                        <input class="input" id="cat" placeholder="Image" value="" type="file" name="image" maxlength="30"  autofocus required><img src=../System/Protocols/product/<?php echo $imatge ?> style="width:30px;height:30px;">
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" placeholder="Descripcio" value="" type="text" name="descripcio" maxlength="30"  autofocus required>
+                        <input class="input" id="cat" placeholder="Descripcio" value="<?php echo $descripcio ?>" type="text" name="descripcio" maxlength="30"  autofocus required>
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" placeholder="Caracteristics" value="" type="text" name="caracter" maxlength="30"  autofocus required>
+                        <input class="input" id="cat" placeholder="Caracteristics" value="<?php echo $caracter ?>" type="text" name="caracter" maxlength="30"  autofocus required>
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" placeholder="Preu" value="" type="text" name="preu" maxlength="30"  autofocus required>
+                        <input class="input" id="cat" placeholder="Preu" value="<?php echo $preu ?>" type="text" name="preu" maxlength="30"  autofocus required>
                     </div>
                 </div>
                 <div style="border:none;" class="user-info" >
                     <div class="input-1">
-                        <input id="logbutton" type="submit" value="Añadir">
+                        <input id="logbutton" type="submit" value="Modificar">
                     </div>
                 </div>
             </form>
