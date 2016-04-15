@@ -31,7 +31,7 @@ require_once('../System/Classes/Producte.php');
     <div class="user-content">
         <div class="user-title"><a href="../admin/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Product</h3></div>
         <div class="caixa caixa1">
-            <form method="POST" name="myForm" action="../System/Protocols/modPro.php?modPro=<?" enctype="multipart/form-data">
+            <form method="POST" name="myForm" action="../System/Protocols/modPro.php?modPro=<?php echo $id ?>" enctype="multipart/form-data">
                 <div class="user-info">
                     <div class="input-1">
                         <input class="input" id="cat" placeholder="Nom" value="<?php echo $nom ?>" type="text" name="nom" maxlength="30"  autofocus required>
@@ -46,7 +46,8 @@ require_once('../System/Classes/Producte.php');
                         </datalist>
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" placeholder="Image" value="" type="file" name="image" maxlength="30"  autofocus required><img src=../System/Protocols/product/<?php echo $imatge ?> style="width:30px;height:30px;">
+                       
+                        <input class="input" id="cat" placeholder="Image" value="<?php echo $imatge ?>" type="file" name="image" maxlength="30"  autofocus required><img src=../System/Protocols/product/<?php echo $imatge ?> style="width:30px;height:30px;">
                     </div>
                     <div class="input-1">
                         <input class="input" id="cat" placeholder="Descripcio" value="<?php echo $descripcio ?>" type="text" name="descripcio" maxlength="30"  autofocus required>
