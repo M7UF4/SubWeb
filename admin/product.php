@@ -3,10 +3,6 @@
 $title='Producte';
 $migas='#Inici|../index.php#AdminPanel|index.php#Producte';
 include "../Public/layouts/menu.php";
-require_once('../System/Classes/Categoria.php');
-$db = new connexio();
-$sql = "SELECT * FROM Categoria";
-$query = $db->query($sql);
 ?>
 
 <!-- Content body -->
@@ -23,12 +19,12 @@ $query = $db->query($sql);
                     </div>
                     <div class="input-1">
                         <input class="input" id="cat" list="categoryname" autocomplete="off" placeholder="Categoria" value="" type="text" name="cat" maxlength="30"  autofocus required>
-                        <datalist id="categoryname">
-                            <?php while($row = $query->fetch_assoc()) { ?>
-                                <option value="<?php echo $row['id_categoria']; ?>">
-                                <?php echo $row['tipus']; ?></option>
-                            <?php } ?>
-                        </datalist>
+                        
+                            <?php
+                                require_once('../System/Classes/Categoria.php');
+                                $Categoria = new Categoria();
+                                $Categoria->view_all();
+                            ?>
                     </div>
                     <div class="input-1">
                         <input class="input" id="cat" placeholder="Image" value="" type="file" name="image" maxlength="30"  autofocus required>
