@@ -28,13 +28,13 @@
             $db = new connexio();
             //var_dump($db);
             //echo '<br> <br>';
-            $sql = "SELECT * FROM Subhasta INNER JOIN Producte on Subhasta.id_producte=Producte.id_producte";
+            $sql = "SELECT * FROM Subhasta";
             $query = $db->query($sql);
             //var_dump($query);
             //echo '<br> <br>';
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"],$obj["link_img"],$obj["nom"]);
+                $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"]);
                 
                 //var_dump($Subhasta);
                 array_push($rtn, $Subhasta);
@@ -42,6 +42,7 @@
             $db->close();
             return $rtn;
         }
+        
         public function view_all_order_desc(){
             $db = new connexio();
             //var_dump($db);

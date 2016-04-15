@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/html/SubWeb/subhasta.php</file>
             <file>file:/var/www/html/SubWeb/admin/product.php</file>
-            <file>file:/var/www/html/SubWeb/admin/delPro.php</file>
-            <file>file:/var/www/html/SubWeb/System/Protocols/modPro.php</file>
-            <file>file:/var/www/html/SubWeb/admin/modPro.php</file>
-            <file>file:/var/www/html/SubWeb/System/Classes/Producte.php</file>
+            <file>file:/var/www/html/SubWeb/System/Classes/Subhasta.php</file>
+            <file>file:/var/www/html/SubWeb/admin/subhasta.php</file>
         </group>
     </open-files>
 </project-private>
