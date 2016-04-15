@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         
         <?php
-        $id_pro=3;
+        $id_pro=2;
         /*Connexio a la base de dades per carregar les subastes als divs*/
         require_once(__DIR__.'/System/Classes/Subhasta.php'); //Necessitem Subhasta
         $Subhasta = new Subhasta();

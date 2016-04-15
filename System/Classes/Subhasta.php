@@ -94,6 +94,21 @@
             $db->close();
             return $rtn;
         }
+        public function view_time($var){
+            $db = new connexio();
+            //var_dump($db);
+            //echo '<br> <br>';
+            $sql = "SELECT * from Subhasta where id_producte = $var";
+            $query = $db->query($sql);
+            //var_dump($query);
+            //echo '<br> <br>';
+            while($obj = $query->fetch_assoc()){
+                $Subhasta = new Subhasta($obj["temps"]);
+            }
+            $db->close();
+            //var_dump($Subhasta);
+            return $Subhasta;
+        }
         //CONSTRUCTORS
         function __construct(){
             $args = func_get_args();
@@ -108,6 +123,12 @@
             $this->id_producte = "";
             $this->num_licitacions = "";
             $this->temps = "";
+        }
+        function __construct1($a4){
+            $this->id_subhasta=0;
+            $this->id_producte = "";
+            $this->num_licitacions = "";
+            $this->temps = $a4;
         }
         function __construct3($a2, $a3, $a4){
             $this->id_subhasta=0;
