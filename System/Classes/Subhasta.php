@@ -16,7 +16,7 @@
         }
         public function mod(){
             $db = new connexio();
-            $db->query("UPDATE Subhasta SET id_producte='$this->id_producte', num_licitacions='$this->num_licitacions', temps='$this->temps' WHERE id_subhasta= '$this->id_subhasta'");
+            $db->query("UPDATE Subhasta SET id_producte='$this->id_producte', temps='$this->temps' WHERE id_subhasta= '$this->id_subhasta'");
             $db->close();
         }
         public function delete($var){
@@ -36,6 +36,23 @@
             while($obj = $query->fetch_assoc()){
                 $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"]);
                 
+                //var_dump($Subhasta);
+                array_push($rtn, $Subhasta);
+            }
+            $db->close();
+            return $rtn;
+        }
+        public function view_sub($id){
+            $db = new connexio();
+            //var_dump($db);
+            //echo '<br> <br>';
+            $sql = "SELECT * FROM Subhasta WHERE id_subhasta = '$id';";
+            $query = $db->query($sql);
+            //var_dump($query);
+            //echo '<br> <br>';
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"]);
                 //var_dump($Subhasta);
                 array_push($rtn, $Subhasta);
             }
