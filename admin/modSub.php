@@ -2,8 +2,7 @@
 <?php 
 $title='Subhasta';
 $migas='#Inici|../index.php#AdminPanel|index.php#Subhasta';
-include "../Public/layouts/menu.php";
-?>
+include "../Public/layouts/menu.php";?>
 
 <!-- Content body -->
 <!-- Body box -->
@@ -12,10 +11,27 @@ include "../Public/layouts/menu.php";
     <div class="user-content">
         <div class="user-title"><a href="../admin/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Subhasta</h3></div>
         <div class="caixa caixa1">
-            <form method="POST" name="myForm" action="../System/Protocols/Subhasta_Inserir.php">
+            <form method="POST" name="myForm" action="../System/Protocols/Subhasta_Mod.php">
                 <div class="user-info">
                     <div class="input-1">
                         <?php
+                        require_once('../System/Classes/Subhasta.php');
+                        $var = $_GET['modSub'];
+                        $Subhasta = new Subhasta();
+                        $Subhasta = $Subhasta->view_sub($var);
+                        foreach ($Subhasta as $row) {
+                            $id = $row->getId_Subhasta();
+                            $prod = $row->getId_Producte();
+                            $temps= $row->getTemps();
+                            //echo''.$id.' '.$prod.' '.$temps.'';
+                         }
+                        
+                        echo '<input class="input" id="cat" placeholder="idsub" value="'.$id.'" type="hidden" name="idsub" required>';
+                        ?>
+                    </div>
+                    <div class="input-1">
+                        <?php
+                            
                             require_once('../System/Classes/Producte.php');
                             $Producte = new Producte();
                             $rtn = $Producte->view_all();
@@ -23,18 +39,23 @@ include "../Public/layouts/menu.php";
                             echo '<select class="input" id="cat" value="" type="text" name="producte" autofocus required>';
                             foreach ($rtn as $row) {
                                 //var_dump($row);
-                                echo '<option value="'.$row->getId_Producte().'">'.$row->getNom().'</option>';
+                                if($row->getId_Producte() == $prod){
+                                    echo '<option selected="selected" value="'.$row->getId_Producte().'">'.$row->getNom().'</option>';
+                                }else{
+                                    echo '<option value="'.$row->getId_Producte().'">'.$row->getNom().'</option>';
+                                }
+                                
                             }
                             echo '</select>';
                         ?>
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" placeholder="time" value="" type="datetime-local" name="time"  step="1" required>
+                        <input class="input" id="cat" value="<?php echo $temps; ?>" type="datetime" name="time" step="1" required>
                     </div>
                 </div>
                 <div style="border:none;" class="user-info" >
                     <div class="input-1">
-                        <input id="logbutton" type="submit" value="Añadir">
+                        <input id="logbutton" type="submit" value="Modifica">
                     </div>
                 </div>
             </form>
@@ -57,7 +78,7 @@ include "../Public/layouts/menu.php";
                     $id_producte = $row->getId_Producte();
                     $licitacions = $row->getNum_Licitacions();
                     $temps = $row->getTemps();
-                        if ( $i%2 == 0){
+                    if ( $i%2 == 0){
                            echo '
                             <ul class="row1">
                                 <li class="cell cellcat">'.$id_subasta.'&nbsp;</li>
@@ -80,7 +101,6 @@ include "../Public/layouts/menu.php";
                             </ul>
                             '; 
                         }
-                        
                     $i++;
                 }
             ?>

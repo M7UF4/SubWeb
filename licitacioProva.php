@@ -10,16 +10,26 @@ and open the template in the editor.
         <title>Licitacions</title>
     </head>
     <body>
-        <form name="formulario" method="post" action="System/Protocols/Licitacio_apostar.php">
-            <p> INSERIR UNA LICITACIÓ </p>
-            id licitació: <input type="number" name="id_licitacio" value=""><br/> <br/>
-            id producte: <input type="number" name="id_producte" value=""><br/> <br/>
-            id user: <input type="number" name="id_user" value=""><br/> <br/>
-            aposta en credits: <input placeholder="Triskens" type="text" name="aposta" value="" onkeypress="return aceptNum(event)" onpaste="return false;"><br/> <br/>
-            <input value="Pujar" type="submit" />
-        </form>
+        
         <?php
-        // put your code here
+        $id_pro=3;
+        /*Connexio a la base de dades per carregar les subastes als divs*/
+        require_once(__DIR__.'/System/Classes/Subhasta.php'); //Necessitem Subhasta
+        $Subhasta = new Subhasta();
+        $Subhasta=$Subhasta->view_time($id_pro); //cambiar per id_subhasta
+        
+        $fecha = $Subhasta->getTemps();
+        
+        $segundos=strtotime($fecha) - strtotime('now');
+        $diferencia_dias=intval($segundos/60/60/24);
+        $segundos = $segundos - ($diferencia_dias*60*60*24);
+        $diferencia_horas=intval($segundos/60/60);
+        $segundos = $segundos - ($diferencia_horas*60*60);
+        $diferencia_minutos=intval($segundos/60);
+        $segundos = $segundos - ($diferencia_minutos*60);
+        
+        echo "La cantidad de tiempo entre la fecha ".$fecha." y hoy ".strtotime('now')."es de <b>".$diferencia_dias."</b> dies, horas ".$diferencia_horas.", minutos ".$diferencia_minutos.", segundos ".$segundos."";
+        
         ?>
     </body>
 </html>
