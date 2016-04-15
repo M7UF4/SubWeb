@@ -31,16 +31,18 @@ include "Public/layouts/menu.php";?>
                 foreach ($return as $row) {
                     $titol = $row->getNom();
                     $descripcio = $row->getDescripcio();
-                    $img = $row->getLink_img(); 
+                    $img = $row->getLink_img();
                 }
                     echo
                     '<a href="'.$id_Producte.'"><div class="columna-esquerra">
                     <div class="titol">'.$titol.'</div>
                     <div class="imatge">
-                        <img src="'.$img.'" height="100%">
+                        <img src="Public/img/productes/'.$img.'" height="100%">
                     </div>
-                    <p>'.$descripcio.'</p>1<br>
-                        '.$temps_restant.'
+                    <div class="descricpio">
+                        <p>'.$descripcio.'</p>
+                            '.$temps_restant.'
+                    </div>
                     </div></a>';
             }else{
                 $Producte2 = new Producte();
@@ -54,10 +56,12 @@ include "Public/layouts/menu.php";?>
                     '<a href="'.$id_Producte.'"><div class="columna-dreta">
                     <div class="titol">'.$titol.'</div>
                     <div class="imatge">
-                        <img src="'.$img.'" height="100%">
+                        <img src="Public/img/productes/'.$img.'" height="100%">
                     </div>
-                    <p>'.$descripcio.'</p>2<br>
-                        '.$temps_restant.'
+                    <div class="descricpio">
+                        <p>'.$descripcio.'</p>
+                            '.$temps_restant.'
+                    </div>
                     </div></a>';
             }
             $i++;
