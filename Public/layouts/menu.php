@@ -18,6 +18,7 @@
                 echo '<LINK REL=StyleSheet HREF="../Public/css/style.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/menu.css" TYPE="text/css" MEDIA=screen>';
                 echo '<LINK REL=StyleSheet HREF="../Public/css/panellAdmin.css" TYPE="text/css" MEDIA=screen>';
+                echo '<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />';
                 echo '<script src="../Public/jquery/jquery-1.12.0.min.js"></script>';
                 echo '<script src="../Public/jquery/jquery-ui.min.js"></script>';
                 echo '<link rel="shortcut icon" href="../favicon.ico">';

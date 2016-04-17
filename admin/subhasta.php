@@ -61,7 +61,7 @@ include "../Public/layouts/menu.php";
                            echo '
                             <ul class="row1">
                                 <li class="cell cellcat">'.$id_subasta.'&nbsp;</li>
-                                <li class="cell cellcat">'.$id_producte.'&nbsp;</li>
+                                <li class="cell cellcat"><a href=proDetail.php?idPro='.$id_producte.'>'.$id_producte.'</a>&nbsp;</li>
                                 <li class="cell cellcat">'.$licitacions.'&nbsp;</li>
                                 <li class="cell cellcat">'.$temps.'&nbsp;</li>
                                 <a class="cell celldel" href="modSub.php?modSub='.$id_subasta.'"><li><i class="fa fa-pencil" aria-hidden="true"></i></li></a><br>
