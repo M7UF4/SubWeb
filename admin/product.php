@@ -73,7 +73,7 @@ include "../Public/layouts/menu.php";
                         <ul class="row1">
                             <li class="cell cellid">'.$id.'&nbsp;</li>
                             <li class="cell cellcat">'.$nom.'&nbsp;</li>
-                            <li class="cell cellid"><img src=../System/Protocols/product/'.$imatge.' style="width:30px;height:30px;">&nbsp;</li>
+                            <li class="cell cellid"><a href="../Public/img/productes/'.$imatge.'"> <img src=../Public/img/productes/'.$imatge.' style="width:30px;height:30px;"></a>&nbsp;</li>
                             <li class="cell cellcat">'.$descripcio.'&nbsp;</li>
                             <li class="cell cellcat">'.$caracter.'&nbsp;</li>
                             <li class="cell cellcat">'.$preu.'&nbsp;</li>
