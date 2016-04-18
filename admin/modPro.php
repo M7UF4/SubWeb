@@ -47,7 +47,7 @@ require_once('../System/Classes/Producte.php');
                     </div>
                     <div class="input-1">
                        
-                        <input class="input" id="cat" placeholder="Image" value="<?php echo $imatge ?>" type="file" name="image" maxlength="30"  autofocus required><img src=../System/Protocols/product/<?php echo $imatge ?> style="width:30px;height:30px;">
+                        <input class="input" id="cat" placeholder="Image" value="<?php echo $imatge ?>" type="file" name="image" maxlength="30"  autofocus required><img src=../Public/img/productes/<?php echo $imatge ?> style="width:30px;height:30px;">
                     </div>
                     <div class="input-1">
                         <input class="input" id="cat" placeholder="Descripcio" value="<?php echo $descripcio ?>" type="text" name="descripcio" maxlength="30"  autofocus required>
@@ -93,7 +93,7 @@ require_once('../System/Classes/Producte.php');
                         <ul class="row1">
                             <li class="cell cellid">'.$id.'&nbsp;</li>
                             <li class="cell cellcat">'.$nom.'&nbsp;</li>
-                            <li class="cell cellid"><img src=../System/Protocols/product/'.$imatge.' style="width:30px;height:30px;">&nbsp;</li>
+                            <li class="cell cellid"><img src=../Public/img/productes/'.$imatge.' style="width:30px;height:30px;">&nbsp;</li>
                             <li class="cell cellcat">'.$descripcio.'&nbsp;</li>
                             <li class="cell cellcat">'.$caracter.'&nbsp;</li>
                             <li class="cell cellcat">'.$preu.'&nbsp;</li>

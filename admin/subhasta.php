@@ -44,7 +44,7 @@ include "../Public/layouts/menu.php";
                 <li class="cell cellcat celltop">Id subhasta</li>
                 <li class="cell cellcat celltop">Producte</li>
                 <li class="cell cellcat celltop">Licitacions</li>
-                <li class="cell cellcat celltop">Temps</li>
+                <li class="cell cellcat celltop">Data de tancament</li>
                 <a class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
             </ul>
             <?php
