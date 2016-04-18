@@ -62,10 +62,11 @@ include "../Public/layouts/menu.php";?>
         </div>
         <div class="caixa caixa2">
             <ul class="row">
-                <li class="cell cellcat celltop">Id subhasta</li>
-                <li class="cell cellcat celltop">Producte</li>
-                <li class="cell cellcat celltop">Licitacions</li>
-                <li class="cell cellcat celltop">Temps</li>
+                <li class="cell cellsubid celltop">Id subhasta</li>
+                <li class="cell cellproid celltop">Producte</li>
+                <li class="cell celllicit celltop">Licitacions</li>
+                <li class="cell celldata celltop">Data Limit</li>
+                <a class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
                 <a class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
             </ul>
             <?php
@@ -78,13 +79,13 @@ include "../Public/layouts/menu.php";?>
                     $id_producte = $row->getId_Producte();
                     $licitacions = $row->getNum_Licitacions();
                     $temps = $row->getTemps();
-                    if ( $i%2 == 0){
+                        if ( $i%2 == 0){
                            echo '
                             <ul class="row1">
-                                <li class="cell cellcat">'.$id_subasta.'&nbsp;</li>
-                                <li class="cell cellcat">'.$id_producte.'&nbsp;</li>
-                                <li class="cell cellcat">'.$licitacions.'&nbsp;</li>
-                                <li class="cell cellcat">'.$temps.'&nbsp;</li>
+                                <li class="cell cellsubid">'.$id_subasta.'&nbsp;</li>
+                                <li class="cell cellproid"><a href=proDetail.php?idPro='.$id_producte.'>'.$id_producte.'</a>&nbsp;</li>
+                                <li class="cell celllicit">'.$licitacions.'&nbsp;</li>
+                                <li class="cell celldata">'.$temps.'&nbsp;</li>
                                 <a class="cell celldel" href="modSub.php?modSub='.$id_subasta.'"><li><i class="fa fa-pencil" aria-hidden="true"></i></li></a><br>
                                 <a class="cell celldel" href="delSub.php?delSub='.$id_subasta.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
                             </ul>
@@ -92,15 +93,16 @@ include "../Public/layouts/menu.php";?>
                         }else{
                             echo '
                             <ul class="row2">
-                                <li class="cell cellcat">'.$id_subasta.'&nbsp;</li>
-                                <li class="cell cellcat">'.$id_producte.'&nbsp;</li>
-                                <li class="cell cellcat">'.$licitacions.'&nbsp;</li>
-                                <li class="cell cellcat">'.$temps.'&nbsp;</li>
+                                <li class="cell cellsubid">'.$id_subasta.'&nbsp;</li>
+                                <li class="cell cellproid"><a href=proDetail.php?idPro='.$id_producte.'>'.$id_producte.'</a>&nbsp;</li>
+                                <li class="cell celllicit">'.$licitacions.'&nbsp;</li>
+                                <li class="cell celldata">'.$temps.'&nbsp;</li>
                                 <a class="cell celldel" href="modSub.php?modSub='.$id_subasta.'"><li><i class="fa fa-pencil" aria-hidden="true"></i></li></a><br>
                                 <a class="cell celldel" href="delSub.php?delSub='.$id_subasta.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
                             </ul>
                             '; 
                         }
+                        
                     $i++;
                 }
             ?>

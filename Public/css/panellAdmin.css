@@ -281,14 +281,14 @@ body{
     padding: 3px;
     display: block;
     background-color: whitesmoke;
-    overflow: hidden;
+    overflow: auto;
 }
 .row2{
     width: 100%;
     padding: 3px;
     display: block;
     background-color: white;
-    overflow: hidden;
+    overflow: auto;
 }
 .cell{
     float: left;
@@ -302,6 +302,50 @@ a.cell{
     background-color: #a1a1a1;
     width: 25px;
     text-align: center;
+}
+.cellsubid{
+    width: 120px;
+    text-align: left;
+    overflow: hidden;
+}
+.celldata{
+    width: 220px;
+    text-align: left;
+    overflow: hidden;
+}
+.celllicit{
+    width: 120px;
+    text-align: left;
+    overflow: hidden;
+}
+.cellproid{
+    width: 120px;
+    text-align: left;
+    overflow: hidden;
+}
+.cellpvp{
+    width: 50px;
+    text-align: left;
+    overflow: hidden;
+}
+.cellcar{
+    width: 200px;
+    text-align: left;
+    overflow: hidden;
+}
+.celldes{
+    width: 200px;
+    text-align: left;
+    overflow: hidden;
+}
+.cellimg{
+    width: 70px;
+    text-align: center;
+}
+.cellnom{
+    width: 120px;
+    text-align: left;
+    overflow: hidden;
 }
 .cellcat{
     width: 200px;

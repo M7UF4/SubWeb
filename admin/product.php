@@ -54,12 +54,13 @@ include "../Public/layouts/menu.php";
         <div class="caixa caixa2">
             <ul class="row">
                 <li class="cell cellid celltop">Id</li>
-                <li class="cell cellcat celltop">Nom</li>
-                <li class="cell cellid celltop">Imatge</li>
-                <li class="cell cellcat celltop">Descripcio</li>
-                <li class="cell cellcat celltop">Caracteristics</li>
-                <li class="cell cellid celltop">Preu mercat</li>
-                <a class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
+                <li class="cell cellnom celltop">Nom</li>
+                <li class="cell cellimg celltop">Imatge</li>
+                <li class="cell celldes celltop">Descripcio</li>
+                <li class="cell cellcar celltop">Caracteristics</li>
+                <li class="cell cellpvp celltop">Pvp</li>
+                <a  class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
+                <a  class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
             </ul>
             <?php
                 require_once('../System/Classes/Producte.php');
@@ -73,19 +74,33 @@ include "../Public/layouts/menu.php";
                     $descripcio = $row->getDescripcio();
                     $caracter = $row->getCaracteristiques();
                     $preu = $row->getPreu_Mercat();
-                    
-                        echo '
+                        if ( $i%2 == 0){
+                           echo '
                         <ul class="row1">
                             <li class="cell cellid">'.$id.'&nbsp;</li>
-                            <li class="cell cellcat">'.$nom.'&nbsp;</li>
-                            <li class="cell cellid"><a href="../Public/img/productes/'.$imatge.'"> <img src=../Public/img/productes/'.$imatge.' style="width:30px;height:30px;"></a>&nbsp;</li>
-                            <li class="cell cellcat">'.$descripcio.'&nbsp;</li>
-                            <li class="cell cellcat">'.$caracter.'&nbsp;</li>
-                            <li class="cell cellcat">'.$preu.'&nbsp;</li>
+                            <li class="cell cellnom">'.$nom.'&nbsp;</li>
+                            <li class="cell cellimg"><a href="../Public/img/productes/'.$imatge.'"> <img src=../Public/img/productes/'.$imatge.' style="width:30px;height:30px;"></a>&nbsp;</li>
+                            <li class="cell celldes">'.$descripcio.'&nbsp;</li>
+                            <li class="cell cellcar">'.$caracter.'&nbsp;</li>
+                            <li class="cell cellpvp">'.$preu.'&nbsp;</li>
+                            <a class="cell celldel" href="modPro.php?modPro='.$id.'"><li><i class="fa fa-pencil" aria-hidden="true"></i></li></a><br>
+                            <a class="cell celldel" href="delPro.php?delPro='.$id.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
+                        </ul>
+                        '; 
+                        }else{
+                            echo '
+                        <ul class="row2">
+                            <li class="cell cellid">'.$id.'&nbsp;</li>
+                            <li class="cell cellnom">'.$nom.'&nbsp;</li>
+                            <li class="cell cellimg"><a href="../Public/img/productes/'.$imatge.'"> <img src=../Public/img/productes/'.$imatge.' style="width:30px;height:30px;"></a>&nbsp;</li>
+                            <li class="cell celldes">'.$descripcio.'&nbsp;</li>
+                            <li class="cell cellcar">'.$caracter.'&nbsp;</li>
+                            <li class="cell cellpvp">'.$preu.'&nbsp;</li>
                             <a class="cell celldel" href="modPro.php?modPro='.$id.'"><li><i class="fa fa-pencil" aria-hidden="true"></i></li></a><br>
                             <a class="cell celldel" href="delPro.php?delPro='.$id.'"><li><i class="fa fa-minus" aria-hidden="true"></i></li></a>
                         </ul>
                         ';
+                        }
                     $i++;
                 }
             ?>
