@@ -14,9 +14,15 @@
                     . "VALUES ('$this->id_producte', '$this->num_licitacions', '$this->temps')");
             $db->close();
         }
+        
         public function mod(){
             $db = new connexio();
             $db->query("UPDATE Subhasta SET id_producte='$this->id_producte', temps='$this->temps' WHERE id_subhasta= '$this->id_subhasta'");
+            $db->close();
+        }
+        public function mod2($idsub){
+            $db = new connexio();
+            $db->query("UPDATE Subhasta SET num_licitacions='$this->num_licitacions' WHERE id_subhasta='$idsub'");
             $db->close();
         }
         public function delete($var){
@@ -103,12 +109,13 @@
             //var_dump($query);
             //echo '<br> <br>';
             while($obj = $query->fetch_assoc()){
-                $Subhasta = new Subhasta($obj["temps"]);
+                $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"]);
             }
             $db->close();
             //var_dump($Subhasta);
             return $Subhasta;
         }
+        
         //CONSTRUCTORS
         function __construct(){
             $args = func_get_args();
@@ -124,10 +131,16 @@
             $this->num_licitacions = "";
             $this->temps = "";
         }
-        function __construct1($a4){
+        function __construct1($a3){
             $this->id_subhasta=0;
             $this->id_producte = "";
-            $this->num_licitacions = "";
+            $this->num_licitacions = $a3;
+            $this->temps = "";
+        }
+        function __construct2($a3, $a4){
+            $this->id_subhasta=0;
+            $this->id_producte = "";
+            $this->num_licitacions = $a3;
             $this->temps = $a4;
         }
         function __construct3($a2, $a3, $a4){

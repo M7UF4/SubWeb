@@ -18,19 +18,24 @@ include "../Public/layouts/menu.php";
                         <input class="input" id="cat" placeholder="Nom" value="" type="text" name="nom" maxlength="30"  autofocus required>
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" list="categoryname" autocomplete="off" placeholder="Categoria" value="" type="text" name="cat" maxlength="30"  autofocus required>
-                        
-                            <?php
-                                require_once('../System/Classes/Categoria.php');
-                                $Categoria = new Categoria();
-                                $Categoria->view_all();
-                            ?>
+                        <?php
+                            require_once('../System/Classes/Categoria.php');
+                            $Categoria = new Categoria();
+                            $rtn = $Categoria->view_all();
+                            //var_dump($rtn);
+                            echo '<select class="input" id="cat" value="" type="text" name="cat" required>';
+                            foreach ($rtn as $row) {
+                                //var_dump($row);
+                                echo '<option value="'.$row->getId_Categoria().'">'.$row->getTipus().'</option>';
+                            }
+                            echo '</select>';
+                        ?>
                     </div>
                     <div class="input-1">
                         <input class="input" id="cat" placeholder="Image" value="" type="file" name="image" maxlength="30"  autofocus required>
                     </div>
                     <div class="input-1">
-                        <input class="input" id="cat" placeholder="Descripcio" value="" type="text" name="descripcio" maxlength="30"  autofocus required>
+                        <input class="input" id="cat" placeholder="Descripcio" value="" type="text" name="desc" maxlength="30"  autofocus required>
                     </div>
                     <div class="input-1">
                         <input class="input" id="cat" placeholder="Caracteristics" value="" type="text" name="caracter" maxlength="30"  autofocus required>
