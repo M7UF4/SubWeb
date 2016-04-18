@@ -55,7 +55,8 @@
             echo '<div class="header-nav">';
                 echo'<ul class="nav">';
                     if (strpos($self,"admin/")) {
-                        echo'<li><a href="../index.php">Inici</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="../index.php"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Inici</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="../subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Tenda</a> <span class="flecha">&#9660</span></li>';
                         //echo'<li><a href="../../phpmyadmin/">phpmyadmin</a> <span class="flecha">&#9660</span></li>';
                         /*
                          * Resta de Menus aqui!!
@@ -64,7 +65,7 @@
                             header('Location: ../login.php');
                         }else{
                             if($value['id_tipus'] == 1){   
-                                echo'<li style="float:right;"><a>Hola, ';
+                                echo'<li style="float:right;"><a><i class="fa fa-user" aria-hidden="true">&nbsp;</i>Hola, ';
                                 echo $value['user'];
                                 echo'<span class="flecha">&#9660</span></a>';
                                     echo'<ul class="panel-ul">';
@@ -74,10 +75,10 @@
                                             echo'</div>';
                                             echo'<div class="panel-links">';
                                                 if($value['id_tipus'] == 1){
-                                                    echo'<a href="../admin/">AdminPanel</a>';
+                                                    echo'<a href="../admin/"><i class="fa fa-wrench" aria-hidden="true">&nbsp;</i>AdminPanel</a>';
                                                 }
-                                                echo'<a href="../user/"> Configuració</a>';
-                                                echo'<a href="../logout.php">Sortir</a>';
+                                                echo'<a href="../user/"><i class="fa fa-cog" aria-hidden="true">&nbsp;</i>Configuració</a>';
+                                                echo'<a href="../logout.php"><i class="fa fa-sign-out" aria-hidden="true">&nbsp;</i>Sortir</a>';
                                             echo'</div>';
                                         echo'</div>';
                                     echo'</ul>';
@@ -87,7 +88,8 @@
                             }
                         }
                     }else if (strpos($self,"user/")) {
-                        echo'<li><a href="../index.php">Inici</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="../index.php"><i class="fa fa-home" aria-hidden="true">&nbsp;</i> Inici</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="../subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Tenda</a> <span class="flecha">&#9660</span></li>';
                         //echo'<li><a href="../../phpmyadmin/">phpmyadmin</a> <span class="flecha">&#9660</span></li>';
                         /*
                          * Resta de Menus aqui!!
@@ -95,7 +97,7 @@
                         if(!isset($_SESSION['usuari'])){
                             header('Location: ../login.php');
                         }else{
-                            echo'<li style="float:right;"><a>Hola, ';
+                            echo'<li style="float:right;"><a><i class="fa fa-user" aria-hidden="true">&nbsp;</i>Hola, ';
                             echo $value['user'];
                             echo'<span class="flecha">&#9660</span></a>';
                                 echo'<ul class="panel-ul">';
@@ -105,17 +107,18 @@
                                         echo'</div>';
                                         echo'<div class="panel-links">';
                                             if($value['id_tipus'] == 1){
-                                                echo'<a href="../admin/">AdminPanel</a>';
+                                                echo'<a href="../admin/"><i class="fa fa-wrench" aria-hidden="true">&nbsp;</i>AdminPanel</a>';
                                             }
-                                            echo'<a href="../user/"> Configuració</a>';
-                                            echo'<a href="../logout.php">Sortir</a>';
+                                            echo'<a href="../user/"><i class="fa fa-cog" aria-hidden="true">&nbsp;</i>Configuració</a>';
+                                            echo'<a href="../logout.php"><i class="fa fa-sign-out" aria-hidden="true">&nbsp;</i>Sortir</a>';
                                         echo'</div>';
                                     echo'</div>';
                                 echo'</ul>';
                             echo'</li>';
                         }
                     }else{
-                        echo'<li><a href="index.php">Inici</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="index.php"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Inici</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Tenda</a> <span class="flecha">&#9660</span></li>';
                         //echo'<li><a href="../phpmyadmin/">phpmyadmin</a> <span class="flecha">&#9660</span></li>';
                         /*
                          * Resta de Menus aqui!!
@@ -124,7 +127,7 @@
                             echo'<li style="float:right;"><a href="login.php">Login <span class="flecha">&#9660</span></a></li>';
                             echo'<li style="float:right;"><a href="signup.php">Signup <span class="flecha">&#9660</span></a></li>';
                         }else{
-                            echo'<li style="float:right;"><a>Hola, ';
+                            echo'<li style="float:right;"><a><i class="fa fa-user" aria-hidden="true">&nbsp;</i>Hola, ';
                             echo $value['user'];
                             echo'<span class="flecha">&#9660</span></a>';
                                 echo'<ul class="panel-ul">';
@@ -134,10 +137,10 @@
                                         echo'</div>';
                                         echo'<div class="panel-links">';
                                             if($value['id_tipus'] == 1){
-                                                echo'<a href="admin/">AdminPanel</a>';
+                                                echo'<a href="admin/"><i class="fa fa-wrench" aria-hidden="true">&nbsp;</i>AdminPanel</a>';
                                             }
-                                            echo'<a href="user/"> Configuració</a>';
-                                            echo'<a href="logout.php">Sortir</a>';
+                                            echo'<a href="user/"><i class="fa fa-cog" aria-hidden="true">&nbsp;</i>Configuració</a>';
+                                            echo'<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true">&nbsp;</i>Sortir</a>';
                                         echo'</div>';
                                     echo'</div>';
                                 echo'</ul>';
