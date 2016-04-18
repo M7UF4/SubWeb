@@ -140,11 +140,24 @@ function validateForm() {
         <div class="input-1">
             <input id="logbutton" type="submit" value="Registra't">
         </div>
-        <p>
-            Al registrar-te, acceptes les <a class="link" href="#">Condicions del Servei</a> i la <a class="link" href="#">Política de Privacitat</a>, 
-            incluïnt el <a class="link" href="#">Ús de Cookies</a>.
-            <!-- Altres podran trobar-te per correu electònic o per número de telèfon quan sigui proporcionat.-->
-        </p>
+        <div class="input-1">
+            <div id="infomsg">
+                <p>
+                La contrasenya i nom de usuari son dos dades que et permeten conectarte a  la nostra página i serveis. Aquestes dades han de ser secretes..<br>
+                Et recomanem que no uses la mateixa contrasenya para la teva compta de Subweb que per al teu correu electronic.<br>
+                Una contrasenya segura no ha de ser facil d'adivinar.<br><br>
+                </p>
+                <strong><i style='color:red;' class="fa fa-exclamation-triangle" aria-hidden="true"></i> Ha de tenir un minim de sis caracters amb almenys un número, una lletra majuscula i una minuscula.</strong>
+            </div>
+        </div><br>
+        <div class="input-1">
+            <div id="alertmsg">
+                Al registrar-te, acceptes les <a class="link" href="#">Condicions del Servei</a> i la <a class="link" href="#">Política de Privacitat</a>, 
+                incluïnt el <a class="link" href="#">Ús de Cookies</a>.
+
+            </div>
+        </div>
+        
     </div>
 </form>
 

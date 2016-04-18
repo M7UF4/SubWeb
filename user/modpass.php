@@ -26,6 +26,11 @@ include "../Public/layouts/menu.php";?>
                 </div>
                 
             </div>
+            <div class="user-info input-1">
+                <div id="infomsg">
+                    <i style='color:red;' class="fa fa-exclamation-triangle" aria-hidden="true"></i> Ha de tenir un minim de sis caracters amb almenys un número, una lletra majuscula i una minuscula.
+                </div>
+            </div>
             <div style="border:none;" class="user-info" >
                 <div class="input-1">
                     <input id="logbutton" type="submit" value="Envia">
