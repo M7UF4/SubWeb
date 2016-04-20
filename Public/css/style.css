@@ -99,3 +99,65 @@ form{
     background-color: #333;
     padding: 5px;
 }
+.content-title{
+    position: fixed;
+    top: 24.2;
+    bottom:0;
+    left:0;
+    right: 0;
+    background-color: rgba(22,22,22,0.8);
+    overflow: auto;
+}
+.inner_cover{
+    padding-top: 65px;
+    width: 80%;
+    margin: auto;
+    color: whitesmoke;
+}
+.cover-heading{
+    font-family: 'Rokkitt', serif;
+    text-align: center;
+    text-shadow: 0 1px 1px #FB6e18;
+    margin-bottom: -6px;
+    color: #FB5D18;
+}
+.lead{
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 18px;
+    text-align: center;
+}
+.btn{
+    font-family: 'Rokkitt', serif;
+    font-weight: 400;
+    background-color: #FB5D18;
+    font-size: 19px;
+    border-radius: 0px;
+    text-shadow: 0 1px 1px #333;
+    transition: all 0.3s ease;
+    color: white;
+    padding: 10px 15px 10px 15px;
+}
+.btn:focus{
+    font-family: 'Rokkitt', serif;
+    font-weight: 400;
+    background-color:  #FB6e18;
+    font-size: 19px;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    font-family: 'Rokkitt', serif;
+    font-weight: 400;
+    background-color:  #FB6e18;
+    font-size: 19px;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+}
+.inner{
+    position: relative;
+    top: 400;
+    padding-bottom: 40px;
+}
+.lead > #linkg1{
+    color: #FB5D18;
+}

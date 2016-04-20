@@ -8,7 +8,7 @@ include "Public/layouts/menu.php";?>
         background-color: rgba(0,0,0,0);
     }
     html{
-        background-color: #DDF45B;
+        background-color: #31231E;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -36,26 +36,32 @@ include "Public/layouts/menu.php";?>
             <div class="content-slider">
                 <div id="slider"></div>
             </div>
-        </div>
-        <div class="content-slider">
-		
-        </div>
-        <div class="content-zone">
+            <div class="inner_cover">
+                <h1 class="cover-heading">SubWeb La teva web de Subhastes Online.</h1>
+                <p class="lead">SubWeb es una pagina per a comprar productes al millor preu. Es simple ... Busca un producte que t'agradi i aposta el que vulguis, qui sap .. potser ets el proxim guanyador d'una ps4 per no mes de 20€.</p>
+                <p class="lead">
+                  <a href="subhasta.php" class="btn">Comensa ja ...</a>
+                </p>
+                <div class="inner">
+                    <p class="lead">Subweb Online by <a id='linkg1' href="#">@Grup1</a>.</p>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>
 <script>
 $(document).ready(function(){
     var i = 0;
-    var url = "https://api.flickr.com/services/feeds/photos_public.gne?id=90380536@N06&format=json&jsoncallback=?";
+    var url = "https://api.flickr.com/services/feeds/photos_public.gne?id=90380536@N06&format=json&per_page=20&jsoncallback=?";
     $.getJSON(url, function(data){
         var html = "";
         $.each(data.items, function(i, item){
-            html += "<img src=" + item.media.m + ">";
+            html += "<img src=" + item.media.m.replace('_m', '_b') + ">";
         });
         $("#slider").html(html);
         cambiarSlider();
-        var control = setInterval(cambiarSlider, 6000);
+        var control = setInterval(cambiarSlider, 8000);
     });
     function cambiarSlider(){
             i++;
@@ -67,6 +73,7 @@ $(document).ready(function(){
             //$("#slider img").hide();
             var src = $("#slider img").eq(i).attr('src');
             $('html').css('backgroundImage','url('+src+')');
+            $('html').css('transition','background-image 0.8s ease-in-out');
             //$("#slider img").eq(i).fadeIn(2000);
     }
 });
