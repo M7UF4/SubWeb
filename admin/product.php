@@ -56,9 +56,9 @@ include "../Public/layouts/menu.php";
                 <li class="cell cellid celltop">Id</li>
                 <li class="cell cellnom celltop">Nom</li>
                 <li class="cell cellimg celltop">Imatge</li>
-                <li class="cell celldes celltop">Descripcio</li>
+                <li class="cell celldes celltop">Descripció</li>
                 <li class="cell cellcar celltop">Caracteristics</li>
-                <li class="cell cellpvp celltop">Pvp</li>
+                <li class="cell cellpvp celltop">PVP</li>
                 <a  class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
                 <a  class="cell celldel celltop" href="#"><li><strong>&nbsp;</strong></li></a>
             </ul>

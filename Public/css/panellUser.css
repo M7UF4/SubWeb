@@ -253,3 +253,42 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+.detNom{
+    width:900px;
+    margin:auto;
+    background-color: red;
+    text-align:center;
+}
+
+.row1{
+    width: 900px;
+    margin:auto;
+    display: block;
+    background-color: whitesmoke;
+    overflow: auto;
+}
+
+.row1 li{
+    display:inline;
+    list-style-type: none;
+    padding-right: 20px;
+    float: left;
+}
+
+.apostes{
+    width:900px;
+    margin:auto;
+    background-color: whitesmoke;
+}
+
+.apostes_guanyat{
+    width:900px;
+    margin:auto;
+    background-color: white;
+}
+
+.apostes_perdut{
+    width:900px;
+    margin:auto;
+    background-color: whitesmoke;
+}

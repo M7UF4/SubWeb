@@ -45,12 +45,12 @@ INSERT INTO `Categoria` (`id_categoria`, `tipus`) VALUES
 
 CREATE TABLE IF NOT EXISTS `Licitacio` (
   `id_usuari` int(10) NOT NULL,
-  `id_producte` int(10) NOT NULL,
+  `id_subhasta` int(10) NOT NULL,
   `valor` int(10) NOT NULL,
   `id_licitacio` int(255) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_licitacio`),
   KEY `id_usuari` (`id_usuari`),
-  KEY `id_producte` (`id_producte`)
+  KEY `id_subhasta` (`id_subhasta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -155,7 +155,7 @@ INSERT INTO `Usuari` (`id_usuari`, `saldo`, `user`, `email`, `password`, `nom`, 
 --
 ALTER TABLE `Licitacio`
   ADD CONSTRAINT `Licitacio_ibfk_1` FOREIGN KEY (`id_usuari`) REFERENCES `Usuari` (`id_usuari`),
-  ADD CONSTRAINT `Licitacio_ibfk_2` FOREIGN KEY (`id_producte`) REFERENCES `Producte` (`id_producte`);
+  ADD CONSTRAINT `Licitacio_ibfk_2` FOREIGN KEY (`id_subhasta`) REFERENCES `Subhasta` (`id_subhasta`);
 
 --
 -- Constraints for table `Pagament`

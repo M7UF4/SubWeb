@@ -50,10 +50,10 @@ include "../Public/layouts/menu.php";
                             <div class="detNom"><h1>'.$nom.'</h1></div>
                         <div class="caixa3">
                         <ul class="row1">
-                            <li class="cell cellimg"><img src=../System/Protocols/product/'.$imatge.' style="width:300px;height:300px;">&nbsp;
+                            <li class="cell cellimg"><img src=../Public/img/productes/'.$imatge.' style="width:300px;height:300px;">&nbsp;
                                 <br>licitacions totat: '.$licitacions.'
                             </li>
-                            <br><li class="cell cellpreu"><b>PVP</b>: '.$preu.' $&nbsp;</li><li class="cell cellpreu"><b>Tiempo quedan: </b>Acabat&nbsp;</li><br><br>
+                            <br><li class="cell cellpreu"><b>PVP</b>: '.$preu.' $&nbsp;</li><li class="cell cellpreu2"><b>Tiempo quedan: </b>Acabat&nbsp;</li><br><br>
                             <li class="cell celldesc"><b>Descripció</b>: '.$descripcio.'&nbsp;</li><br><br>
                             <li class="cell celldesc"><b>Caracteristiques</b>: '.$caracter.'&nbsp;</li><br><br>
                             </ul>
@@ -65,14 +65,14 @@ include "../Public/layouts/menu.php";
                             <div class="detNom"><h1>'.$nom.'</h1></div>
                         <div class="caixa3">
                         <ul class="row1">
-                            <li class="cell cellimg"><img src=../System/Protocols/product/'.$imatge.' style="width:300px;height:300px;">&nbsp;
+                            <li class="cell cellimg"><img src=../Public/img/productes/'.$imatge.' style="width:300px;height:300px;">&nbsp;
                                 <br>licitacions totat: '.$licitacions.'
                             </li>
-                            <br><li class="cell cellpreu"><b>PVP</b>: '.$preu.' $&nbsp;</li><li class="cell cellpreu"><b>Tiempo quedan: </b>('.
-                                
-                                $diferencia_dias.' Dies) '.$diferencia_horas .$diferencia_minutos. $segundos.'&nbsp;</li><br><br>
+                            <br><li class="cell cellpreu"><b>PVP</b>: '.$preu.' $&nbsp;</li><br><br>
                             <li class="cell celldesc"><b>Descripció</b>: '.$descripcio.'&nbsp;</li><br><br>
                             <li class="cell celldesc"><b>Caracteristiques</b>: '.$caracter.'&nbsp;</li><br><br>
+                            <li class="cell cellpreu"><b>Tiempo quedan: </b>('.
+                                $diferencia_dias.' Dies) '.$diferencia_horas.':' .$diferencia_minutos.':'. $segundos.'&nbsp;</li>
                             </ul>
                         ';
                     $i++;

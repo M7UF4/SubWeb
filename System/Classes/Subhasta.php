@@ -22,7 +22,7 @@
         }
         public function mod2($idsub){
             $db = new connexio();
-            $db->query("UPDATE Subhasta SET num_licitacions='$this->num_licitacions' WHERE id_subhasta='$idsub'");
+            $db->query("UPDATE Subhasta SET num_licitacions='$this->num_licitacions', temps='$this->temps' WHERE id_subhasta='$idsub'");
             $db->close();
         }
         public function delete($var){

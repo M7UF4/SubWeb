@@ -38,6 +38,21 @@
             $db->close();
             return $rtn;
         }
+        
+        public function view_lici($idUsr){
+            $db = new connexio();
+            $sql = "SELECT * FROM Licitacio where id_usuari='$idUsr'";
+            $query = $db->query($sql);
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                $Licitacio = new Licitacio($obj["id_usuari"],$obj["id_subhasta"],$obj["valor"],$obj["id_licitacio"]);
+                //var_dump($Licitacio);
+                array_push($rtn, $Licitacio);
+            }
+            $db->close();
+            return $rtn;
+        }
+        
         //CONSTRUCTORS
         function __construct(){
             $args = func_get_args();
