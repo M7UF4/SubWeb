@@ -45,7 +45,6 @@ include "Public/layouts/menu.php";
                         <ul class="row1">
                             <li class="cellimg cell"><img src=Public/img/productes/'.$imatge.'></li>
                             <li class="celllic cell">Licitacions totals: '.$licitacions.'</li>
-                            <li class="cellbut cell"> <b> Pujar</b> </li>
                             <li class="celltitle cell"><b>PVP</b></li>
                                 <li class="cellpvp cell">'.$preu.'</li>
                             <li class="celltitle cell"><b>Descripció</b></li>
@@ -65,7 +64,7 @@ include "Public/layouts/menu.php";
                         <ul class="row1">
                             <li class="cellimg cell"><img src=Public/img/productes/'.$imatge.'></li>
                             <li class="celllic cell">Licitacions totals: '.$licitacions.'</li>
-                            <li class="cellbut cell"> <b> Pujar</b> </li>
+                            <li id="start" class="cellbut cell"> Pujar </li>
                             <li class="celltitle cell"><b>PVP</b></li>
                                 <li class="cellpvp cell">'.$preu.'</li>
                             <li class="celltitle cell"><b>Descripció</b></li>
@@ -77,22 +76,22 @@ include "Public/layouts/menu.php";
                         </ul>
                     </div>
                     
-                    <div class="panpuja" style="display:none;">
-                        <form method="post" action="System/Protocols/addpuja.php">
+                    <div class="panpuja" id="panpujaform" style="display:none;">
+                        <form class="panpuja2" method="post" action="System/Protocols/addpuja.php">
                             <div class="input-1">
-                                <input id="cat" class="input" type="text" name="preu" />
+                                <input id="cat" class="input" type="text" name="preu" required onkeypress="return aceptNum(event)" onpaste="return false;"/>
                             </div>
                             <div class="input-1">
-                                <input id="cat" class="input" type="hidden" name="idsub" value="'.$id_Subhasta.'"/>
+                                <input class="input" type="hidden" name="idsub" value="'.$id_Subhasta.'"/>
                             </div>
                             <div class="input-1">
-                                <input id="cat" class="input" type="hidden" name="idusr" value="'.$id_user.'" />
+                                <input class="input" type="hidden" name="idusr" value="'.$id_user.'" />
                             </div>
                             <div class="input-1">
-                                <input id="cat" class="input" type="hidden" name="temps" value="'.$temps.'" />
+                                <input class="input" type="hidden" name="temps" value="'.$temps.'" />
                             </div>
                             <div class="input-1">
-                                <input id="cat" class="input" type="hidden" name="licitacions" value="'.$licitacions.'"" />
+                                <input class="input" type="hidden" name="licitacions" value="'.$licitacions.'"" />
                             </div>
                             <div style="border:none;" class="user-info" >
                                 <div class="input-1">
@@ -106,8 +105,21 @@ include "Public/layouts/menu.php";
         }
     ?>
 </div>
-
-            
+<script>
+var nav4 = window.Event ? true : false;
+function aceptNum(evt){
+    var key = nav4 ? evt.which : evt.keyCode;
+    return (key <= 13 || (key>= 48 && key <= 57));
+}
+$(document).ready(function() {
+    $("#start").click(function() {
+        $("#panpujaform").show();
+    });
+    $("#logbutton").click(function() {
+        $("#panpujaform").hide();
+    });
+});
+</script>       
 <!-- Footer content box -->
 <?php include "Public/layouts/footer.php";?> 
 
