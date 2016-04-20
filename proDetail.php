@@ -8,18 +8,23 @@ include "Public/layouts/menu.php";
 <!-- Body box -->
 <div class="body-box">
     <?php
+            if(!isset($_SESSION['usuari'])){
+                header('Location: login.php');
+                //var_dump($value);
+            }
         require_once('System/Classes/Producte.php');
-        $id_pro = $_GET['idPro'];
-        $Producte=new Producte();
-        $rtn=$Producte->view_pro($id_pro);
+        $id_sub = $_GET['idSub'];
             require_once(__DIR__.'/System/Classes/Subhasta.php');
             $Subhasta = new Subhasta();
-            $Subhasta=$Subhasta->view_time($id_pro);
+            $Subhasta=$Subhasta->view_time($id_sub);
 
             $fecha = $Subhasta->getTemps();
             $licitacions = $Subhasta->getNum_Licitacions();
-            $id_Subhasta = $Subhasta->getId_Subhasta();
             $temps=$Subhasta->getTemps();
+            $id_Producte=$Subhasta->getId_Producte();
+            
+            $Producte=new Producte();
+            $rtn=$Producte->view_pro($id_Producte);
 
             $segundos=strtotime($fecha) - strtotime('now');
             $diferencia_dias=intval($segundos/60/60/24);
@@ -83,7 +88,7 @@ include "Public/layouts/menu.php";
                                 <input id="cat" class="input" type="text" name="preu" />
                             </div>
                             <div class="input-1">
-                                <input id="cat" class="input" type="hidden" name="idsub" value="'.$id_Subhasta.'"/>
+                                <input id="cat" class="input" type="hidden" name="idsub" value="'.$id_sub.'"/>
                             </div>
                             <div class="input-1">
                                 <input id="cat" class="input" type="hidden" name="idusr" value="'.$id_user.'" />

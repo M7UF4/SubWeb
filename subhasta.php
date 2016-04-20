@@ -34,7 +34,7 @@ include "Public/layouts/menu.php";?>
                     $img = $row->getLink_img();
                 }
                     echo
-                    '<a href="'.$id_Producte.'"><div class="columna-esquerra">
+                    '<a href=proDetail.php?idSub='.$id_Subasta.'><div class="columna-esquerra">
                     <div class="titol">'.$titol.'</div>
                     <div class="imatge">
                         <img src="Public/img/productes/'.$img.'" height="100%">
@@ -53,7 +53,7 @@ include "Public/layouts/menu.php";?>
                     $img = $row->getLink_img(); 
                 }
                     echo
-                    '<a href="'.$id_Producte.'"><div class="columna-dreta">
+                    '<a href=proDetail.php?idSub='.$id_Subasta.'><div class="columna-dreta">
                     <div class="titol">'.$titol.'</div>
                     <div class="imatge">
                         <img src="Public/img/productes/'.$img.'" height="100%">

@@ -292,3 +292,25 @@ body{
     margin:auto;
     background-color: whitesmoke;
 }
+
+.row{
+    background-color:#A1A1A1;
+    width:500px;
+    margin:auto;
+}
+
+.row li{
+    display:inline;
+}
+
+.prolit{
+    margin-left: 125px;
+    color:black;
+    line-height: 35px;
+}
+
+.list{
+    background-color: white;
+    color:black;
+    line-height: 35px;
+}
