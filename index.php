@@ -15,6 +15,15 @@ include "Public/layouts/menu.php";?>
         background-size: cover;
         
     }
+.content-title{
+    position: fixed;
+    top: 24.2;
+    bottom:0;
+    left:0;
+    right: 0;
+    background-color: rgba(22,22,22,0.8);
+    overflow: auto;
+}
 .content-slider{
     background-color:rgba(98,93,106,0.8);
     padding: 0;

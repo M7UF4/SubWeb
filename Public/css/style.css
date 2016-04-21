@@ -99,15 +99,7 @@ form{
     background-color: #333;
     padding: 5px;
 }
-.content-title{
-    position: fixed;
-    top: 24.2;
-    bottom:0;
-    left:0;
-    right: 0;
-    background-color: rgba(22,22,22,0.8);
-    overflow: auto;
-}
+
 .inner_cover{
     padding-top: 65px;
     width: 80%;
