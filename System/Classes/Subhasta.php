@@ -6,6 +6,7 @@
         private $id_producte;
         private $num_licitacions;
         private $temps;
+        private $completada;
         
         //METODES
         public function add(){
@@ -115,6 +116,24 @@
             //var_dump($Subhasta);
             return $Subhasta;
         }
+        public function subhastes_acabades(){
+            $db = new connexio();
+            //var_dump($db);
+            //echo '<br> <br>';
+            $sql = "SELECT * FROM `Subhasta` WHERE ((`temps` - CURRENT_TIMESTAMP)<0) AND completada = 0;";
+            $query = $db->query($sql);
+            //var_dump($query);
+            //echo '<br> <br>';
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                $Subhasta = new Subhasta($obj["id_subhasta"],$obj["id_producte"],$obj["num_licitacions"],$obj["temps"],$obj["completada"]);
+                
+                //var_dump($Subhasta);
+                array_push($rtn, $Subhasta);
+            }
+            $db->close();
+            return $rtn;
+        }
         
         //CONSTRUCTORS
         function __construct(){
@@ -154,6 +173,13 @@
             $this->id_producte = $a2;
             $this->num_licitacions = $a3;
             $this->temps = $a4;
+        }
+        function __construct5($a1, $a2, $a3, $a4, $a5){
+            $this->id_subhasta=$a1;
+            $this->id_producte = $a2;
+            $this->num_licitacions = $a3;
+            $this->temps = $a4;
+            $this->completada = $a5;
         }
            
         //METODES SET

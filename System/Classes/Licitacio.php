@@ -52,6 +52,31 @@
             $db->close();
             return $rtn;
         }
+        function verificar_guanyador($id_subhasta){ 
+            $db = new connexio();
+            $sql = "SELECT * , COUNT( valor ) FROM Licitacio WHERE id_subasta =$id_subhasta GROUP BY valor ORDER BY count(valor) asc, valor asc";
+            $query = $db->query($sql);
+            echo '<br><br>';
+            $rtn = $query->fetch_assoc();
+            $this->id_licitacio = $rtn['id_licitacio'];
+            $this->id_usuari=$rtn['id_usuari'];
+            $this->id_subasta = $rtn['id_producte'];
+            $this->valor = $rtn['valor'];
+            $db->close();
+        }
+        function averiguar_usuari($id_subhasta){ 
+            $db = new connexio();
+            $sql = "SELECT * FROM Licitacio WHERE id_subhasta =$id_subhasta";
+            $query = $db->query($sql);
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                $Licitacio = new Licitacio($obj["id_usuari"],$obj["valor"]);
+                //var_dump($Licitacio);
+                array_push($rtn, $Licitacio);
+            }
+            $db->close();
+            return $rtn;
+        }
         
         //CONSTRUCTORS
         function __construct(){
@@ -65,19 +90,25 @@
         function __construct0(){
             $this->id_licitacio = 0;
             $this->id_usuari="";
-            $this->id_subhasta = "";
+            $this->id_subasta = "";
             $this->valor = "";
+        }
+        function __construct2($a2, $a4){
+            $this->id_licitacio = 0;
+            $this->id_usuari= $a2;
+            $this->id_subasta = "";
+            $this->valor = $a4;
         }
         function __construct3($a2, $a3, $a4){
             $this->id_licitacio = 0;
             $this->id_usuari= $a2;
-            $this->id_subhasta = $a3;
+            $this->id_subasta = $a3;
             $this->valor = $a4;
         }
         function __construct4($a1, $a2, $a3, $a4){
             $this->id_licitacio = $a1;
             $this->id_usuari=$a2;
-            $this->id_subhasta = $a3;
+            $this->id_subasta = $a3;
             $this->valor = $a4;
         }
            
