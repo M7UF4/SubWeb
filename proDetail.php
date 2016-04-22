@@ -3,6 +3,7 @@
 $title='Productes';
 $migas='#Index|index.php#Producte';
 include "Public/layouts/menu.php";
+include "System/config.php";
 ?>
 <!-- Content body -->
 <!-- Body box -->
@@ -35,6 +36,19 @@ include "Public/layouts/menu.php";
             $segundos = $segundos - ($diferencia_minutos*60);
 
             $id_user = $value['id_usuari'];
+            $db = new connexio();
+            $sql = "SELECT * FROM Factura WHERE id_subhasta = '$id_sub'";
+            $query = $db->query($sql);
+            $row = $query->fetch_assoc();
+            $id_usuari = $row['id_usuari'];
+            $valorf = $row['valor'];
+            echo $id_usuari;
+            $sql2 = "SELECT user FROM Usuari WHERE id_usuari = '$id_usuari'";
+            $query2 = $db->query($sql2);
+            $row2 = $query2->fetch_assoc();
+            $user = $row2['user'];
+            //var_dump($row2);
+            $db->close();
 
         foreach ($rtn as $row) {
             $id = $row->getId_Producte();
@@ -58,6 +72,8 @@ include "Public/layouts/menu.php";
                                 <li class="cellcar cell">'.$caracter.'</li>
                             <li class="celltitle cell"><b>Temps restant</b></li>
                                 <li class="celltim cell">¡¡Subhasta Finalitzada!!</li>
+                            <li class="celltitle cell"><b>Guanyador</b></li>
+                                <li class="celltim cell">'.ucfirst($user).' '.$valorf.'</li>
                         </ul>
                     </div>
                 ';
