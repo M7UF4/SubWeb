@@ -1,19 +1,20 @@
 .body-box {
     overflow:auto;
-    background-color:red;
+    background-color:white;
 }
 .content-box{
     width:80%;
+    padding:1%;
     margin-left:10%;
     margin-right:10%;
     margin-top:1%;
     margin-bottom:2%;
-    background-color: green;
+    background-color: rgba(0,0,0,0.2);
     overflow: auto;
 }
 .columna-esquerra{
     float:left;
-    background-color:purple;
+    background-color:white;
     height: 200px;
     width: 43%;
     margin-top: 1%;
@@ -21,14 +22,14 @@
 }
 .columna-dreta{
     float:right;
-    background-color:yellow;
+    background-color:white;
     height: 200px;
     width: 43%;
     margin-top: 1%;
     margin-bottom: 1%;
 }
 .titol{
-    background-color:brown;
+    background-color:cyan;
     height: 10%;
     width: 100%;
 }
@@ -45,7 +46,7 @@
 }
 .descricpio{
     float:right;
-    background-color:blue;
+    background-color:rgba(0,0,0,0.4);
     height: 89%;
     width: 55%;
     margin-left: 1%;

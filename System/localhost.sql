@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `Factura` (
   `valor` varchar(50),
   `comprat` varchar(50) NOT NULL,
   `carrer` varchar(200),
-  PRIMARY KEY (`id_factura`)
+  PRIMARY KEY (`id_factura`),
   KEY `id_usuari` (`id_usuari`),
   KEY `id_subhasta` (`id_subhasta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -97,9 +97,13 @@ CREATE TABLE IF NOT EXISTS `Producte` (
 
 INSERT INTO `Producte` (`id_producte`, `nom`, `descripcio`, `caracteristiques`, `link_img`, `id_categoria`, `preu_mercat`) VALUES
 (1, 'ps4', 'descripcio1', 'caracteristiques1', 'ps4.png', 3, 400),
-(2, 'nom2', 'des2', 'car2', 'subwoofer.jpg', 1, 200),
-(3, 'nom3', 'des3', 'cr3', 'lavadoraFagor.jpg', 2, 250),
-(4, 'ipad', 'descrip4', 'caract4', 'ipad-air.jpg', 4, 150);
+(2, 'Subwoofer Stereo ',' Endinsat en una nova experiencia audiovisual afegint un so mes ple i dinamic a la televisio. Es el complement perfecte per a gaudir del millor so dels teus programes de televisio, pel.licules, videojocs ... El seu elegant disseny amb acabat en fusta evita la formacio de pols i redueix la distorsio del so.
+El subwoofer actiu es el complement perfecte per afegir al seu Home Cinema una presencia sonora real. Compta amb una potencia de 30W i reduides dimensions.', 'subwoofer passiu
+Entrada: COAXIAL × 1
+Potencia de sortida: 2 x 15 W + 30 W (Subwoofer)
+Dimensions de Subwoofer: 16 x 20 x 25 cm / 1.8 kg', 'subwoofer.jpg', 1, 200),
+(3, 'Fagor A860', 'des3', 'cr3', 'lavadoraFagor.jpg', 2, 250),
+(4, 'ipad E-550', 'descrip4', 'caract4', 'ipad-air.jpg', 4, 150);
 -- --------------------------------------------------------
 
 --
