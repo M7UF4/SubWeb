@@ -22,11 +22,10 @@
     foreach ($Subhasta as $row) {
         //Cambiar la columna de Subhasta "Completada" per un 1
         //Substituir els completada = 0 per completada = 1;
-        $completada = 1;
         //UPDATE de cada subhasta
-        $db = new connexio();
-        $db->query("UPDATE Subhasta SET completada='$completada';");
-        $db->close();
+        $modSub = new Subhasta();
+        $modSub->modCompleted($row->getId_Subhasta());
+        
         
         //Carregar a la BD Factures els resultats dels guanyadors
         //Associem els atributs a variables per insertar posteriorment
@@ -35,14 +34,20 @@
         
         //Associem els atributs que ens falten de les altres taules(id_usuari, $valor, $comprat)
         $licitacio = new Licitacio();
-        $id_Usuari = $licitacio->getId_Usuari();
-        $valor = $licitacio->getValor();
-        $comprat = 0;
+        $return = $licitacio->verificar_guanyador($id_Subasta);
+        if($return != null){
+            $id_Usuari = $return['id_usuari'];
+            $valor = $return['valor']; 
+        }else{
+            $id_Usuari = 1;
+            $valor = 'null'; 
+        }
+        
         
         //Insertem a la BBDD Factures
         $db = new connexio();
-        $db->query("INSERT INTO Factura(id_producte, id_usuari, id_subasta, valor, comprat) "
-                . "VALUES ('$id_Usuari','$id_Producte','$id_Subasta', '$valor', '$comprat')");
+        $db->query("INSERT INTO Factura(id_producte, id_usuari, id_subhasta, valor, comprat, carrer) "
+                . "VALUES ('$id_Producte','$id_Usuari','$id_Subasta', '$valor', '0','null')");
         $db->close();
         
     }

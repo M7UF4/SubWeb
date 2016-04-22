@@ -54,14 +54,16 @@
         }
         function verificar_guanyador($id_subhasta){ 
             $db = new connexio();
-            $sql = "SELECT * , COUNT( valor ) FROM Licitacio WHERE id_subasta =$id_subhasta GROUP BY valor ORDER BY count(valor) asc, valor asc";
+            $sql = "SELECT * , COUNT( valor ) FROM Licitacio WHERE id_subhasta =$id_subhasta GROUP BY valor ORDER BY count(valor) asc, valor asc";
             $query = $db->query($sql);
-            echo '<br><br>';
-            $rtn = $query->fetch_assoc();
-            $this->id_licitacio = $rtn['id_licitacio'];
-            $this->id_usuari=$rtn['id_usuari'];
-            $this->id_subasta = $rtn['id_producte'];
-            $this->valor = $rtn['valor'];
+            $datos = "";
+            if ($query != null) {
+                $row = $query->fetch_assoc();
+                $datos = $row;
+                return $datos;
+            } else {
+                return null;
+            }
             $db->close();
         }
         function averiguar_usuari($id_subhasta){ 

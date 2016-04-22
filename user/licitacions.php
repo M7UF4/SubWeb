@@ -18,9 +18,9 @@ include "../Public/layouts/menu.php";
             $rtn = $rtn->view_lici($idUsr);
             //var_dump($rtn);
             foreach ($rtn as $row) {
-            $idSub = $row->getId_Subhasta();
-            $valor = $row->getValor();
-            echo $idSub .'<br>'. $valor;
+                $idSub = $row->getId_Subhasta();
+                $valor = $row->getValor();
+                echo $idSub .'<br>'. $valor;
             }
         ?>
     </div>

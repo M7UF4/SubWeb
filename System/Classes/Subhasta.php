@@ -21,6 +21,11 @@
             $db->query("UPDATE Subhasta SET id_producte='$this->id_producte', temps='$this->temps' WHERE id_subhasta= '$this->id_subhasta'");
             $db->close();
         }
+        public function modCompleted($idsub){
+            $db = new connexio();
+            $db->query("UPDATE Subhasta SET completada='1' WHERE id_subhasta= '$idsub'");
+            $db->close();
+        }
         public function mod2($idsub){
             $db = new connexio();
             $db->query("UPDATE Subhasta SET num_licitacions='$this->num_licitacions', temps='$this->temps' WHERE id_subhasta='$idsub'");

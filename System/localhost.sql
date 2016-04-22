@@ -61,14 +61,16 @@ CREATE TABLE IF NOT EXISTS `Licitacio` (
 --
 
 CREATE TABLE IF NOT EXISTS `Factura` (
+  `id_factura` int(255) NOT NULL AUTO_INCREMENT,
   `id_producte` int(10) NOT NULL,
   `id_usuari` int(10),
   `id_subhasta` int(10) NOT NULL,
   `valor` varchar(50),
   `comprat` varchar(50) NOT NULL,
   `carrer` varchar(200),
-  PRIMARY KEY (`id_subhasta`),
-  KEY `id_usuari` (`id_usuari`)
+  PRIMARY KEY (`id_factura`)
+  KEY `id_usuari` (`id_usuari`),
+  KEY `id_subhasta` (`id_subhasta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -119,10 +121,10 @@ CREATE TABLE IF NOT EXISTS `Subhasta` (
 --
 
 INSERT INTO `Subhasta` (`id_subhasta`, `id_producte`, `num_licitacions`, `temps`) VALUES
-(1, 1, 0, '2016-04-11 18:41:59'),
-(2, 4, 100, '2016-04-18 18:44:43'),
-(3, 2, 10, '2016-04-13 18:34:07'),
-(4, 4, 5, '2016-04-15 13:46:12');
+(1, 1, 0, '2016-04-25 18:41:59'),
+(2, 3, 0, '2016-04-26 18:44:43'),
+(3, 2, 0, '2016-04-30 18:34:07'),
+(4, 4, 0, '2016-04-29 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -182,11 +184,16 @@ ALTER TABLE `Licitacio`
 ALTER TABLE `Licitacio`
   ADD CONSTRAINT `Licitacio_2` FOREIGN KEY (`id_subhasta`) REFERENCES `Subhasta` (`id_subhasta`);
 
+
 --
--- Constraints for table `Pagament`
+-- Constraints for table `Factura`
 --
 ALTER TABLE `Factura`
-  ADD CONSTRAINT `Pagament_ibfk_1` FOREIGN KEY (`id_usuari`) REFERENCES `Usuari` (`id_usuari`);
+  ADD CONSTRAINT `Factura_ibfk_1` FOREIGN KEY (`id_usuari`) REFERENCES `Usuari` (`id_usuari`);
+
+ALTER TABLE `Factura`
+  ADD CONSTRAINT `Factura_ibfk_2` FOREIGN KEY (`id_subhasta`) REFERENCES `Subhasta` (`id_subhasta`);
+
 
 --
 -- Constraints for table `Producte`
@@ -212,21 +219,6 @@ INSERT INTO `Usuari` (`id_usuari`, `saldo`, `user`, `email`, `password`, `nom`, 
 (1, 50000, 'Admin', 'subweb@gmail.com', 'eb0a191797624dd3a48fa681d3061212', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 INSERT INTO `Usuari` (`id_usuari`, `saldo`, `user`, `email`, `password`, `nom`, `cognom`, `dni`, `phone`, `adreca`, `pais`, `poble`, `provincia`, `postal`, `id_tipus`) VALUES
-(2, 50000, 'test', 'subweb@gmail.com', 'eb0a191797624dd3a48fa681d3061212', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
+(2, 50000, 'Usuari', 'usuari@gmail.com', 'eb0a191797624dd3a48fa681d3061212', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
-
-
---
--- Inserts de datos para la tabla `Licitacio`
---
-
-INSERT INTO `Licitacio` (`id_usuari`, `id_subhasta`, `valor`, `id_licitacio`) VALUES
-(1, 1, 15, 1),
-(2, 1, 10, 2),
-(1, 1, 10, 3),
-(1, 1, 5, 4),
-(2, 1, 5, 5),
-(1, 1, 3, 6),
-(1, 1, 3, 7),
-(2, 1, 17, 8);
 
