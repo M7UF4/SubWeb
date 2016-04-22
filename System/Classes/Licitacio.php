@@ -10,7 +10,7 @@
         //METODES
         public function add(){
             $db = new connexio();
-            $db->query("INSERT INTO `licitacio` (`id_usuari`, `id_subhasta`, `valor`) "
+            $db->query("INSERT INTO `Licitacio` (`id_usuari`, `id_subhasta`, `valor`) "
                     . "VALUES ('$this->id_usuari', '$this->id_subhasta', '$this->valor')");
             $db->close();
         }
