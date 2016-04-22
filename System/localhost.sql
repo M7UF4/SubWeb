@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS `Factura` (
   `id_subhasta` int(10) NOT NULL,
   `valor` varchar(50),
   `comprat` varchar(50) NOT NULL,
+  `carrer` varchar(200),
   PRIMARY KEY (`id_subhasta`),
   KEY `id_usuari` (`id_usuari`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
