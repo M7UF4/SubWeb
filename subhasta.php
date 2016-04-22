@@ -1,7 +1,7 @@
 <!-- Header content box -->
 <?php 
 $title='Index';
-$migas='#Index|index.php #Subhasta | subhasta.php' ;
+$migas='#Index|index.php #Subhasta|subhasta.php' ;
 include "Public/layouts/menu.php";?>
 <LINK REL=StyleSheet HREF="Public/css/subhasta.css" TYPE="text/css" MEDIA=screen>
       

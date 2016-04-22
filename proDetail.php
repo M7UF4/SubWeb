@@ -1,7 +1,7 @@
 <!-- Header content box -->
 <?php 
 $title='Productes';
-$migas='#Index|index.php#Producte';
+$migas='#Index|index.php#Subhasta|subhasta.php#Producte';
 include "Public/layouts/menu.php";
 require_once "System/config.php";
 ?>

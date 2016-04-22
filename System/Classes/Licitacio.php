@@ -2,16 +2,17 @@
     require_once __DIR__."/../config.php";
     class Licitacio{
         /*Atributs*/
-        private $id_usuari;
-        private $id_subhasta;
-        private $valor;
-        private $id_licitacio;
+        public $id_usuari;
+        public $id_subhasta;
+        public $valor;
+        public $id_licitacio;
         
         //METODES
         public function add(){
             $db = new connexio();
-            $db->query("INSERT INTO Licitacio(id_usuari,id_subhasta,valor) "
+            $db->query("INSERT INTO Licitacio(`id_usuari`, `id_subhasta`, `valor`) "
                     . "VALUES ('$this->id_usuari', '$this->id_subhasta', '$this->valor')");
+            var_dump($db);
             $db->close();
         }
         public function mod(){
@@ -31,7 +32,7 @@
             $query = $db->query($sql);
             $rtn = array();
             while($obj = $query->fetch_assoc()){
-                $Licitacio = new Licitacio($obj["id_usuari"],$obj["id_subhasta"],$obj["valor"],$obj["id_licitacio"],$obj["password"],$obj["nom"],$obj["cognom"],$obj["dni"],$obj["telefon"],$obj["adreça"],$obj["id_tipus"]);
+                $Licitacio = new Licitacio($obj["id_licitacio"],$obj["id_usuari"],$obj["id_subhasta"],$obj["valor"]);
                 //var_dump($Licitacio);
                 array_push($rtn, $Licitacio);
             }
@@ -44,8 +45,9 @@
             $sql = "SELECT * FROM Licitacio where id_usuari='$idUsr'";
             $query = $db->query($sql);
             $rtn = array();
+            
             while($obj = $query->fetch_assoc()){
-                $Licitacio = new Licitacio($obj["id_usuari"],$obj["id_subhasta"],$obj["valor"],$obj["id_licitacio"]);
+                $Licitacio = new Licitacio($obj["id_licitacio"],$obj["id_usuari"],$obj["id_subhasta"],$obj["valor"]);
                 //var_dump($Licitacio);
                 array_push($rtn, $Licitacio);
             }

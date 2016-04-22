@@ -44,8 +44,8 @@ include "../Public/layouts/menu.php";
                 ';
             
             foreach ($rtn as $row) {
-            $valor = $row->getId_Subhasta();
-            $idSub=$row->getId_Usuari();
+            $valor = $row->getValor();
+            $idSub = $row->getId_Usuari();
             $Subhasta=new Subhasta();
             $return=$Subhasta->view_sub($idSub);
             //var_dump($rtn);
