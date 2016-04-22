@@ -3,7 +3,7 @@
 $title='Productes';
 $migas='#Index|index.php#Producte';
 include "Public/layouts/menu.php";
-include "System/config.php";
+require_once "System/config.php";
 ?>
 <!-- Content body -->
 <!-- Body box -->
