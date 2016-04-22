@@ -10,7 +10,7 @@
         //METODES
         public function add(){
             $db = new connexio();
-            $db->query("INSERT INTO Licitacio(`id_usuari`, `id_subhasta`, `valor`) "
+            $db->query("INSERT INTO `licitacio` (`id_usuari`, `id_subhasta`, `valor`) "
                     . "VALUES ('$this->id_usuari', '$this->id_subhasta', '$this->valor')");
             var_dump($db);
             $db->close();
@@ -94,25 +94,25 @@
         function __construct0(){
             $this->id_licitacio = 0;
             $this->id_usuari="";
-            $this->id_subasta = "";
+            $this->id_subhasta = "";
             $this->valor = "";
         }
         function __construct2($a2, $a4){
             $this->id_licitacio = 0;
             $this->id_usuari= $a2;
-            $this->id_subasta = "";
+            $this->id_subhasta = "";
             $this->valor = $a4;
         }
         function __construct3($a2, $a3, $a4){
             $this->id_licitacio = 0;
             $this->id_usuari= $a2;
-            $this->id_subasta = $a3;
+            $this->id_subhasta = $a3;
             $this->valor = $a4;
         }
         function __construct4($a1, $a2, $a3, $a4){
             $this->id_licitacio = $a1;
             $this->id_usuari=$a2;
-            $this->id_subasta = $a3;
+            $this->id_subhasta = $a3;
             $this->valor = $a4;
         }
            
