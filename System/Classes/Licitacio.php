@@ -12,7 +12,6 @@
             $db = new connexio();
             $db->query("INSERT INTO `licitacio` (`id_usuari`, `id_subhasta`, `valor`) "
                     . "VALUES ('$this->id_usuari', '$this->id_subhasta', '$this->valor')");
-            var_dump($db);
             $db->close();
         }
         public function mod(){
