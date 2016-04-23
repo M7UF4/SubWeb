@@ -23,7 +23,7 @@ require_once "System/config.php";
             $licitacions = $Subhasta->getNum_Licitacions();
             $temps=$Subhasta->getTemps();
             $id_Producte=$Subhasta->getId_Producte();
-            
+                
             $Producte=new Producte();
             $rtn=$Producte->view_pro($id_Producte);
 
@@ -42,7 +42,7 @@ require_once "System/config.php";
             $row = $query->fetch_assoc();
             $id_usuari = $row['id_usuari'];
             $valorf = $row['valor'];
-            echo $id_usuari;
+            
             $sql2 = "SELECT user FROM Usuari WHERE id_usuari = '$id_usuari'";
             $query2 = $db->query($sql2);
             $row2 = $query2->fetch_assoc();
@@ -65,7 +65,7 @@ require_once "System/config.php";
                             <li class="cellimg cell"><img src=Public/img/productes/'.$imatge.'></li>
                             <li class="celllic cell">Licitacions totals: '.$licitacions.'</li>
                             <li class="celltitle cell"><b>PVP</b></li>
-                                <li class="cellpvp cell">'.$preu.'</li>
+                                <li class="cellpvp cell">'.$preu.' €</li>
                             <li class="celltitle cell"><b>Descripció</b></li>
                                 <li class="celldes cell">'.$descripcio.'</li>
                             <li class="celltitle cell"><b>Caracteristiques</b></li>
@@ -85,15 +85,15 @@ require_once "System/config.php";
                         <ul class="row1">
                             <li class="cellimg cell"><img src=Public/img/productes/'.$imatge.'></li>
                             <li class="celllic cell">Licitacions totals: '.$licitacions.'</li>
-                            <li id="start" class="cellbut cell"> Pujar </li>
+                            <li id="start" class="cellbut cell"> LICITAR </li>
                             <li class="celltitle cell"><b>PVP</b></li>
-                                <li class="cellpvp cell">'.$preu.'</li>
+                                <li class="cellpvp cell">'.$preu.' €</li>
                             <li class="celltitle cell"><b>Descripció</b></li>
                                 <li class="celldes cell">'.$descripcio.'</li>
-                            <li class="celltitle cell"><b>Caracteristiques</b></li>
+                            <li class="celltitle cell"><b>Característiques</b></li>
                                 <li class="cellcar cell">'.$caracter.'</li>
                             <li class="celltitle cell"><b>Temps restant</b></li>
-                                <li class="celltim cell">'.$diferencia_dias.' Dies + '.$diferencia_horas.':'.$diferencia_minutos.':'.$segundos.'</li>
+                                <li class="celltim cell">'.$diferencia_dias.' Dies + '.$diferencia_horas.':'.$diferencia_minutos.':'.$segundos.' hores</li>
                         </ul>
                     </div>
                     

@@ -96,14 +96,49 @@ CREATE TABLE IF NOT EXISTS `Producte` (
 --
 
 INSERT INTO `Producte` (`id_producte`, `nom`, `descripcio`, `caracteristiques`, `link_img`, `id_categoria`, `preu_mercat`) VALUES
-(1, 'ps4', 'descripcio1', 'caracteristiques1', 'ps4.png', 3, 400),
+(1, 'Play Station 4', 'PlayStation 4 tofereix experiencies mes espectaculars, mes realistes. Molt mes del que mai hauries pogut imaginar.', 
+'CPU
+AMD Jaguar x86-64 de baixa potencia, 8 nuclis
+GPU
+1,84 TFLOPS, targeta grafica AMD basada en Radeon de nova generacio
+MEMORIA
+GDDR5 de 8 GB
+HDD
+Unitat de disc dur de 500 GB
+UNITAT OPTICA (NOMES LECTURA)
+BD x 6 CAV; DVD x 8 CAV
+PORTS USB
+2,0', 
+'ps4.png', 3, 400),
 (2, 'Subwoofer Stereo ',' Endinsat en una nova experiencia audiovisual afegint un so mes ple i dinamic a la televisio. Es el complement perfecte per a gaudir del millor so dels teus programes de televisio, pel.licules, videojocs ... El seu elegant disseny amb acabat en fusta evita la formacio de pols i redueix la distorsio del so.
 El subwoofer actiu es el complement perfecte per afegir al seu Home Cinema una presencia sonora real. Compta amb una potencia de 30W i reduides dimensions.', 'subwoofer passiu
-Entrada: COAXIAL × 1
+Entrada: COAXIAL x 1
 Potencia de sortida: 2 x 15 W + 30 W (Subwoofer)
 Dimensions de Subwoofer: 16 x 20 x 25 cm / 1.8 kg', 'subwoofer.jpg', 1, 200),
-(3, 'Fagor A860', 'des3', 'cr3', 'lavadoraFagor.jpg', 2, 250),
-(4, 'ipad E-550', 'descrip4', 'caract4', 'ipad-air.jpg', 4, 150);
+(3, 'Fagor A860', 'Si busques Lavadoras de carrega frontal Fagor, compra la teva Fagor A860.', '- Garantia espanyola
+- Programes reduits en temps (Turbo Time Plus)
+- Indicador de fases de rentat
+- Indicador de temps restant
+- Velocitat maxima de centrifugacio (r.p.m.): 1200
+- Tecla i / o funcions: Aclarit extra
+- Tecla i / o funcions: Facil planxa
+- Tecla i / o funcions: Regulació de centrif. i antiarrugues
+- Tecla de exclusió centrifugacio
+- Capacitat de rentat (kg.): 8
+- Selector velocitats de centrifugat
+- Exclusió centrifugat
+- Programacio diferida (h): 24
+- Sistema ABS (control de equilibratge)
+- Programes: Rapids: 15 min. (2Kg) / 30 min. (4Kg)
+- Effi Silent (súpersilencio)
+- Programa especial: Edredo
+- Color: Blanc
+
+dimensions:
+- Alt x ample x fons 85 x 59 x 59 cm', 'lavadoraFagor.jpg', 2, 250),
+(4, 'ipad E-550', 'APPLE. 
+iPad Air Wi-Fi 32 GB. 
+Model: MD786TY/B', 'Processador Xip A7 amb arquitectura de 64 bits i coprocessador de moviment M7Sistema operativoiOS 8Tipo de pantallaPantalla Retina multi-touch retroiluminada per LED amb tecnologia IPS. Coberta oleofuga antihuellas. Tamany de la pantalla 9,7 "Resolució 2048x1536 pppCapacidad de disc duro1x32 GB', 'ipad-air.jpg', 4, 150);
 -- --------------------------------------------------------
 
 --

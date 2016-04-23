@@ -61,7 +61,7 @@
                 echo'<ul class="nav">';
                     if (strpos($self,"admin/")) {
                         echo'<li><a href="../index.php"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Inici</a> <span class="flecha">&#9660</span></li>';
-                        echo'<li><a href="../subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Tenda</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="../subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Sala de Subhastes</a> <span class="flecha">&#9660</span></li>';
                         //echo'<li><a href="../../phpmyadmin/">phpmyadmin</a> <span class="flecha">&#9660</span></li>';
                         /*
                          * Resta de Menus aqui!!
@@ -94,7 +94,7 @@
                         }
                     }else if (strpos($self,"user/")) {
                         echo'<li><a href="../index.php"><i class="fa fa-home" aria-hidden="true">&nbsp;</i> Inici</a> <span class="flecha">&#9660</span></li>';
-                        echo'<li><a href="../subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Tenda</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="../subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Sala de Subhastes</a> <span class="flecha">&#9660</span></li>';
                         //echo'<li><a href="../../phpmyadmin/">phpmyadmin</a> <span class="flecha">&#9660</span></li>';
                         /*
                          * Resta de Menus aqui!!
@@ -123,7 +123,7 @@
                         }
                     }else{
                         echo'<li><a href="index.php"><i class="fa fa-home" aria-hidden="true">&nbsp;</i>Inici</a> <span class="flecha">&#9660</span></li>';
-                        echo'<li><a href="subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Tenda</a> <span class="flecha">&#9660</span></li>';
+                        echo'<li><a href="subhasta.php"><i class="fa fa-shopping-cart" aria-hidden="true">&nbsp;</i>Sala de Subhastes</a> <span class="flecha">&#9660</span></li>';
                         //echo'<li><a href="../phpmyadmin/">phpmyadmin</a> <span class="flecha">&#9660</span></li>';
                         /*
                          * Resta de Menus aqui!!

@@ -110,7 +110,7 @@
             $db = new connexio();
             //var_dump($db);
             //echo '<br> <br>';
-            $sql = "SELECT * from Subhasta where id_producte = $var";
+            $sql = "SELECT * from Subhasta where id_subhasta = $var";
             $query = $db->query($sql);
             //var_dump($query);
             //echo '<br> <br>';

@@ -40,8 +40,8 @@ include "Public/layouts/menu.php";?>
                         <img src="Public/img/productes/'.$img.'" height="100%">
                     </div>
                     <div class="descricpio">
-                        <p>'.$descripcio.'</p>
-                            '.$temps_restant.'
+                        <p align="justify">'.$descripcio.'</p><br>
+                        </p>Tancament: <strong>'.$temps_restant.'</strong></p>
                     </div>
                     </div></a>';
             }else{
@@ -59,8 +59,8 @@ include "Public/layouts/menu.php";?>
                         <img src="Public/img/productes/'.$img.'" height="100%">
                     </div>
                     <div class="descricpio">
-                        <p>'.$descripcio.'</p>
-                            '.$temps_restant.'
+                        <p align="justify">'.$descripcio.'</p><br>
+                        </p>Tancament: <strong>'.$temps_restant.'</strong></p>
                     </div>
                     </div></a>';
             }
