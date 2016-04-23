@@ -138,7 +138,18 @@ dimensions:
 - Alt x ample x fons 85 x 59 x 59 cm', 'lavadoraFagor.jpg', 2, 250),
 (4, 'ipad E-550', 'APPLE. 
 iPad Air Wi-Fi 32 GB. 
-Model: MD786TY/B', 'Processador Xip A7 amb arquitectura de 64 bits i coprocessador de moviment M7Sistema operativoiOS 8Tipo de pantallaPantalla Retina multi-touch retroiluminada per LED amb tecnologia IPS. Coberta oleofuga antihuellas. Tamany de la pantalla 9,7 "Resolució 2048x1536 pppCapacidad de disc duro1x32 GB', 'ipad-air.jpg', 4, 150);
+Model: MD786TY/B', 'Processador Xip A7 amb arquitectura de 64 bits i coprocessador de moviment M7Sistema operativoiOS 8Tipo de pantallaPantalla Retina multi-touch retroiluminada per LED amb tecnologia IPS. Coberta oleofuga antihuellas. Tamany de la pantalla 9,7 "Resolució 2048x1536 pppCapacidad de disc duro1x32 GB', 'ipad-air.jpg', 4, 150),
+(5, 'Nikon-d5100', 'Formato DX 16.2 megapixeles Se', 
+'Live View amb Selector automatic descenes
+Nitid sistema denfocament automatic 11 punts
+4 fps de tret continu
+La manera defectes especials
+Maneres dEscena
+Ampli a la cambra Retoc Menu
+Sistema de reduccio de pols integrat Dual
+Incorporat en el connector HDMI
+so estereo', 'Nikon-d5100.jpg', 5, 550);
+
 -- --------------------------------------------------------
 
 --

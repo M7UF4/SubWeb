@@ -46,10 +46,12 @@ include "Public/layouts/menu.php";?>
                 <div id="slider"></div>
             </div>
             <div class="inner_cover">
-                <h1 class="cover-heading">SubWeb La teva web de Subhastes Online.</h1>
-                <p class="lead">SubWeb es una pagina per a comprar productes al millor preu. Es simple ... Busca un producte que t'agradi i aposta el que vulguis, qui sap .. potser ets el proxim guanyador d'una ps4 per no mes de 20€.</p>
+                <h1 class="cover-heading">SubWeb la teva web de Subhastes Online.</h1>
+                <p class="lead">SubWeb és una pàgina per adquirir productes al millor preu. És senzill ... Cerca un producte que t'agradi i realitza la teva licitació, qui sap .. pot ser ets el pròxim guanyador d'una PS4 per tan sols 2€.</p>
+                <p class="lead">Guanya el qui hagi apostat menys sense repetició. No hi ha apostes mínimes. Cada aposta consumeix 50 crèdits online. Adquireix tants com necessitis en el teu panell d'Usuari / Secció Tenda.</p>
+                <br>
                 <p class="lead">
-                  <a href="subhasta.php" class="btn">Comensa ja ...</a>
+                  <a href="subhasta.php" class="btn">Comença aquí</a>
                 </p>
                 <div class="inner">
                     <p class="lead">Subweb Online by <a id='linkg1' href="#">@Grup1</a>.</p>
