@@ -11,7 +11,7 @@
     $desc = $_POST['descripcio'];
     $caracter = $_POST['caracter'];
     
-    move_uploaded_file($file_tmp,"product/$file");
+    move_uploaded_file($file_tmp,"../../Public/img/productes/$file");
 
     $Producte = new Producte($nom, $desc, $caracter, $file, $cat, $preu);
     $Producte->mod($var);

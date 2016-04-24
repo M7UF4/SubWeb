@@ -4,7 +4,7 @@ $migas='#Index|index.php#Producte';
 include "../Public/layouts/menu.php";
 ?>
 <?php
-include "../System/config.php";
+include_once "../System/config.php";
 $saldo=$value['saldo'];
 $idusr=$value['id_usuari'];
 $valor=$_POST['valor'];

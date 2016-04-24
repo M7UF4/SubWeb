@@ -1,12 +1,35 @@
 <?php
 $nom = $_POST['nom'];
+$usernom = $_POST['usernom'];
 $preu = $_POST['valor'];
+$email = $_POST['email'];
 require_once '../Public/dompdf/autoload.inc.php';
 
-$data=date('Y,m,d');
-$gavi='<html><body><h1>SUBWEß</h1>';
+$gavi='<html><body>'
+        . '<div id="logo">'
+        . '<ul class="logo2">'
+        . '<li class="s">S</li>'
+        .'<li class="u">U</li>'
+        .'<li class="b">ß</li>'
+        .'<li class="w">W</li>'
+        .'<li class="e">E</li>'
+        .'<li class="b2">B</li><br>'
+        . '<li class="add">C/Madrid 35, Amposta<li>'
+        . '</ul>'
+        . '</div>';
+$gavi.='<table class="user-data"><tr>'
+        . '<td width=200px;><b>'.ucfirst($usernom).'</b><br>'.$email.'</td>'
+        . '</tr></table>';
 
-$gavi.=$nom.' '.$preu.'</body></html>';
+$gavi.='<br><br><br><br><br><hr><table class="datapaid" style="margin:0%; margin:auto;"><tr class="menutr">'
+        . '<td width="350px">Nom</td>'
+        . '<td width="100px">Valor</td>'
+        . '<td width="100px">Situació</td></tr><tr>'
+        . '<td width="350px">'.$nom.'</td>'
+        . '<td width="10px">'.$preu.'</td>'
+        . '<td width="100px">Pagat</td>'
+        . '</tr></table>';
+//$gavi=$nom.' '.$preu.'</body></html>';
 
 use Dompdf\Dompdf;
 
@@ -22,4 +45,6 @@ $dompdf->render();
 
 // Output the generated PDF to Browser
 $dompdf->stream("recibo", array("Attachment" => false));
+
+//SUBWEß
 ?>
