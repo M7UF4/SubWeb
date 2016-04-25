@@ -12,7 +12,7 @@
     $preu = $_POST['preu'];
     $iduser = $value['id_usuari'];
     $user = $value['user'];
-    var_dump($value);
+    //var_dump($value);
     $lici = $_POST["licitacions"];
     $temps = $_POST["temps"];
         $lici=$lici+1;
