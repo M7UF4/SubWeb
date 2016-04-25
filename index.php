@@ -6,6 +6,7 @@ include "Public/layouts/menu.php";?>
 <style>
     body{
         background-color: rgba(0,0,0,0);
+		background-color: rgba(22,22,22,0.8);
     }
     html{
         background-color: #31231E;
@@ -17,11 +18,11 @@ include "Public/layouts/menu.php";?>
     }
 .content-title{
     position: fixed;
-    top: 24.2;
+    top: 25;
     bottom:0;
     left:0;
     right: 0;
-    background-color: rgba(22,22,22,0.8);
+    background-color: rgba(22,22,22,0);
     overflow: auto;
 }
 .content-slider{
