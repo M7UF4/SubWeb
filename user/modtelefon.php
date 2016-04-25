@@ -13,7 +13,7 @@ if( $value['phone'] != ""){
 <div class="user-box">
     <!--Content Box -->
     <div class="user-content">
-        <div class="user-title"><a href="../user/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Modifica el teu telefon</h3></div>
+        <div class="user-title"><a href="../user/"><span class="sb-return"><i class="fa fa-angle-left sb-return-icon"></i></span></a><h3>Modifica el teu telèfon</h3></div>
         <form method="POST" name="myForm" action="../System/Protocols/Usuari_Phone.php">
             <div class="user-info">
                 <div class="input-1">    

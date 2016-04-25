@@ -101,7 +101,7 @@ function testmail(opc){
             flag_mail = true;
         }
     }else{
-        var fail = "<div class='alert' role='alert'>El format del e-mail no és vàlid o es igual que l'anterior.</div>";
+        var fail = "<div class='alert' role='alert'>El format del e-mail no és vàlid ó és igual que l'anterior.</div>";
         $('#alertemail').empty().append(fail);
         flag_mail = false;
     }

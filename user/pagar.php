@@ -11,7 +11,7 @@ $valor=$_POST['valor'];
 $idsub=$_POST['idsub'];
 if($saldo<$valor){
     //echo "no saldo";
-    echo "<script>alert('No suficiente saldo.\nCompras mas puntos o pagas desde paypal.')</script>";
+    echo "<script>alert('No tens suficient saldo.\nCompra més punts o paga des de paypal.')</script>";
     echo "<script>window.open('tenda.php','_self')</script>";
 }
 else{
@@ -21,7 +21,7 @@ $db = new connexio();
 $db->query("UPDATE Factura SET comprat='$completada' where id_subhasta='$idsub'");
 $db->query("UPDATE Usuari SET saldo='$resta' where id_usuari='$idusr'");
 $db->close();
-echo "<script>alert('Gracies per la teva compra.')</script>";
+echo "<script>alert('Gràcies per la teva compra.')</script>";
 echo "<script>window.open('factures.php','_self')</script>";
     }
 ?>

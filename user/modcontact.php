@@ -19,7 +19,7 @@ include "../Public/layouts/menu.php";?>
             <div class="user-info">
                 <div class="input-2">
                     <input class="input" id="pais" placeholder="Pais" value="" type="text" name="pais" maxlength="32">
-                    <input class="input" id="poble" placeholder="Poble" value="" type="text" name="poble" maxlength="32">
+                    <input class="input" id="poble" placeholder="Localitat" value="" type="text" name="poble" maxlength="32">
                 </div>
             </div>
             <div class="user-info">

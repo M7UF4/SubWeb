@@ -143,11 +143,11 @@ function validateForm() {
         <div class="input-1">
             <div id="infomsg">
                 <p>
-                La contrasenya i nom de usuari son dos dades que et permeten conectarte a  la nostra página i serveis. Aquestes dades han de ser secretes..<br>
-                Et recomanem que no uses la mateixa contrasenya para la teva compta de Subweb que per al teu correu electronic.<br>
-                Una contrasenya segura no ha de ser facil d'adivinar.<br><br>
+                La contrasenya i nom d'usuari són dues dades que et permeten connectar-te a la nostra pàgina i serveis. Aquestes dades han de ser secretes.
+                Et recomanem que no utilitzis la mateixa contrasenya pel teu compte de Subweb que per al teu correu electrònic.
+                Una contrasenya segura no ha de ser fàcil d'endevinar.<br><br>
                 </p>
-                <strong><i style='color:red;' class="fa fa-exclamation-triangle" aria-hidden="true"></i> Ha de tenir un minim de sis caracters amb almenys un número, una lletra majuscula i una minuscula.</strong>
+                <strong><i style='color:red;' class="fa fa-exclamation-triangle" aria-hidden="true"></i> Ha de tenir un mínim de sis caràcters amb almenys un número, una lletra majúscula i una minúscula.</strong>
             </div>
         </div><br>
         <div class="input-1">

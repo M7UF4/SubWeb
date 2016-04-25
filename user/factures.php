@@ -18,7 +18,7 @@ include "../Public/layouts/menu.php";
         </ul>
     </div>
     <div class="user-content">
-        <div class="user-title"><h3>Llista de apostes guanyats</h3></div>
+        <div class="user-title"><h3>Llista d'apostes guanyades</h3></div>
         <div class="user-info">
             <table class="row" style="width:40%; margin: auto;">
                         <tr>

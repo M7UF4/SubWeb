@@ -56,7 +56,7 @@ include "../Public/layouts/menu.php";?>
         </div>
         <form method="POST" name="myForm" action="../System/Protocols/Usuari_Tenda.php">
             <div class="user-info">
-                &nbsp;Aceptes que la teva compra estigui disponible inmediatament i renuncies al teu dret legal de retirada.
+                &nbsp;Acceptes que la teva compra estigui disponible immediatament i renuncies al teu dret legal de retirada.
             </div>
             <div style="border:none;" class="user-info" >
                 <div class="input-1">

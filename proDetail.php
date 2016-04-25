@@ -68,7 +68,7 @@ require_once "System/config.php";
                                 <li class="cellpvp cell">'.$preu.' €</li>
                             <li class="celltitle cell"><b>Descripció</b></li>
                                 <li class="celldes cell">'.$descripcio.'</li>
-                            <li class="celltitle cell"><b>Caracteristiques</b></li>
+                            <li class="celltitle cell"><b>Característiques</b></li>
                                 <li class="cellcar cell">'.$caracter.'</li>
                             <li class="celltitle cell"><b>Temps restant</b></li>
                                 <li class="celltim cell">¡¡Subhasta Finalitzada!!</li>
