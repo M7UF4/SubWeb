@@ -1,0 +1,98 @@
+<?php
+    require_once __DIR__."/../config.php";
+    class Pagament{
+        /*Atributs*/
+        private $id_pagament;
+        private $id_usuari;
+        private $tipus;
+        private $quantitat;
+        
+        //METODES
+        public function add(){
+            $db = new connexio();
+            $db->query("INSERT INTO Pagament(id_usuari,tipus,quantitat) "
+                    . "VALUES ('$this->id_usuari', '$this->tipus', '$this->quantitat')");
+            $db->close();
+        }
+        public function mod(){
+            $db = new connexio();
+            $db->query("UPDATE Pagament SET id_usuari='$this->id_usuari', user='$this->tipus', quantitat='$this->quantitat' WHERE id_pagament= '$this->id_pagament'");
+            $db->close();
+        }
+        public function delete($var){
+            $db = new connexio();
+            $sql = "delete from Pagament where id_pagament = $var";
+            $db->query($sql);
+        }
+        public function view_all(){
+            $db = new connexio();
+            $sql = "SELECT * FROM Pagament;";
+            $query = $db->query($sql);
+            $rtn = array();
+            while($obj = $query->fetch_assoc()){
+                $Pagament = new Pagament($obj["id_pagament"],$obj["id_usuari"],$obj["tipus"],$obj["quantitat"]);
+                //var_dump($Pagament);
+                array_push($rtn, $Pagament);
+            }
+            $db->close();
+            return $rtn;
+        }
+        //CONSTRUCTORS
+        function __construct(){
+            $args = func_get_args();
+            $num = func_num_args();
+            $f='__construct'. $num;
+            if (method_exists($this, $f)) {
+                call_user_func_array(array($this, $f), $args);
+            }
+        }
+        function __construct0(){
+            $this->id_pagament=0;
+            $this->id_usuari = "";
+            $this->tipus = "";
+            $this->quantitat = "";
+        }
+        function __construct10($a2, $a3, $a4){
+            $this->id_pagament=0;
+            $this->id_usuari = $a2;
+            $this->tipus = $a3;
+            $this->quantitat = $a4;
+        }
+        function __construct11($a1, $a2, $a3, $a4){
+            $this->id_pagament=$a1;
+            $this->id_usuari = $a2;
+            $this->tipus = $a3;
+            $this->quantitat = $a4;
+        }
+           
+        //METODES SET
+        public function setId_Pagament($id_pagament) {
+            $this->id_pagament = $id_pagament;
+        }
+        public function setId_Usuari($id_usuari) {
+            $this->id_usuari = $id_usuari;
+        }
+        public function setTipus($tipus) {
+            $this->tipus = $tipus;
+        }
+        public function setQuantitat($quantitat) {
+            $this->quantitat = $quantitat;
+        }
+        
+        //METODES GET 
+        public function getId_Pagament(){
+            return $this->id_pagament;
+        }
+        public function getId_Usuari(){
+            return $this->id_usuari;
+        }
+        public function getTipus(){
+            return $this->tipus;
+        }
+        public function getQuantitat(){
+            return $this->quantitat;
+        }
+    }
+?>
+
+
