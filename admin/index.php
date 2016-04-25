@@ -49,8 +49,8 @@ include "../Public/layouts/menu.php";?>
                 <i class="fa fa-chevron-right"></i>
             </div>
         </a>
-        <a href="#">
-            <div class="user-info"><strong>#</strong> 
+        <a href="../doc">
+            <div class="user-info"><strong>Documentació</strong> 
                 <i class="fa fa-chevron-right"></i>
             </div>
         </a>
