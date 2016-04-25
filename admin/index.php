@@ -54,8 +54,8 @@ include "../Public/layouts/menu.php";?>
                 <i class="fa fa-chevron-right"></i>
             </div>
         </a>
-        <a href="#">
-            <div class="user-info"><strong>#</strong> 
+        <a href="http://neo.x10host.com/index.php">
+            <div class="user-info"><strong>Link to hosting SubWeb</strong> 
                 <i class="fa fa-chevron-right"></i>
             </div>
         </a>
